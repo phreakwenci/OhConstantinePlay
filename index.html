@@ -66,12 +66,11 @@
     0    0    5px #000; /* optional soft glow */
 }
 
-}
 
         /* Confessional chat box */
         .confessional-box {
             position: fixed;
-            bottom: 20px;
+            bottom: 50px;
             right: 20px;
             width: 300px;
             background: #271759;
@@ -536,17 +535,17 @@ document.getElementById('countdown-timer').innerHTML =
 setInterval(updateCountdown, 1000);
 updateCountdown();
 
-// Try to play ambient audio (will be muted by default)
+/*
 document.addEventListener('DOMContentLoaded', function() {
 const choirAudio = document.getElementById('choirAudio');
 choirAudio.volume = 0.3;
 
-// Attempt to unmute if user interacts with page
 document.addEventListener('click', function() {
 choirAudio.muted = false;
 choirAudio.play().catch(e => console.log("Audio play prevented:", e));
 }, { once: true });
 });
+*/
 
 // Easter egg in console
 console.log("%cNIKA! NIKA! NIKA!", "color: #FFC107; font-size: 24px; font-weight: bold;");
