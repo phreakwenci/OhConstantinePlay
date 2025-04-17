@@ -22,7 +22,6 @@
             background-color: #1a103d;
             color: #f8f3e6;
 overflow-x: hidden;
-
             background-image: url('https://i.imgur.com/skrCpXn.jpeg');
     background-repeat: repeat;
     background-size: auto;
@@ -58,7 +57,6 @@ overflow-x: hidden;
             transform: scale(1.2);
             color: #FFC107;
         }
-
       .text-outline {
   text-shadow:
     -2px -2px 0 #000,
@@ -67,8 +65,6 @@ overflow-x: hidden;
      2px  2px 0 #000,
     0    0    5px #000; /* optional soft glow */
 }
-
-
         /* Confessional chat box */
         .confessional-box {
             position: fixed;
@@ -490,69 +486,68 @@ Email Us <i class="fas fa-envelope ml-2"></i>
 </div>
 </footer>
 
-<!-- Confessional Chat Box -->
+
+<!-- Landbot Embed -->
+<script type="module" src="https://cdn.landbot.io/landbot-3/landbot-3.0.0.mjs"></script>
+<!-- Custom Confessional Box with Landbot -->
 <div class="confessional-box" id="confessionalBox">
-<div class="confessional-header" id="confessionalToggle">
-<h3>Ask Eusebius!</h3>
+  <div class="confessional-header" id="confessionalToggle">
+    <h3>Ask Eusebius!</h3>
+  </div>
+  <div class="confessional-content hidden" id="confessionalContent">
+    <div id="landbotEusebius" style="width: 100%; height: 400px;"></div>
+  </div>
 </div>
-<div class="confessional-content hidden" id="confessionalContent">
-<p class="text-yellow-100 mb-4">The bishop is in. Ask, and ye shall receive... selective orthodoxy.</p>
-<textarea class="w-full p-2 bg-purple-900 text-yellow-100 rounded mb-2" placeholder="Your question..."></textarea>
-<button class="bg-yellow-600 hover:bg-yellow-500 text-black font-bold py-2 px-4 rounded w-full">
-Preach It <i class="fas fa-dove ml-1"></i>
-</button>
-</div>
-</div>
+
+<script type="module">
+  const landbot = new Landbot.Container({
+    container: '#landbotEusebius',
+    configUrl: 'https://storage.googleapis.com/landbot.site/v3/H-2886775-CR0KCOEU4E15QMCE/index.json',
+  });
+</script>
+
+
 
 <script>
 // Mobile menu toggle (simplified)
 document.querySelector('nav button').addEventListener('click', function() {
 document.getElementById('mobileMenu').classList.toggle('hidden');
 });
-
 // Confessional chat box toggle
 const confessionalToggle = document.getElementById('confessionalToggle');
 const confessionalBox = document.getElementById('confessionalBox');
 const confessionalContent = document.getElementById('confessionalContent');
-
 confessionalToggle.addEventListener('click', function() {
 confessionalBox.classList.toggle('open');
 confessionalContent.classList.toggle('hidden');
 });
-
 // Countdown timer to opening night (June 8, 2025)
 function updateCountdown() {
 const now = new Date();
 const openingNight = new Date('June 8, 2025 00:00:00');
 const diff = openingNight - now;
-
 const days = Math.floor(diff / (1000 * 60 * 60 * 24));
 const hours = Math.floor((diff % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
 const minutes = Math.floor((diff % (1000 * 60 * 60)) / (1000 * 60));
 const seconds = Math.floor((diff % (1000 * 60)) / 1000);
-
 document.getElementById('countdown-timer').innerHTML = 
 `${days}d ${hours}h ${minutes}m ${seconds}s`;
 }
-
 setInterval(updateCountdown, 1000);
 updateCountdown();
-
 /*
 document.addEventListener('DOMContentLoaded', function() {
 const choirAudio = document.getElementById('choirAudio');
 choirAudio.volume = 0.3;
-
 document.addEventListener('click', function() {
 choirAudio.muted = false;
 choirAudio.play().catch(e => console.log("Audio play prevented:", e));
 }, { once: true });
 });
 */
-
 // Easter egg in console
 console.log("%cNIKA! NIKA! NIKA!", "color: #FFC107; font-size: 24px; font-weight: bold;");
 console.log("%cThe true believers know the secret of the Nika riots...", "color: #f8f3e6;");
 </script>
-</body>
+<p style="border-radius: 8px; text-align: center; font-size: 12px; color: #fff; margin-top: 16px;position: fixed; left: 8px; bottom: 8px; z-index: 10; background: rgba(0, 0, 0, 0.8); padding: 4px 8px;">Made with <img src="https://enzostvs-deepsite.hf.space/logo.svg" alt="DeepSite Logo" style="width: 16px; height: 16px; vertical-align: middle;display:inline-block;margin-right:3px;filter:brightness(0) invert(1);"><a href="https://enzostvs-deepsite.hf.space" style="color: #fff;text-decoration: underline;" target="_blank" >DeepSite</a> - 🧬 <a href="https://enzostvs-deepsite.hf.space?remix=phreakwenci/oh-constantine-http-www-meganrippey-com" style="color: #fff;text-decoration: underline;" target="_blank" >Remix</a></p></body>
 </html>
