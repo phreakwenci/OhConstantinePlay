@@ -127,8 +127,25 @@ overflow-x: hidden;
         }
         
         .donate-button {
-            animation: pulse 2s infinite;
-        }
+    animation: pulse 2s infinite;
+    display: inline-block; /* make sure it's blocky for transform */
+    will-change: transform; /* hint to browser for smoother animation */
+}
+
+.donate-button:hover {
+    animation-play-state: paused; /* pause the pulse animation on hover */
+    transform: scale(1.05); /* manually scale up on hover */
+}
+
+
+.glow-on-sale-text {
+  animation: glow 1.5s infinite alternate;
+  color: #FFC107;
+  font-weight: bold;
+  font-size: 1.8rem;
+}
+
+
         
         .donate-button:hover {
             animation: none;
@@ -176,7 +193,7 @@ overflow-x: hidden;
       Oh Constantine!
     </h1>
     <h2 class="text-2xl md:text-4xl italic text-yellow-100 mb-8 text-outline">
-      "Holy Laughter. Unholy Debate."
+      "Holy Debate. Unholy Laugther."
     </h2>
 
     <div class="text-2xl md:text-5xl mb-8 text-yellow-100 text-outline space-y-2">
@@ -187,14 +204,25 @@ overflow-x: hidden;
     <div class="countdown text-outline text-yellow-300 mb-8 text-xl">
       Opening night in: <span id="countdown-timer"></span>
     </div>
+<div class="countdown text-outline text-yellow-300 mb-8 text-xl">
+  Tickets on sale in: <span id="tickets-countdown-timer"></span>
+</div>
 
-    <div class="flex flex-col md:flex-row justify-center gap-4 mt-6">
-      <a href="https://www.hollywoodfringe.org/projects/11553?tab=tickets" target="_blank" class="bg-yellow-600 hover:bg-yellow-500 text-black font-bold py-3 px-8 rounded-full text-lg transition transform hover:scale-105">
-        Buy Tickets <i class="fas fa-crown ml-2"></i>
-      </a>
-      <a href="https://seedandspark.com/fund/oh-constantine-play#story" target="_blank" class="donate-button bg-purple-600 hover:bg-purple-500 text-white font-bold py-3 px-8 rounded-full text-lg transition">
-        Support Our Campaign <i class="fas fa-hand-holding-heart ml-2"></i>
-      </a>
+<div class="flex flex-col md:flex-row justify-center gap-6 mt-6">
+  <a href="https://www.hollywoodfringe.org/projects/11553?tab=tickets" 
+     id="buyTicketsButton" 
+     class="donate-button bg-yellow-600 hover:bg-yellow-500 text-black font-bold py-3 px-8 rounded-full text-lg transition transform"
+     target="_blank">
+    Tickets On Sale May 1st!
+  </a>
+
+  <a href="https://seedandspark.com/fund/oh-constantine-play#story" 
+     target="_blank" 
+     class="donate-button bg-purple-600 hover:bg-purple-500 text-white font-bold py-3 px-8 rounded-full text-lg transition transform">
+    Get on our email list!<i class="fas fa-hand-holding-heart ml-2"></i>
+  </a>
+</div>
+
     </div>
   </div>
 </header>
@@ -419,7 +447,7 @@ overflow-x: hidden;
 <p class="text-yellow-100 mb-6">Standard seating for one performance</p>
 <p class="text-3xl font-bold text-yellow-300 mb-6">$15</p>
 <a href="https://www.hollywoodfringe.org/projects/11553?tab=tickets" target="_blank" class="block w-full bg-yellow-600 hover:bg-yellow-500 text-black font-bold py-3 px-6 rounded-full text-center transition">
-Purchase <i class="fas fa-ticket-alt ml-2"></i>
+Purchase Tickets Starting May 1st! <i class="fas fa-ticket-alt ml-2"></i>
 </a>
 </div>
 
@@ -433,18 +461,76 @@ Purchase <i class="fas fa-star ml-2"></i>
 </a>
 </div>
 </div>
+<!-- Show Schedule Section -->
+<section id="show-schedule" class="py-16 relative overflow-hidden">
 
-<div class="mt-12 text-center">
-<p class="text-yellow-100 mb-4">Performances run June 8–28, 2025 at The Zephyr Theater</p>
-<a href="https://www.hollywoodfringe.org/projects/11553?tab=tickets" target="_blank" class="inline-block bg-yellow-600 hover:bg-yellow-500 text-black font-bold py-3 px-8 rounded-full text-lg transition transform hover:scale-105">
-View All Showtimes <i class="fas fa-calendar-alt ml-2"></i>
-</a>
-</div>
-</div>
+  <div class="container mx-auto px-6">
+    <div class="text-center mb-12">
+      <h2 class="text-4xl byzantine-title text-yellow-300 mb-4">Show Schedule</h2>
+      <p class="text-lg text-yellow-100 italic max-w-2xl mx-auto">Choose your night of holy chaos!</p>
+    </div>
+
+    <div class="max-w-5xl mx-auto bg-black bg-opacity-70 p-8 rounded-3xl ornamental-border shadow-xl">
+      <table class="w-full table-auto text-yellow-100">
+        <thead>
+          <tr class="text-yellow-300 border-b border-yellow-300">
+            <th class="py-4 px-6 text-left font-bold text-xl byzantine-title">Date</th>
+            <th class="py-4 px-6 text-left font-bold text-xl byzantine-title">Event</th>
+            <th class="py-4 px-6 text-left font-bold text-xl byzantine-title">Time</th>
+            <th class="py-4 px-6 text-left font-bold text-xl byzantine-title">Tickets</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr class="border-b border-yellow-300 hover:bg-purple-800/50 transition">
+            <td class="py-4 px-6">Sun, June 8</td>
+            <td class="py-4 px-6 text-xl byzantine-title">Preview Night</td>
+            <td class="py-4 px-6">9:30 PM – 11:00 PM</td>
+            <td class="py-4 px-6">
+              <a href="https://www.hollywoodfringe.org/projects/11553?tab=tickets" target="_blank" class="text-yellow-300 hover:underline">Get Tickets</a>
+            </td>
+          </tr>
+          <tr class="border-b border-yellow-300">
+            <td class="py-4 px-6">Fri, June 13</td>
+            <td class="py-4 px-6 byzantine-title text-xl">Performance 1</td>
+            <td class="py-4 px-6">4:15 PM – 5:45 PM</td>
+            <td class="py-4 px-6">
+              <a href="https://www.hollywoodfringe.org/projects/11553?tab=tickets" target="_blank" class="text-yellow-300 hover:underline">Get Tickets</a>
+            </td>
+          </tr>
+          <tr class="border-b border-yellow-300">
+            <td class="py-4 px-6">Sun, June 15</td>
+            <td class="py-4 px-6 byzantine-title text-xl">Performance 2</td>
+            <td class="py-4 px-6">7:30 PM – 9:00 PM</td>
+            <td class="py-4 px-6">
+              <a href="https://www.hollywoodfringe.org/projects/11553?tab=tickets" target="_blank" class="text-yellow-300 hover:underline">Get Tickets</a>
+            </td>
+          </tr>
+          <tr class="border-b border-yellow-300">
+            <td class="py-4 px-6">Thu, June 19</td>
+            <td class="py-4 px-6 byzantine-title text-xl">Performance 3</td>
+            <td class="py-4 px-6">4:45 PM – 6:15 PM</td>
+            <td class="py-4 px-6">
+              <a href="https://www.hollywoodfringe.org/projects/11553?tab=tickets" target="_blank" class="text-yellow-300 hover:underline">Get Tickets</a>
+            </td>
+          </tr>
+          <tr>
+            <td class="py-4 px-6">Sat, June 28</td>
+            <td class="py-4 px-6 byzantine-title text-xl">Performance 4</td>
+            <td class="py-4 px-6">10:15 PM – 11:45 PM</td>
+            <td class="py-4 px-6">
+              <a href="https://www.hollywoodfringe.org/projects/11553?tab=tickets" target="_blank" class="text-yellow-300 hover:underline">Get Tickets</a>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
 </section>
 
+
 <!-- Contact Section -->
-<section id="contact" class="py-16 bg-opacity-90 bg-purple-900 relative">
+<section id="contact" class="py-16 bg-opacity-90 bg-purple-900 relative rounded-t-3xl rounded-b-3xl overflow-hidden">
+
 <div class="container mx-auto px-6">
 <div class="text-center mb-12">
 <h2 class="text-4xl byzantine-title text-yellow-300 mb-4">Contact Us</h2>
@@ -534,7 +620,47 @@ const minutes = Math.floor((diff % (1000 * 60 * 60)) / (1000 * 60));
 const seconds = Math.floor((diff % (1000 * 60)) / 1000);
 document.getElementById('countdown-timer').innerHTML = 
 `${days}d ${hours}h ${minutes}m ${seconds}s`;
+}// Countdown timer to ticket sales (May 1, 2025)
+function updateTicketCountdown() {
+  const now = new Date();
+  const ticketLaunch = new Date('May 1, 2025 00:00:00');
+  const diff = ticketLaunch - now;
+
+  if (diff > 0) {
+    const days = Math.floor(diff / (1000 * 60 * 60 * 24));
+    const hours = Math.floor((diff % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+    const minutes = Math.floor((diff % (1000 * 60 * 60)) / (1000 * 60));
+    const seconds = Math.floor((diff % (1000 * 60)) / 1000);
+    document.getElementById('tickets-countdown-timer').innerHTML =
+      `${days}d ${hours}h ${minutes}m ${seconds}s`;
+  } else {
+   const saleElement = document.getElementById('tickets-countdown-timer');
+saleElement.innerHTML = "🎟️ Tickets are now ON SALE! 🎟️";
+saleElement.classList.add('glow-on-sale-text');
+
+  }
 }
+function updateTicketButton() {
+  const now = new Date();
+  const saleDate = new Date('May 1, 2025 00:00:00');
+  const buyButton = document.getElementById('buyTicketsButton');
+
+  if (now >= saleDate) {
+    buyButton.innerText = "Buy Tickets Now!";
+  } else {
+    buyButton.innerText = "Tickets On Sale May 1st!";
+  }
+}
+
+// Call it once right away
+updateTicketButton();
+
+// Update it every minute, just in case people leave the page open overnight
+setInterval(updateTicketButton, 60000);
+
+setInterval(updateTicketCountdown, 1000);
+updateTicketCountdown();
+
 setInterval(updateCountdown, 1000);
 updateCountdown();
 /*
@@ -548,7 +674,7 @@ choirAudio.play().catch(e => console.log("Audio play prevented:", e));
 });
 */
 // Easter egg in console
-console.log("%cNIKA! NIKA! NIKA!", "color: #FFC107; font-size: 24px; font-weight: bold;");
+console.log("%cVOLTAIRE GOD SPEED US TO THE GLORIUS MUSE", "color: #FFC107; font-size: 24px; font-weight: bold;");
 console.log("%cThe true believers know the secret of the Nika riots...", "color: #f8f3e6;");
 </script>
 <p style="border-radius: 8px; text-align: center; font-size: 12px; color: #fff; margin-top: 16px;position: fixed; left: 8px; bottom: 8px; z-index: 10; background: rgba(0, 0, 0, 0.8); padding: 4px 8px;">Made with <img src="https://enzostvs-deepsite.hf.space/logo.svg" alt="DeepSite Logo" style="width: 16px; height: 16px; vertical-align: middle;display:inline-block;margin-right:3px;filter:brightness(0) invert(1);"><a href="https://enzostvs-deepsite.hf.space" style="color: #fff;text-decoration: underline;" target="_blank" >DeepSite</a> - 🧬 <a href="https://enzostvs-deepsite.hf.space?remix=phreakwenci/oh-constantine-http-www-meganrippey-com" style="color: #fff;text-decoration: underline;" target="_blank" >Remix</a></p></body>
