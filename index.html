@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Oh Constantine! - A Holy Satirical Musical</title>
+    <title>Oh Constantine! - A Holy Satire, With Music!</title>
     <meta name="description" content="A divine musical comedy of slapstick theology and ecclesiastical chaos, live at the Hollywood Fringe Festival.">
     <meta property="og:title" content="Oh Constantine! - A Holy Satirical Musical">
     <meta property="og:description" content="Four bishops. One Emperor. Infinite heresy. A holy musical spectacle at the Hollywood Fringe Festival.">
@@ -136,6 +136,15 @@ overflow-x: hidden;
     animation-play-state: paused; /* pause the pulse animation on hover */
     transform: scale(1.05); /* manually scale up on hover */
 }
+.fade-image {
+  animation: rotateImages 8s infinite ease-in-out;
+}
+
+@keyframes rotateImages {
+  0%, 45% { opacity: 1; }
+  50%, 95% { opacity: 0; }
+  100% { opacity: 1; }
+}
 
 
 .glow-on-sale-text {
@@ -218,7 +227,7 @@ overflow-x: hidden;
 
 <!-- Email Signup Modal Trigger -->
 <button id="openSignup" class="donate-button bg-purple-600 hover:bg-purple-500 text-white font-bold py-3 px-8 rounded-full text-lg transition transform">
-  Get on our email list! <i class="fas fa-hand-holding-heart ml-2"></i>
+  Want Discounts? Get on our email list! <i class="fas fa-hand-holding-heart ml-2"></i>
 </button>
 
 
@@ -1207,6 +1216,7 @@ overflow-x: hidden;
     <div class="h-64 bg-purple-700 flex items-center justify-center" aria-hidden="true">
       <i class="fas fa-crown text-6xl text-yellow-300"></i>
     </div>
+    
     <div class="p-6">
       <h3 class="text-2xl byzantine-title text-yellow-300 mb-2">Constantine</h3>
       <p class="text-yellow-100 italic">Emperor of Rome</p>
@@ -1249,7 +1259,7 @@ overflow-x: hidden;
     <div class="p-6">
       <h3 class="text-2xl byzantine-title text-yellow-300 mb-2">Athanasius</h3>
       <p class="text-yellow-100 italic">Bishop of Alexandria</p>
-      <p class="mt-3">Played by Sol Mason</p>
+      <p class="mt-3">Played by Nandi Sharma</p>
     </div>
   </div>
 </a>
@@ -1318,35 +1328,10 @@ overflow-x: hidden;
 <div class="w-24 h-1 bg-yellow-300 mx-auto"></div>
 </div>
 
-<div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
-<!-- Placeholder images with alt text -->
-<div class="h-48 bg-purple-700 rounded-lg flex items-center justify-center" aria-label="Production still coming soon">
-<i class="fas fa-image text-4xl text-yellow-300 opacity-50" aria-hidden="true"></i>
+<div class="instagram-embed text-center">
+  <iframe src="https://www.instagram.com/ohconstantineplay/embed" width="100%" height="600" frameborder="0" scrolling="no" allowtransparency="true"></iframe>
 </div>
-<div class="h-48 bg-purple-700 rounded-lg flex items-center justify-center" aria-label="Production still coming soon">
-<i class="fas fa-image text-4xl text-yellow-300 opacity-50" aria-hidden="true"></i>
-</div>
-<div class="h-48 bg-purple-700 rounded-lg flex items-center justify-center" aria-label="Production still coming soon">
-<i class="fas fa-image text-4xl text-yellow-300 opacity-50" aria-hidden="true"></i>
-</div>
-<div class="h-48 bg-purple-700 rounded-lg flex items-center justify-center" aria-label="Production still coming soon">
-<i class="fas fa-image text-4xl text-yellow-300 opacity-50" aria-hidden="true"></i>
-</div>
-<div class="h-48 bg-purple-700 rounded-lg flex items-center justify-center" aria-label="Production still coming soon">
-<i class="fas fa-image text-4xl text-yellow-300 opacity-50" aria-hidden="true"></i>
-</div>
-<div class="h-48 bg-purple-700 rounded-lg flex items-center justify-center" aria-label="Production still coming soon">
-<i class="fas fa-image text-4xl text-yellow-300 opacity-50" aria-hidden="true"></i>
-</div>
-<div class="h-48 bg-purple-700 rounded-lg flex items-center justify-center" aria-label="Production still coming soon">
-<i class="fas fa-image text-4xl text-yellow-300 opacity-50" aria-hidden="true"></i>
-</div>
-<div class="h-48 bg-purple-700 rounded-lg flex items-center justify-center" aria-label="Production still coming soon">
-<i class="fas fa-image text-4xl text-yellow-300 opacity-50" aria-hidden="true"></i>
-</div>
-</div>
-</div>
-</section>
+
 
 <!-- Tickets Section -->
 <section id="tickets" class="py-16 bg-opacity-90 bg-purple-900 relative">
@@ -1386,59 +1371,64 @@ Purchase <i class="fas fa-star ml-2"></i>
       <p class="text-lg text-yellow-100 italic max-w-2xl mx-auto">Choose your night of holy chaos!</p>
     </div>
 
-    <div class="max-w-5xl mx-auto bg-black bg-opacity-70 p-8 rounded-3xl ornamental-border shadow-xl">
-      <table class="w-full table-auto text-yellow-100">
-        <thead>
-          <tr class="text-yellow-300 border-b border-yellow-300">
-            <th class="py-4 px-6 text-left font-bold text-xl byzantine-title">Date</th>
-            <th class="py-4 px-6 text-left font-bold text-xl byzantine-title">Event</th>
-            <th class="py-4 px-6 text-left font-bold text-xl byzantine-title">Time</th>
-            <th class="py-4 px-6 text-left font-bold text-xl byzantine-title">Tickets</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr class="border-b border-yellow-300 hover:bg-purple-800/50 transition">
-            <td class="py-4 px-6">Sun, June 8</td>
-            <td class="py-4 px-6 text-xl byzantine-title">Preview Night</td>
-            <td class="py-4 px-6">9:30 PM – 11:00 PM</td>
-            <td class="py-4 px-6">
-              <a href="https://www.hollywoodfringe.org/projects/11553?tab=tickets" target="_blank" class="text-yellow-300 hover:underline">Get Tickets</a>
-            </td>
-          </tr>
-          <tr class="border-b border-yellow-300">
-            <td class="py-4 px-6">Fri, June 13</td>
-            <td class="py-4 px-6 byzantine-title text-xl">Performance 1</td>
-            <td class="py-4 px-6">4:15 PM – 5:45 PM</td>
-            <td class="py-4 px-6">
-              <a href="https://www.hollywoodfringe.org/projects/11553?tab=tickets" target="_blank" class="text-yellow-300 hover:underline">Get Tickets</a>
-            </td>
-          </tr>
-          <tr class="border-b border-yellow-300">
-            <td class="py-4 px-6">Sun, June 15</td>
-            <td class="py-4 px-6 byzantine-title text-xl">Performance 2</td>
-            <td class="py-4 px-6">7:30 PM – 9:00 PM</td>
-            <td class="py-4 px-6">
-              <a href="https://www.hollywoodfringe.org/projects/11553?tab=tickets" target="_blank" class="text-yellow-300 hover:underline">Get Tickets</a>
-            </td>
-          </tr>
-          <tr class="border-b border-yellow-300">
-            <td class="py-4 px-6">Thu, June 19</td>
-            <td class="py-4 px-6 byzantine-title text-xl">Performance 3</td>
-            <td class="py-4 px-6">4:45 PM – 6:15 PM</td>
-            <td class="py-4 px-6">
-              <a href="https://www.hollywoodfringe.org/projects/11553?tab=tickets" target="_blank" class="text-yellow-300 hover:underline">Get Tickets</a>
-            </td>
-          </tr>
-          <tr>
-            <td class="py-4 px-6">Sat, June 28</td>
-            <td class="py-4 px-6 byzantine-title text-xl">Performance 4</td>
-            <td class="py-4 px-6">10:15 PM – 11:45 PM</td>
-            <td class="py-4 px-6">
-              <a href="https://www.hollywoodfringe.org/projects/11553?tab=tickets" target="_blank" class="text-yellow-300 hover:underline">Get Tickets</a>
-            </td>
-          </tr>
-        </tbody>
-      </table>
+<div class="overflow-x-auto">
+  <div class="w-full max-w-5xl mx-auto bg-black bg-opacity-70 p-8 rounded-3xl ornamental-border shadow-xl">
+   <table class="min-w-full table-auto text-yellow-100 text-center">
+  <thead>
+    <tr>
+      <th class="px-4 py-2">Date</th>
+      <th class="px-4 py-2">Event</th>
+      <th class="px-4 py-2">Time</th>
+      <th class="px-4 py-2">Venue</th>
+      <th class="px-4 py-2">Tickets</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td class="px-4 py-2">Sun, June 8</td>
+      <td class="px-4 py-2">Preview Night</td>
+      <td class="px-4 py-2">9:45 PM</td>
+      <td class="px-4 py-2">Zephyr Theatre</td>
+      <td class="px-4 py-2"><a href="https://www.hollywoodfringe.org/projects/11553?embed=false&performance_id=27027&tab=performance" class="text-blue-400 hover:underline" target="_blank">Get Tickets</a></td>
+    </tr>
+    <tr>
+      <td class="px-4 py-2">Fri, June 13</td>
+      <td class="px-4 py-2">Performance 1</td>
+      <td class="px-4 py-2">4:30 PM</td>
+      <td class="px-4 py-2">Zephyr Theatre</td>
+      <td class="px-4 py-2"><a href="https://www.hollywoodfringe.org/projects/11553?embed=false&performance_id=27028&tab=performance" class="text-blue-400 hover:underline" target="_blank">Get Tickets</a></td>
+    </tr>
+    <tr>
+      <td class="px-4 py-2">Sun, June 15</td>
+      <td class="px-4 py-2">Performance 2</td>
+      <td class="px-4 py-2">7:45 PM</td>
+      <td class="px-4 py-2">Zephyr Theatre</td>
+      <td class="px-4 py-2"> <a href="https://www.hollywoodfringe.org/projects/11553?embed=false&performance_id=27029&tab=performance" class="text-blue-400 hover:underline" target="_blank">Get Tickets</a></td>
+    </tr>
+    <tr>
+      <td class="px-4 py-2">Wed, June 18</td>
+      <td class="px-4 py-2">Performance 3</td>
+      <td class="px-4 py-2">8:15 PM</td>
+      <td class="px-4 py-2">Zephyr Theatre</td>
+      <td class="px-4 py-2"> <a href="https://www.hollywoodfringe.org/projects/11553?embed=false&performance_id=28324&tab=performance" class="text-blue-400 hover:underline" target="_blank">Get Tickets</a></td>
+    </tr>
+    <tr>
+      <td class="px-4 py-2">Thu, June 19</td>
+      <td class="px-4 py-2">Performance 4</td>
+      <td class="px-4 py-2">5:00 PM</td>
+      <td class="px-4 py-2">Zephyr Theatre</td>
+      <td class="px-4 py-2"> <a href="https://www.hollywoodfringe.org/projects/11553?embed=false&performance_id=27030&tab=performance" class="text-blue-400 hover:underline" target="_blank">Get Tickets</a></td>
+    </tr>
+    <tr>
+      <td class="px-4 py-2">Sat, June 28</td>
+      <td class="px-4 py-2">Closing Night</td>
+      <td class="px-4 py-2">10:30 PM</td>
+      <td class="px-4 py-2">Zephyr Theatre</td>
+      <td class="px-4 py-2"><a href="https://www.hollywoodfringe.org/projects/11553?embed=false&performance_id=27031&tab=performance" class="text-blue-400 hover:underline" target="_blank">Get Tickets</a></td>
+    </tr>
+  </tbody>
+</table>
+   </table>
     </div>
   </div>
 </section>
