@@ -139,6 +139,40 @@
       from { text-shadow: 0 0 5px #FFC107; }
       to   { text-shadow: 0 0 20px #FFC107; }
     }
+
+    /* Tooltip hidden by default */
+    .hidden { display: none; }
+
+    /* Wikipedia preview tooltip styling */
+    #wikiPreviewTooltip {
+      width: 280px;
+      pointer-events: none; /* so it doesn’t block hover events */
+      position: fixed;
+      background: #000;
+      background-opacity: 0.9;
+      color: #ffe;
+      padding: 0.75rem;
+      border-radius: 0.5rem;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.5);
+      z-index: 9999;
+    }
+    #wikiPreviewTitle {
+      font-weight: bold;
+      margin-bottom: 0.5rem;
+    }
+    #wikiPreviewExtract {
+      font-size: 0.875rem;
+      line-height: 1.25rem;
+    }
+    #wikiPreviewLink {
+      margin-top: 0.5rem;
+      font-size: 0.75rem;
+      color: #3bb;
+      cursor: pointer;
+    }
+    #wikiPreviewLink:hover {
+      text-decoration: underline;
+    }
   </style>
 </head>
 <body>
@@ -300,7 +334,7 @@
       <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
         <!-- Original Cast Members -->
         <!-- Constantine -->
-        <a href="https://en.wikipedia.org/wiki/Constantine_the_Great" target="_blank" class="block">
+        <a href="https://en.wikipedia.org/wiki/Constantine_the_Great" target="_blank" class="wiki-preview-link block">
           <div class="cast-card bg-black bg-opacity-50 rounded-lg overflow-hidden transition duration-300 hover:shadow-lg">
             <div class="h-64 bg-purple-700 flex items-center justify-center" aria-hidden="true">
               <i class="fas fa-crown text-6xl text-yellow-300"></i>
@@ -314,7 +348,7 @@
         </a>
 
         <!-- Constantia -->
-        <a href="https://en.wikipedia.org/wiki/Flavia_Julia_Constantia" target="_blank" class="block">
+        <a href="https://en.wikipedia.org/wiki/Flavia_Julia_Constantia" target="_blank" class="wiki-preview-link block">
           <div class="cast-card bg-black bg-opacity-50 rounded-lg overflow-hidden transition duration-300 hover:shadow-lg">
             <div class="h-64 bg-purple-700 flex items-center justify-center" aria-hidden="true">
               <i class="fas fa-chess-queen text-6xl text-yellow-300"></i>
@@ -328,7 +362,7 @@
         </a>
 
         <!-- Helena -->
-        <a href="https://en.wikipedia.org/wiki/Helena_(empress)" target="_blank" class="block">
+        <a href="https://en.wikipedia.org/wiki/Helena_(empress)" target="_blank" class="wiki-preview-link block">
           <div class="cast-card bg-black bg-opacity-50 rounded-lg overflow-hidden transition duration-300 hover:shadow-lg">
             <div class="h-64 bg-purple-700 flex items-center justify-center" aria-hidden="true">
               <i class="fas fa-chess-queen text-6xl text-yellow-300"></i>
@@ -342,7 +376,7 @@
         </a>
 
         <!-- Athanasius -->
-        <a href="https://en.wikipedia.org/wiki/Athanasius_of_Alexandria" target="_blank" class="block">
+        <a href="https://en.wikipedia.org/wiki/Athanasius_of_Alexandria" target="_blank" class="wiki-preview-link block">
           <div class="cast-card bg-black bg-opacity-50 rounded-lg overflow-hidden transition duration-300 hover:shadow-lg">
             <div class="h-64 bg-purple-700 flex items-center justify-center" aria-hidden="true">
               <i class="fas fa-cross text-6xl text-yellow-300"></i>
@@ -356,7 +390,7 @@
         </a>
 
         <!-- Eusebius -->
-        <a href="https://en.wikipedia.org/wiki/Eusebius_of_Nicomedia" target="_blank" class="block">
+        <a href="https://en.wikipedia.org/wiki/Eusebius_of_Nicomedia" target="_blank" class="wiki-preview-link block">
           <div class="cast-card bg-black bg-opacity-50 rounded-lg overflow-hidden transition duration-300 hover:shadow-lg">
             <div class="h-64 bg-purple-700 flex items-center justify-center" aria-hidden="true">
               <i class="fas fa-church text-6xl text-yellow-300"></i>
@@ -370,7 +404,7 @@
         </a>
 
         <!-- Arius -->
-        <a href="https://en.wikipedia.org/wiki/Arius" target="_blank" class="block">
+        <a href="https://en.wikipedia.org/wiki/Arius" target="_blank" class="wiki-preview-link block">
           <div class="cast-card bg-black bg-opacity-50 rounded-lg overflow-hidden transition duration-300 hover:shadow-lg">
             <div class="h-64 bg-purple-700 flex items-center justify-center" aria-hidden="true">
               <i class="fas fa-dove text-6xl text-yellow-300"></i>
@@ -384,7 +418,7 @@
         </a>
 
         <!-- Mark (no wiki) -->
-        <a href="https://en.wikipedia.org/wiki/First_Council_of_Nicaea" target="_blank" class="block">
+        <a href="https://en.wikipedia.org/wiki/First_Council_of_Nicaea" target="_blank" class="wiki-preview-link block">
           <div class="cast-card bg-black bg-opacity-50 rounded-lg overflow-hidden transition duration-300">
             <div class="h-64 bg-purple-700 flex items-center justify-center" aria-hidden="true">
               <i class="fas fa-horse-head text-6xl text-yellow-300"></i>
@@ -398,7 +432,7 @@
         </a>
 
         <!-- Theo (fictional) -->
-        <a href="https://en.wikipedia.org/wiki/First_Council_of_Nicaea" target="_blank" class="block">
+        <a href="https://en.wikipedia.org/wiki/First_Council_of_Nicaea" target="_blank" class="wiki-preview-link block">
           <div class="cast-card bg-black bg-opacity-50 rounded-lg overflow-hidden transition duration-300">
             <div class="h-64 bg-purple-700 flex items-center justify-center" aria-hidden="true">
               <i class="fas fa-theater-masks text-6xl text-yellow-300"></i>
@@ -413,7 +447,7 @@
 
         <!-- New/Addendum Cast Members -->
         <!-- SEEB (double for Arius) -->
-        <a href="https://en.wikipedia.org/wiki/Eusebius" target="_blank" class="block">
+        <a href="https://en.wikipedia.org/wiki/Eusebius" target="_blank" class="wiki-preview-link block">
           <div class="cast-card bg-black bg-opacity-50 rounded-lg overflow-hidden transition duration-300 hover:shadow-lg">
             <div class="h-64 bg-purple-700 flex items-center justify-center" aria-hidden="true">
               <i class="fas fa-scroll text-6xl text-yellow-300"></i>
@@ -427,7 +461,7 @@
         </a>
 
         <!-- CRIPUS (double for Athanasius) -->
-        <a href="https://en.wikipedia.org/wiki/Crispus" target="_blank" class="block">
+        <a href="https://en.wikipedia.org/wiki/Crispus" target="_blank" class="wiki-preview-link block">
           <div class="cast-card bg-black bg-opacity-50 rounded-lg overflow-hidden transition duration-300 hover:shadow-lg">
             <div class="h-64 bg-purple-700 flex items-center justify-center" aria-hidden="true">
               <i class="fas fa-crown text-6xl text-yellow-300"></i>
@@ -441,7 +475,7 @@
         </a>
 
         <!-- FAUSTA (actor TBD) -->
-        <a href="https://en.wikipedia.org/wiki/Fausta" target="_blank" class="block">
+        <a href="https://en.wikipedia.org/wiki/Fausta" target="_blank" class="wiki-preview-link block">
           <div class="cast-card bg-black bg-opacity-50 rounded-lg overflow-hidden transition duration-300 hover:shadow-lg">
             <div class="h-64 bg-purple-700 flex items-center justify-center" aria-hidden="true">
               <i class="fas fa-chess-queen text-6xl text-yellow-300"></i>
@@ -455,7 +489,7 @@
         </a>
 
         <!-- ALEXANDER (also Nicholas of Myra) -->
-        <a href="https://en.wikipedia.org/wiki/Pope_Alexander_I_of_Alexandria" target="_blank" class="block">
+        <a href="https://en.wikipedia.org/wiki/Pope_Alexander_I_of_Alexandria" target="_blank" class="wiki-preview-link block">
           <div class="cast-card bg-black bg-opacity-50 rounded-lg overflow-hidden transition duration-300 hover:shadow-lg">
             <div class="h-64 bg-purple-700 flex items-center justify-center" aria-hidden="true">
               <i class="fas fa-cross text-6xl text-yellow-300"></i>
@@ -469,14 +503,14 @@
         </a>
 
         <!-- PAPPY (link to Bishop Paphnutius) -->
-        <a href="https://en.wikipedia.org/wiki/Paphnutius_of_Thebes" target="_blank" class="block">
+        <a href="https://en.wikipedia.org/wiki/Paphnutius_of_Thebes" target="_blank" class="wiki-preview-link block">
           <div class="cast-card bg-black bg-opacity-50 rounded-lg overflow-hidden transition duration-300 hover:shadow-lg">
             <div class="h-64 bg-purple-700 flex items-center justify-center" aria-hidden="true">
               <i class="fas fa-church text-6xl text-yellow-300"></i>
             </div>
             <div class="p-6">
               <h3 class="text-2xl byzantine-title text-yellow-300 mb-2">
-                <a href="https://en.wikipedia.org/wiki/Paphnutius" class="hover:underline" target="_blank">PAPPY</a>
+                <a href="https://en.wikipedia.org/wiki/Paphnutius" class="hover:underline">PAPPY</a>
               </h3>
               <p class="text-yellow-100 italic">Bishop Paphnutius</p>
               <p class="mt-3">Played by Guy Picot</p>
@@ -485,7 +519,7 @@
         </a>
 
         <!-- EUST (double for Eusebius) -->
-        <a href="https://en.wikipedia.org/wiki/First_Council_of_Nicaea" target="_blank" class="block">
+        <a href="https://en.wikipedia.org/wiki/First_Council_of_Nicaea" target="_blank" class="wiki-preview-link block">
           <div class="cast-card bg-black bg-opacity-50 rounded-lg overflow-hidden transition duration-300 hover:shadow-lg">
             <div class="h-64 bg-purple-700 flex items-center justify-center" aria-hidden="true">
               <i class="fas fa-user text-6xl text-yellow-300"></i>
@@ -503,6 +537,13 @@
     <!-- 👈 close the container -->
   </section>
   <!-- 👈 close the cast section -->
+
+  <!-- Wikipedia Preview Tooltip -->
+  <div id="wikiPreviewTooltip" class="hidden">
+    <div id="wikiPreviewTitle"></div>
+    <div id="wikiPreviewExtract"></div>
+    <div id="wikiPreviewLink">Read more on Wikipedia →</div>
+  </div>
 
   <!-- Gallery Section -->
   <section id="gallery" class="py-16 bg-opacity-90 bg-purple-900 relative">
@@ -703,7 +744,85 @@
     });
   </script>
 
-  <!-- Scripts -->
+  <!-- Wikipedia Preview Script -->
+  <script>
+    (function() {
+      const tooltip = document.getElementById('wikiPreviewTooltip');
+      const titleEl = document.getElementById('wikiPreviewTitle');
+      const extractEl = document.getElementById('wikiPreviewExtract');
+      const linkEl = document.getElementById('wikiPreviewLink');
+
+      function positionTooltip(x, y) {
+        const offset = 12;
+        const rect = tooltip.getBoundingClientRect();
+        let left = x + offset;
+        let top = y + offset;
+        if (left + rect.width > window.innerWidth) {
+          left = x - rect.width - offset;
+        }
+        if (top + rect.height > window.innerHeight) {
+          top = y - rect.height - offset;
+        }
+        tooltip.style.left = left + 'px';
+        tooltip.style.top = top + 'px';
+      }
+
+      function getWikiTitleFromUrl(url) {
+        try {
+          const parts = new URL(url).pathname.split('/');
+          return decodeURIComponent(parts[parts.length - 1]);
+        } catch (e) {
+          return null;
+        }
+      }
+
+      document.querySelectorAll('a.wiki-preview-link').forEach(anchor => {
+        let controller = null;
+
+        anchor.addEventListener('mouseenter', async (ev) => {
+          const pageTitle = getWikiTitleFromUrl(anchor.href);
+          if (!pageTitle) return;
+
+          if (controller) {
+            controller.abort();
+          }
+          controller = new AbortController();
+
+          const apiUrl = `https://en.wikipedia.org/api/rest_v1/page/summary/${pageTitle}`;
+          try {
+            const response = await fetch(apiUrl, { signal: controller.signal });
+            if (!response.ok) throw new Error('Fetch failed');
+            const data = await response.json();
+
+            titleEl.textContent = data.title || pageTitle;
+            extractEl.textContent = data.extract || 'No summary available.';
+            linkEl.onclick = () => window.open(anchor.href, '_blank');
+
+            tooltip.classList.remove('hidden');
+            positionTooltip(ev.clientX, ev.clientY);
+          } catch (err) {
+            tooltip.classList.add('hidden');
+          }
+        });
+
+        anchor.addEventListener('mousemove', (ev) => {
+          if (!tooltip.classList.contains('hidden')) {
+            positionTooltip(ev.clientX, ev.clientY);
+          }
+        });
+
+        anchor.addEventListener('mouseleave', () => {
+          tooltip.classList.add('hidden');
+          if (controller) {
+            controller.abort();
+            controller = null;
+          }
+        });
+      });
+    })();
+  </script>
+
+  <!-- Core Scripts -->
   <script>
     document.addEventListener('DOMContentLoaded', function () {
       // Mobile menu toggle
@@ -715,20 +834,20 @@
       }
 
       // Confessional box toggle
-      const confessionalToggle = document.getElementById('confessionalToggle');
-      const confessionalBox = document.getElementById('confessionalBox');
-      const confessionalContent = document.getElementById('confessionalContent');
-      if (confessionalToggle && confessionalBox && confessionalContent) {
-        confessionalToggle.addEventListener('click', function () {
-          confessionalBox.classList.toggle('open');
-          confessionalContent.classList.toggle('hidden');
+      const confToggle = document.getElementById('confessionalToggle');
+      const confBox = document.getElementById('confessionalBox');
+      const confContent = document.getElementById('confessionalContent');
+      if (confToggle && confBox && confContent) {
+        confToggle.addEventListener('click', function () {
+          confBox.classList.toggle('open');
+          confContent.classList.toggle('hidden');
         });
       }
 
       // Countdown to Opening Night (June 8, 2025)
       function updateCountdown() {
         const now = new Date();
-        const openingNight = new Date('June 8, 2025 00:00:00');
+        const openingNight = new Date('June 8, 2025 21:30:00');
         const diff = openingNight - now;
         const days = Math.floor(diff / (1000 * 60 * 60 * 24));
         const hours = Math.floor((diff % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
@@ -742,17 +861,17 @@
         const now = new Date();
         const ticketLaunch = new Date('May 1, 2025 00:00:00');
         const diff = ticketLaunch - now;
-        const countdown = document.getElementById('tickets-countdown-timer');
+        const countdownEl = document.getElementById('tickets-countdown-timer');
 
         if (diff > 0) {
           const days = Math.floor(diff / (1000 * 60 * 60 * 24));
           const hours = Math.floor((diff % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
           const minutes = Math.floor((diff % (1000 * 60 * 60)) / (1000 * 60));
           const seconds = Math.floor((diff % (1000 * 60)) / 1000);
-          countdown.textContent = `${days}d ${hours}h ${minutes}m ${seconds}s`;
+          countdownEl.textContent = `${days}d ${hours}h ${minutes}m ${seconds}s`;
         } else {
-          countdown.innerHTML = "🎟️ Tickets are now ON SALE! 🎟️";
-          countdown.classList.add('glow-on-sale-text');
+          countdownEl.innerHTML = "🎟️ Tickets are now ON SALE! 🎟️";
+          countdownEl.classList.add('glow-on-sale-text');
         }
       }
 
@@ -766,7 +885,7 @@
         }
       }
 
-      // Initialize once and set intervals
+      // Initialize and set intervals
       updateCountdown();
       updateTicketCountdown();
       updateTicketButton();
