@@ -1,1684 +1,791 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Oh Constantine! - A Holy Satire, With Music!</title>
-    <meta name="description" content="A divine musical comedy of slapstick theology and ecclesiastical chaos, live at the Hollywood Fringe Festival.">
-    <meta property="og:title" content="Oh Constantine! - A Holy Satirical Musical">
-    <meta property="og:description" content="Four bishops. One Emperor. Infinite heresy. A holy musical spectacle at the Hollywood Fringe Festival.">
-    <meta property="og:image" content="https://i.imgur.com/skrCpXn.jpeg">
-    <meta property="og:description" content="Four bishops. One Emperor. Infinite heresy. A holy musical spectacle." />
-    <script src="https://cdn.tailwindcss.com"></script>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <link href="https://fonts.googleapis.com/css2?family=Cinzel+Decorative:wght@700&family=Cormorant+Garamond:wght@400;600&display=swap" rel="stylesheet">
-    <style>
-        html {
-            scroll-behavior: smooth;
-        }
-        
-        body {
-            font-family: 'Cormorant Garamond', serif;
-            background-color: #1a103d;
-            color: #f8f3e6;
-overflow-x: hidden;
-            background-image: url('https://i.imgur.com/skrCpXn.jpeg');
-    background-repeat: repeat;
-    background-size: auto;
-    background-color: #1a103d; /* fallback color */
-        }
-        
-        .byzantine-title {
-            font-family: 'Cinzel Decorative', cursive;
-            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
-        }
-        
-        .ornamental-border {
-            border: 8px solid transparent;
-            border-image: url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxMDAiIGhlaWdodD0iMTAwIiB2aWV3Qm94PSIwIDAgMTAwIDEwMCI+PHBhdGggZD0iTTAsMjVMMjUsMCBMNTAsMjUgTDc1LDAgTDEwMCwyNSBMNzUsNTAgTDEwMCw3NSBMNzUsMTAwIEw1MCw3NSBMMjUsMTAwIEwwLDc1IEwyNSw1MCBMMCwyNSBaIiBmaWxsPSJub25lIiBzdHJva2U9IiNGRkMxMDciIHN0cm9rZS13aWR0aD0iMiIvPjwvc3ZnPg==') 20% round;
-        }
-        
-        .cast-card:hover {
-            transform: scale(1.05);
-            box-shadow: 0 10px 25px rgba(255, 193, 7, 0.3);
-        }
-        
-        .ticket-card {
-            background: linear-gradient(135deg, #271759 0%, #331d69 100%);
-            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
-        }
-        
-        .ticket-card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 15px 30px rgba(255, 193, 7, 0.4);
-        }
-        
-        .social-icon:hover {
-            transform: scale(1.2);
-            color: #FFC107;
-        }
-      .text-outline {
-  text-shadow:
-    -2px -2px 0 #000,
-     2px -2px 0 #000,
-    -2px  2px 0 #000,
-     2px  2px 0 #000,
-    0    0    5px #000; /* optional soft glow */
-}
-        /* Confessional chat box */
-        .confessional-box {
-            position: fixed;
-            bottom: 50px;
-            right: 20px;
-            width: 300px;
-            background: #271759;
-            border: 2px solid #FFC107;
-            border-radius: 8px;
-            z-index: 1000;
-            box-shadow: 0 5px 15px rgba(0,0,0,0.3);
-            transform: translateY(100%);
-            transition: transform 0.3s ease;
-        }
-        
-        .confessional-box.open {
-            transform: translateY(0);
-        }
-        
-        .confessional-header {
-            background: #331d69;
-            color: #FFC107;
-            padding: 10px;
-            cursor: pointer;
-            border-radius: 6px 6px 0 0;
-        }
-        
-        .confessional-content {
-            padding: 15px;
-            max-height: 400px;
-            overflow-y: auto;
-        }
-        
-        /* Countdown timer */
-        .countdown {
-            font-family: 'Cinzel Decorative', cursive;
-            font-size: 1.5rem;
-            color: #FFC107;
-            text-align: center;
-            margin-top: 1rem;
-        }
-        
-        /* Accessibility improvements */
-        a:focus, button:focus {
-            outline: 2px solid #FFC107;
-            outline-offset: 2px;
-        }
-        
-        /* Hidden easter egg */
-        .easter-egg {
-            position: absolute;
-            left: -9999px;
-        }
-        
-        /* Donate button animation */
-        @keyframes pulse {
-            0% { transform: scale(1); }
-            50% { transform: scale(1.05); }
-            100% { transform: scale(1); }
-        }
-        
-        .donate-button {
-    animation: pulse 2s infinite;
-    display: inline-block; /* make sure it's blocky for transform */
-    will-change: transform; /* hint to browser for smoother animation */
-}
-
-.donate-button:hover {
-    animation-play-state: paused; /* pause the pulse animation on hover */
-    transform: scale(1.05); /* manually scale up on hover */
-}
-.fade-image {
-  animation: rotateImages 8s infinite ease-in-out;
-}
-
-@keyframes rotateImages {
-  0%, 45% { opacity: 1; }
-  50%, 95% { opacity: 0; }
-  100% { opacity: 1; }
-}
-
-
-.glow-on-sale-text {
-  animation: glow 1.5s infinite alternate;
-  color: #FFC107;
-  font-weight: bold;
-  font-size: 1.8rem;
-}
-
-
-        
-        .donate-button:hover {
-            animation: none;
-            transform: scale(1.05);
-        }
-    </style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Oh Constantine! - A Holy Satire, With Music!</title>
+  <meta name="description" content="A divine musical comedy of slapstick theology and ecclesiastical chaos, live at the Hollywood Fringe Festival."/>
+  <meta property="og:title" content="Oh Constantine! - A Holy Satirical Musical"/>
+  <meta property="og:description" content="Four bishops. One Emperor. Infinite heresy. A holy musical spectacle at the Hollywood Fringe Festival."/>
+  <meta property="og:image" content="https://i.imgur.com/skrCpXn.jpeg"/>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"/>
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel+Decorative:wght@700&family=Cormorant+Garamond:wght@400;600&display=swap" rel="stylesheet"/>
+  <style>
+    html {
+      scroll-behavior: smooth;
+    }
+    body {
+      font-family: 'Cormorant Garamond', serif;
+      background-color: #1a103d;
+      color: #f8f3e6;
+      overflow-x: hidden;
+      background-image: url('https://i.imgur.com/skrCpXn.jpeg');
+      background-repeat: repeat;
+      background-size: auto;
+      background-color: #1a103d; /* fallback color */
+    }
+    .byzantine-title {
+      font-family: 'Cinzel Decorative', cursive;
+      text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+    }
+    .ornamental-border {
+      border: 8px solid transparent;
+      border-image: url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxMDAiIGhlaWdodD0iMTAwIiB2aWV3Qm94PSIwIDAgMTAwIDEwMCI+PHBhdGggZD0iTTAsMjVMMjUsMCBMNTAsMjUgTDc1LDAgTDEwMCwyNSBMNzUsNTAgTDEwMCw3NSBMNzUsMTAwIEw1MCw3NSBMMjUsMTAwIEwwLDc1IEwyNSw1MCBMMCwyNSBaIiBmaWxsPSJub25lIiBzdHJva2U9IiNGRkMxMDciIHN0cm9rZS13aWR0aD0iMiIvPjwvc3ZnPg==') 20% round;
+    }
+    .cast-card:hover {
+      transform: scale(1.05);
+      box-shadow: 0 10px 25px rgba(255, 193, 7, 0.3);
+    }
+    .ticket-card {
+      background: linear-gradient(135deg, #271759 0%, #331d69 100%);
+      box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+    }
+    .ticket-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 15px 30px rgba(255, 193, 7, 0.4);
+    }
+    .social-icon:hover {
+      transform: scale(1.2);
+      color: #FFC107;
+    }
+    .text-outline {
+      text-shadow:
+        -2px -2px 0 #000,
+         2px -2px 0 #000,
+        -2px  2px 0 #000,
+         2px  2px 0 #000,
+         0    0    5px #000; /* optional soft glow */
+    }
+    /* Confessional chat box */
+    .confessional-box {
+      position: fixed;
+      bottom: 50px;
+      right: 20px;
+      width: 300px;
+      background: #271759;
+      border: 2px solid #FFC107;
+      border-radius: 8px;
+      z-index: 1000;
+      box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+      transform: translateY(100%);
+      transition: transform 0.3s ease;
+    }
+    .confessional-box.open {
+      transform: translateY(0);
+    }
+    .confessional-header {
+      background: #331d69;
+      color: #FFC107;
+      padding: 10px;
+      cursor: pointer;
+      border-radius: 6px 6px 0 0;
+    }
+    .confessional-content {
+      padding: 15px;
+      max-height: 400px;
+      overflow-y: auto;
+    }
+    /* Countdown timer */
+    .countdown {
+      font-family: 'Cinzel Decorative', cursive;
+      font-size: 1.5rem;
+      color: #FFC107;
+      text-align: center;
+      margin-top: 1rem;
+    }
+    /* Accessibility improvements */
+    a:focus, button:focus {
+      outline: 2px solid #FFC107;
+      outline-offset: 2px;
+    }
+    /* Hidden easter egg */
+    .easter-egg {
+      position: absolute;
+      left: -9999px;
+    }
+    /* Donate button animation */
+    @keyframes pulse {
+      0% { transform: scale(1); }
+      50% { transform: scale(1.05); }
+      100% { transform: scale(1); }
+    }
+    .donate-button {
+      animation: pulse 2s infinite;
+      display: inline-block;
+      will-change: transform;
+    }
+    .donate-button:hover {
+      animation-play-state: paused;
+      transform: scale(1.05);
+    }
+    /* Image fade animation */
+    .fade-image {
+      animation: rotateImages 8s infinite ease-in-out;
+    }
+    @keyframes rotateImages {
+      0%, 45% { opacity: 1; }
+      50%, 95% { opacity: 0; }
+      100% { opacity: 1; }
+    }
+    /* Glow-on-sale text */
+    .glow-on-sale-text {
+      animation: glow 1.5s infinite alternate;
+      color: #FFC107;
+      font-weight: bold;
+      font-size: 1.8rem;
+    }
+    @keyframes glow {
+      from { text-shadow: 0 0 5px #FFC107; }
+      to   { text-shadow: 0 0 20px #FFC107; }
+    }
+  </style>
 </head>
 <body>
-    <!-- Navigation -->
-    <nav class="bg-black bg-opacity-70 sticky top-0 z-50">
-        <div class="container mx-auto px-6 py-3">
-            <div class="flex justify-between items-center">
-                <div class="text-2xl byzantine-title text-yellow-300">Oh Constantine!</div>
-                <div class="hidden md:flex space-x-8">
-                    <a href="#about" class="text-yellow-100 hover:text-yellow-300 transition">About</a>
-                    <a href="#cast" class="text-yellow-100 hover:text-yellow-300 transition">Cast</a>
-                    <a href="#gallery" class="text-yellow-100 hover:text-yellow-300 transition">Gallery</a>
-                    <a href="#tickets" class="text-yellow-100 hover:text-yellow-300 transition">Tickets</a>
-                    <a href="#contact" class="text-yellow-100 hover:text-yellow-300 transition">Contact</a>
-                </div>
-                <button class="md:hidden text-yellow-300" aria-label="Toggle menu">
-                    <i class="fas fa-bars text-2xl"></i>
-                </button>
-            </div>
-            <!-- Mobile menu (hidden by default) -->
-            <div id="mobileMenu" class="hidden md:hidden bg-black bg-opacity-90 p-4 mt-2 rounded-lg">
-                <div class="flex flex-col space-y-4">
-                    <a href="#about" class="text-yellow-100 hover:text-yellow-300 transition">About</a>
-                    <a href="#cast" class="text-yellow-100 hover:text-yellow-300 transition">Cast</a>
-                    <a href="#gallery" class="text-yellow-100 hover:text-yellow-300 transition">Gallery</a>
-                    <a href="#tickets" class="text-yellow-100 hover:text-yellow-300 transition">Tickets</a>
-                    <a href="#contact" class="text-yellow-100 hover:text-yellow-300 transition">Contact</a>
-                </div>
-            </div>
+  <!-- Navigation -->
+  <nav class="bg-black bg-opacity-70 sticky top-0 z-50">
+    <div class="container mx-auto px-6 py-3">
+      <div class="flex justify-between items-center">
+        <div class="text-2xl byzantine-title text-yellow-300">Oh Constantine!</div>
+        <div class="hidden md:flex space-x-8">
+          <a href="#about" class="text-yellow-100 hover:text-yellow-300 transition">About</a>
+          <a href="#cast" class="text-yellow-100 hover:text-yellow-300 transition">Cast</a>
+          <a href="#gallery" class="text-yellow-100 hover:text-yellow-300 transition">Gallery</a>
+          <a href="#tickets" class="text-yellow-100 hover:text-yellow-300 transition">Tickets</a>
+          <a href="#contact" class="text-yellow-100 hover:text-yellow-300 transition">Contact</a>
         </div>
-    </nav>
+        <button class="md:hidden text-yellow-300" aria-label="Toggle menu">
+          <i class="fas fa-bars text-2xl"></i>
+        </button>
+      </div>
+      <!-- Mobile menu (hidden by default) -->
+      <div id="mobileMenu" class="hidden md:hidden bg-black bg-opacity-90 p-4 mt-2 rounded-lg">
+        <div class="flex flex-col space-y-4">
+          <a href="#about" class="text-yellow-100 hover:text-yellow-300 transition">About</a>
+          <a href="#cast" class="text-yellow-100 hover:text-yellow-300 transition">Cast</a>
+          <a href="#gallery" class="text-yellow-100 hover:text-yellow-300 transition">Gallery</a>
+          <a href="#tickets" class="text-yellow-100 hover:text-yellow-300 transition">Tickets</a>
+          <a href="#contact" class="text-yellow-100 hover:text-yellow-300 transition">Contact</a>
+        </div>
+      </div>
+    </div>
+  </nav>
 
-<header class="relative w-full min-h-screen flex flex-col items-center justify-center px-4 sm:px-6 bg-cover bg-center text-center overflow-hidden" style="background-image: url('https://i.imgur.com/skrCpXn.jpeg');">
-  <!-- Background Dimmer -->
-  <div class="absolute inset-0 bg-black bg-opacity-80 z-0"></div>
+  <!-- Hero/Header -->
+  <header class="relative w-full min-h-screen flex flex-col items-center justify-center px-4 sm:px-6 bg-cover bg-center text-center overflow-hidden" style="background-image: url('https://i.imgur.com/skrCpXn.jpeg');">
+    <!-- Background Dimmer -->
+    <div class="absolute inset-0 bg-black bg-opacity-80 z-0"></div>
 
-  <!-- Content -->
-  <div class="relative z-10 w-full max-w-4xl">
-    <h1 class="text-5xl sm:text-6xl md:text-8xl lg:text-8xl font-bold byzantine-title text-yellow-300 mb-4 text-outline break-words leading-tight">
-      Oh Constantine!
-    </h1>
-    <h2 class="text-2xl md:text-4xl italic text-yellow-100 mb-8 text-outline">
-      "Holy Debate. Unholy Laugther."
-    </h2>
+    <!-- Content -->
+    <div class="relative z-10 w-full max-w-4xl">
+      <h1 class="text-5xl sm:text-6xl md:text-8xl lg:text-8xl font-bold byzantine-title text-yellow-300 mb-4 text-outline break-words leading-tight">
+        Oh Constantine!
+      </h1>
+      <h2 class="text-2xl md:text-4xl italic text-yellow-100 mb-8 text-outline">
+        "Holy Debate. Unholy Laughter."
+      </h2>
 
-    <div class="text-2xl md:text-5xl mb-8 text-yellow-100 text-outline space-y-2">
-      <p>June 8–28, 2025 at The Zephyr Theater</p>
-      <p>a member of the Hollywood Fringe Festival</p>
+      <div class="text-2xl md:text-5xl mb-8 text-yellow-100 text-outline space-y-2">
+        <p>June 8–28, 2025 at The Zephyr Theater</p>
+        <p>a member of the Hollywood Fringe Festival</p>
+      </div>
+
+      <div class="countdown text-outline text-yellow-300 mb-8 text-xl">
+        Opening night in: <span id="countdown-timer"></span>
+      </div>
+      <div class="countdown text-outline text-yellow-300 mb-8 text-xl">
+        <span id="tickets-countdown-timer"></span>
+      </div>
+
+      <div class="flex flex-col md:flex-row justify-center gap-6 mt-6">
+        <!-- Buy Tickets Button -->
+        <a
+          href="https://www.hollywoodfringe.org/projects/11553?tab=tickets"
+          id="buyTicketsButton"
+          class="donate-button bg-yellow-600 hover:bg-yellow-500 text-black font-bold py-3 px-8 rounded-full text-lg transition transform"
+          target="_blank"
+        >
+          Tickets On Sale now!
+        </a>
+
+        <!-- Seed & Spark Link (replaces signup button) -->
+        <a
+          href="https://seedandspark.com/fund/oh-constantine-play"
+          class="donate-button bg-purple-600 hover:bg-purple-500 text-white font-bold py-3 px-8 rounded-full text-lg transition transform"
+          target="_blank"
+        >
+          Support Us on Seed & Spark! <i class="fas fa-hand-holding-heart ml-2"></i>
+        </a>
+      </div>
     </div>
 
-    <div class="countdown text-outline text-yellow-300 mb-8 text-xl">
-      Opening night in: <span id="countdown-timer"></span>
-    </div>
-<div class="countdown text-outline text-yellow-300 mb-8 text-xl">
- <span id="tickets-countdown-timer"></span>
-</div>
-
-<div class="flex flex-col md:flex-row justify-center gap-6 mt-6">
-  <a href="https://www.hollywoodfringe.org/projects/11553?tab=tickets" 
-     id="buyTicketsButton" 
-     class="donate-button bg-yellow-600 hover:bg-yellow-500 text-black font-bold py-3 px-8 rounded-full text-lg transition transform"
-     target="_blank">
-    Tickets On Sale May 1st!
-  </a>
-
-<!-- Email Signup Modal Trigger -->
-<button id="openSignup" class="donate-button bg-purple-600 hover:bg-purple-500 text-white font-bold py-3 px-8 rounded-full text-lg transition transform">
-  Want Discounts? Get on our email list! <i class="fas fa-hand-holding-heart ml-2"></i>
-</button>
-
-
-<!-- Hidden Modal -->
-<div id="signupModal" class="fixed inset-0 bg-black bg-opacity-80 flex items-center justify-center z-20 hidden">
-<div class="relative bg-purple-900 border-4 border-yellow-400 rounded-xl p-1 max-w-md w-full shadow-1xl mt-16">
-
-    <!-- Close Button -->
-    <button id="closeSignup" class="absolute top-2 right-2 text-yellow-300 hover:text-yellow-100 text-xl font-bold">&times;</button>
-    
-  <style type="text/css">@import url("https://assets.mlcdn.com/fonts.css?version=1745847");</style>
-    <style type="text/css">
-    /* LOADER */
-    .ml-form-embedSubmitLoad {
-      display: inline-block;
-      width: 20px;
-      height: 20px;
-    }
-
-    .g-recaptcha {
-    transform: scale(1);
-    -webkit-transform: scale(1);
-    transform-origin: 0 0;
-    -webkit-transform-origin: 0 0;
-    height: ;
-    }
-
-    .sr-only {
-      position: absolute;
-      width: 1px;
-      height: 1px;
-      padding: 0;
-      margin: -1px;
-      overflow: hidden;
-      clip: rect(0,0,0,0);
-      border: 0;
-    }
-
-    .ml-form-embedSubmitLoad:after {
-      content: " ";
-      display: block;
-      width: 11px;
-      height: 11px;
-      margin: 1px;
-      border-radius: 50%;
-      border: 4px solid #fff;
-    border-color: #e0b51d #e0b51d #e0b51d transparent;
-    animation: ml-form-embedSubmitLoad 1.2s linear infinite;
-    }
-    @keyframes ml-form-embedSubmitLoad {
-      0% {
-      transform: rotate(0deg);
-      }
-      100% {
-      transform: rotate(360deg);
-      }
-    }
-      #mlb2-25408739.ml-form-embedContainer {
-        box-sizing: border-box;
-        display: table;
-        margin: 0 auto;
-        position: static;
-        width: 100% !important;
-      }
-      #mlb2-25408739.ml-form-embedContainer h4,
-      #mlb2-25408739.ml-form-embedContainer p,
-      #mlb2-25408739.ml-form-embedContainer span,
-      #mlb2-25408739.ml-form-embedContainer button {
-        text-transform: none !important;
-        letter-spacing: normal !important;
-      }
-      #mlb2-25408739.ml-form-embedContainer .ml-form-embedWrapper {
-        background-color: #9a41ba;
-        
-        border-width: 9px;
-        border-color: #e0b51d;
-        border-radius: 5px;
-        border-style: solid;
-        box-sizing: border-box;
-        display: inline-block !important;
-        margin: 0;
-        padding: 0;
-        position: relative;
-              }
-      #mlb2-25408739.ml-form-embedContainer .ml-form-embedWrapper.embedPopup,
-      #mlb2-25408739.ml-form-embedContainer .ml-form-embedWrapper.embedDefault { width: 400px; }
-      #mlb2-25408739.ml-form-embedContainer .ml-form-embedWrapper.embedForm { max-width: 400px; width: 100%; }
-      #mlb2-25408739.ml-form-embedContainer .ml-form-align-left { text-align: left; }
-      #mlb2-25408739.ml-form-embedContainer .ml-form-align-center { text-align: center; }
-      #mlb2-25408739.ml-form-embedContainer .ml-form-align-default { display: table-cell !important; vertical-align: middle !important; text-align: center !important; }
-      #mlb2-25408739.ml-form-embedContainer .ml-form-align-right { text-align: right; }
-      #mlb2-25408739.ml-form-embedContainer .ml-form-embedWrapper .ml-form-embedHeader img {
-        border-top-left-radius: 5px;
-        border-top-right-radius: 5px;
-        height: auto;
-        margin: 0 auto !important;
-        max-width: 100%;
-        width: 320px;
-      }
-      #mlb2-25408739.ml-form-embedContainer .ml-form-embedWrapper .ml-form-embedBody,
-      #mlb2-25408739.ml-form-embedContainer .ml-form-embedWrapper .ml-form-successBody {
-        padding: 20px 20px 0 20px;
-      }
-      #mlb2-25408739.ml-form-embedContainer .ml-form-embedWrapper .ml-form-embedBody.ml-form-embedBodyHorizontal {
-        padding-bottom: 0;
-      }
-      #mlb2-25408739.ml-form-embedContainer .ml-form-embedWrapper .ml-form-embedBody .ml-form-embedContent,
-      #mlb2-25408739.ml-form-embedContainer .ml-form-embedWrapper .ml-form-successBody .ml-form-successContent {
-        text-align: left;
-        margin: 0 0 20px 0;
-      }
-      #mlb2-25408739.ml-form-embedContainer .ml-form-embedWrapper .ml-form-embedBody .ml-form-embedContent h4,
-      #mlb2-25408739.ml-form-embedContainer .ml-form-embedWrapper .ml-form-successBody .ml-form-successContent h4 {
-        color: #e0b51d;
-        font-family: 'Montserrat Alternates', sans-serif;
-        font-size: 30px;
-        font-weight: 400;
-        margin: 0 0 10px 0;
-        text-align: center;
-        word-break: break-word;
-      }
-      #mlb2-25408739.ml-form-embedContainer .ml-form-embedWrapper .ml-form-embedBody .ml-form-embedContent p,
-      #mlb2-25408739.ml-form-embedContainer .ml-form-embedWrapper .ml-form-successBody .ml-form-successContent p {
-        color: #edbf1a;
-        font-family: 'Open Sans', Arial, Helvetica, sans-serif;
-        font-size: 22px;
-        font-weight: 400;
-        line-height: 28px;
-        margin: 0 0 10px 0;
-        text-align: left;
-      }
-      #mlb2-25408739.ml-form-embedContainer .ml-form-embedWrapper .ml-form-embedBody .ml-form-embedContent ul,
-      #mlb2-25408739.ml-form-embedContainer .ml-form-embedWrapper .ml-form-embedBody .ml-form-embedContent ol,
-      #mlb2-25408739.ml-form-embedContainer .ml-form-embedWrapper .ml-form-successBody .ml-form-successContent ul,
-      #mlb2-25408739.ml-form-embedContainer .ml-form-embedWrapper .ml-form-successBody .ml-form-successContent ol {
-        color: #edbf1a;
-        font-family: 'Open Sans', Arial, Helvetica, sans-serif;
-        font-size: 22px;
-      }
-      #mlb2-25408739.ml-form-embedContainer .ml-form-embedWrapper .ml-form-embedBody .ml-form-embedContent ol ol,
-      #mlb2-25408739.ml-form-embedContainer .ml-form-embedWrapper .ml-form-successBody .ml-form-successContent ol ol {
-        list-style-type: lower-alpha;
-      }
-      #mlb2-25408739.ml-form-embedContainer .ml-form-embedWrapper .ml-form-embedBody .ml-form-embedContent ol ol ol,
-      #mlb2-25408739.ml-form-embedContainer .ml-form-embedWrapper .ml-form-successBody .ml-form-successContent ol ol ol {
-        list-style-type: lower-roman;
-      }
-      #mlb2-25408739.ml-form-embedContainer .ml-form-embedWrapper .ml-form-embedBody .ml-form-embedContent p a,
-      #mlb2-25408739.ml-form-embedContainer .ml-form-embedWrapper .ml-form-successBody .ml-form-successContent p a {
-        color: #b82aaa;
-        text-decoration: underline;
-      }
-
-      #mlb2-25408739.ml-form-embedContainer .ml-form-embedWrapper .ml-block-form .ml-field-group {
-        text-align: left!important;
-      }
-
-      #mlb2-25408739.ml-form-embedContainer .ml-form-embedWrapper .ml-block-form .ml-field-group label {
-        margin-bottom: 5px;
-        color: #333333;
-        font-size: 14px;
-        font-family: 'Open Sans', Arial, Helvetica, sans-serif;
-        font-weight: bold; font-style: normal; text-decoration: none;;
-        display: inline-block;
-        line-height: 20px;
-      }
-      #mlb2-25408739.ml-form-embedContainer .ml-form-embedWrapper .ml-form-embedBody .ml-form-embedContent p:last-child,
-      #mlb2-25408739.ml-form-embedContainer .ml-form-embedWrapper .ml-form-successBody .ml-form-successContent p:last-child {
-        margin: 0;
-      }
-      #mlb2-25408739.ml-form-embedContainer .ml-form-embedWrapper .ml-form-embedBody form {
-        margin: 0;
-        width: 100%;
-      }
-      #mlb2-25408739.ml-form-embedContainer .ml-form-embedWrapper .ml-form-embedBody .ml-form-formContent,
-      #mlb2-25408739.ml-form-embedContainer .ml-form-embedWrapper .ml-form-embedBody .ml-form-checkboxRow {
-        margin: 0 0 20px 0;
-        width: 100%;
-      }
-      #mlb2-25408739.ml-form-embedContainer .ml-form-embedWrapper .ml-form-embedBody .ml-form-checkboxRow {
-        float: left;
-      }
-      #mlb2-25408739.ml-form-embedContainer .ml-form-embedWrapper .ml-form-embedBody .ml-form-formContent.horozintalForm {
-        margin: 0;
-        padding: 0 0 20px 0;
-        width: 100%;
-        height: auto;
-        float: left;
-      }
-      #mlb2-25408739.ml-form-embedContainer .ml-form-embedWrapper .ml-form-embedBody .ml-form-fieldRow {
-        margin: 0 0 10px 0;
-        width: 100%;
-      }
-      #mlb2-25408739.ml-form-embedContainer .ml-form-embedWrapper .ml-form-embedBody .ml-form-fieldRow.ml-last-item {
-        margin: 0;
-      }
-      #mlb2-25408739.ml-form-embedContainer .ml-form-embedWrapper .ml-form-embedBody .ml-form-fieldRow.ml-formfieldHorizintal {
-        margin: 0;
-      }
-      #mlb2-25408739.ml-form-embedContainer .ml-form-embedWrapper .ml-form-embedBody .ml-form-fieldRow input {
-        background-color: #ffffff !important;
-        color: #333333 !important;
-        border-color: #e0b51d;
-        border-radius: 4px !important;
-        border-style: solid !important;
-        border-width: 1px !important;
-        font-family: 'Open Sans', Arial, Helvetica, sans-serif;
-        font-size: 14px !important;
-        height: auto;
-        line-height: 21px !important;
-        margin-bottom: 0;
-        margin-top: 0;
-        margin-left: 0;
-        margin-right: 0;
-        padding: 10px 10px !important;
-        width: 100% !important;
-        box-sizing: border-box !important;
-        max-width: 100% !important;
-      }
-      #mlb2-25408739.ml-form-embedContainer .ml-form-embedWrapper .ml-form-embedBody .ml-form-fieldRow input::-webkit-input-placeholder,
-      #mlb2-25408739.ml-form-embedContainer .ml-form-embedWrapper .ml-form-embedBody .ml-form-horizontalRow input::-webkit-input-placeholder { color: #333333; }
-
-      #mlb2-25408739.ml-form-embedContainer .ml-form-embedWrapper .ml-form-embedBody .ml-form-fieldRow input::-moz-placeholder,
-      #mlb2-25408739.ml-form-embedContainer .ml-form-embedWrapper .ml-form-embedBody .ml-form-horizontalRow input::-moz-placeholder { color: #333333; }
-
-      #mlb2-25408739.ml-form-embedContainer .ml-form-embedWrapper .ml-form-embedBody .ml-form-fieldRow input:-ms-input-placeholder,
-      #mlb2-25408739.ml-form-embedContainer .ml-form-embedWrapper .ml-form-embedBody .ml-form-horizontalRow input:-ms-input-placeholder { color: #333333; }
-
-      #mlb2-25408739.ml-form-embedContainer .ml-form-embedWrapper .ml-form-embedBody .ml-form-fieldRow input:-moz-placeholder,
-      #mlb2-25408739.ml-form-embedContainer .ml-form-embedWrapper .ml-form-embedBody .ml-form-horizontalRow input:-moz-placeholder { color: #333333; }
-
-      #mlb2-25408739.ml-form-embedContainer .ml-form-embedWrapper .ml-form-embedBody .ml-form-fieldRow textarea, #mlb2-25408739.ml-form-embedContainer .ml-form-embedWrapper .ml-form-embedBody .ml-form-horizontalRow textarea {
-        background-color: #ffffff !important;
-        color: #333333 !important;
-        border-color: #e0b51d;
-        border-radius: 4px !important;
-        border-style: solid !important;
-        border-width: 1px !important;
-        font-family: 'Open Sans', Arial, Helvetica, sans-serif;
-        font-size: 14px !important;
-        height: auto;
-        line-height: 21px !important;
-        margin-bottom: 0;
-        margin-top: 0;
-        padding: 10px 10px !important;
-        width: 100% !important;
-        box-sizing: border-box !important;
-        max-width: 100% !important;
-      }
-
-      #mlb2-25408739.ml-form-embedContainer .ml-form-embedWrapper .ml-form-embedBody .ml-form-fieldRow .custom-radio .custom-control-label::before, #mlb2-25408739.ml-form-embedContainer .ml-form-embedWrapper .ml-form-embedBody .ml-form-horizontalRow .custom-radio .custom-control-label::before, #mlb2-25408739.ml-form-embedContainer .ml-form-embedWrapper .ml-form-embedBody .ml-form-fieldRow .custom-checkbox .custom-control-label::before, #mlb2-25408739.ml-form-embedContainer .ml-form-embedWrapper .ml-form-embedBody .ml-form-horizontalRow .custom-checkbox .custom-control-label::before, #mlb2-25408739.ml-form-embedContainer .ml-form-embedWrapper .ml-form-embedBody .ml-form-embedPermissions .ml-form-embedPermissionsOptionsCheckbox .label-description::before, #mlb2-25408739.ml-form-embedContainer .ml-form-embedWrapper .ml-form-embedBody .ml-form-interestGroupsRow .ml-form-interestGroupsRowCheckbox .label-description::before, #mlb2-25408739.ml-form-embedContainer .ml-form-embedWrapper .ml-form-embedBody .ml-form-checkboxRow .label-description::before {
-          border-color: #e0b51d!important;
-          background-color: #ffffff!important;
-      }
-
-      #mlb2-25408739.ml-form-embedContainer .ml-form-embedWrapper .ml-form-embedBody .ml-form-fieldRow input.custom-control-input[type="checkbox"]{
-        box-sizing: border-box;
-        padding: 0;
-        position: absolute;
-        z-index: -1;
-        opacity: 0;
-        margin-top: 5px;
-        margin-left: -1.5rem;
-        overflow: visible;
-      }
-
-      #mlb2-25408739.ml-form-embedContainer .ml-form-embedWrapper .ml-form-embedBody .ml-form-fieldRow .custom-checkbox .custom-control-label::before, #mlb2-25408739.ml-form-embedContainer .ml-form-embedWrapper .ml-form-embedBody .ml-form-horizontalRow .custom-checkbox .custom-control-label::before, #mlb2-25408739.ml-form-embedContainer .ml-form-embedWrapper .ml-form-embedBody .ml-form-embedPermissions .ml-form-embedPermissionsOptionsCheckbox .label-description::before, #mlb2-25408739.ml-form-embedContainer .ml-form-embedWrapper .ml-form-embedBody .ml-form-interestGroupsRow .ml-form-interestGroupsRowCheckbox .label-description::before, #mlb2-25408739.ml-form-embedContainer .ml-form-embedWrapper .ml-form-embedBody .ml-form-checkboxRow .label-description::before {
-        border-radius: 4px!important;
-      }
-
-
-      #mlb2-25408739.ml-form-embedContainer .ml-form-embedWrapper .ml-form-embedBody .ml-form-checkboxRow input[type=checkbox]:checked~.label-description::after, #mlb2-25408739.ml-form-embedContainer .ml-form-embedWrapper .ml-form-embedBody .ml-form-embedPermissions .ml-form-embedPermissionsOptionsCheckbox input[type=checkbox]:checked~.label-description::after, #mlb2-25408739.ml-form-embedContainer .ml-form-embedWrapper .ml-form-embedBody .ml-form-fieldRow .custom-checkbox .custom-control-input:checked~.custom-control-label::after, #mlb2-25408739.ml-form-embedContainer .ml-form-embedWrapper .ml-form-embedBody .ml-form-horizontalRow .custom-checkbox .custom-control-input:checked~.custom-control-label::after, #mlb2-25408739.ml-form-embedContainer .ml-form-embedWrapper .ml-form-embedBody .ml-form-interestGroupsRow .ml-form-interestGroupsRowCheckbox input[type=checkbox]:checked~.label-description::after {
-        background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 8 8'%3e%3cpath fill='%23fff' d='M6.564.75l-3.59 3.612-1.538-1.55L0 4.26 2.974 7.25 8 2.193z'/%3e%3c/svg%3e");
-      }
-
-      #mlb2-25408739.ml-form-embedContainer .ml-form-embedWrapper .ml-form-embedBody .ml-form-fieldRow .custom-radio .custom-control-input:checked~.custom-control-label::after, #mlb2-25408739.ml-form-embedContainer .ml-form-embedWrapper .ml-form-embedBody .ml-form-fieldRow .custom-radio .custom-control-input:checked~.custom-control-label::after {
-        background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='-4 -4 8 8'%3e%3ccircle r='3' fill='%23fff'/%3e%3c/svg%3e");
-      }
-
-      #mlb2-25408739.ml-form-embedContainer .ml-form-embedWrapper .ml-form-embedBody .ml-form-fieldRow .custom-radio .custom-control-input:checked~.custom-control-label::before, #mlb2-25408739.ml-form-embedContainer .ml-form-embedWrapper .ml-form-embedBody .ml-form-horizontalRow .custom-radio .custom-control-input:checked~.custom-control-label::before, #mlb2-25408739.ml-form-embedContainer .ml-form-embedWrapper .ml-form-embedBody .ml-form-fieldRow .custom-checkbox .custom-control-input:checked~.custom-control-label::before, #mlb2-25408739.ml-form-embedContainer .ml-form-embedWrapper .ml-form-embedBody .ml-form-horizontalRow .custom-checkbox .custom-control-input:checked~.custom-control-label::before, #mlb2-25408739.ml-form-embedContainer .ml-form-embedWrapper .ml-form-embedBody .ml-form-embedPermissions .ml-form-embedPermissionsOptionsCheckbox input[type=checkbox]:checked~.label-description::before, #mlb2-25408739.ml-form-embedContainer .ml-form-embedWrapper .ml-form-embedBody .ml-form-interestGroupsRow .ml-form-interestGroupsRowCheckbox input[type=checkbox]:checked~.label-description::before, #mlb2-25408739.ml-form-embedContainer .ml-form-embedWrapper .ml-form-embedBody .ml-form-checkboxRow input[type=checkbox]:checked~.label-description::before  {
-          border-color: #000000!important;
-          background-color: #000000!important;
-      }
-
-      #mlb2-25408739.ml-form-embedContainer .ml-form-embedWrapper .ml-form-embedBody .ml-form-fieldRow .custom-radio .custom-control-label::before, #mlb2-25408739.ml-form-embedContainer .ml-form-embedWrapper .ml-form-embedBody .ml-form-horizontalRow .custom-radio .custom-control-label::before, #mlb2-25408739.ml-form-embedContainer .ml-form-embedWrapper .ml-form-embedBody .ml-form-fieldRow .custom-radio .custom-control-label::after, #mlb2-25408739.ml-form-embedContainer .ml-form-embedWrapper .ml-form-embedBody .ml-form-horizontalRow .custom-radio .custom-control-label::after, #mlb2-25408739.ml-form-embedContainer .ml-form-embedWrapper .ml-form-embedBody .ml-form-fieldRow .custom-checkbox .custom-control-label::before, #mlb2-25408739.ml-form-embedContainer .ml-form-embedWrapper .ml-form-embedBody .ml-form-fieldRow .custom-checkbox .custom-control-label::after, #mlb2-25408739.ml-form-embedContainer .ml-form-embedWrapper .ml-form-embedBody .ml-form-horizontalRow .custom-checkbox .custom-control-label::before, #mlb2-25408739.ml-form-embedContainer .ml-form-embedWrapper .ml-form-embedBody .ml-form-horizontalRow .custom-checkbox .custom-control-label::after {
-           top: 2px;
-           box-sizing: border-box;
-      }
-
-      #mlb2-25408739.ml-form-embedContainer .ml-form-embedWrapper .ml-form-embedBody .ml-form-embedPermissions .ml-form-embedPermissionsOptionsCheckbox .label-description::before, #mlb2-25408739.ml-form-embedContainer .ml-form-embedWrapper .ml-form-embedBody .ml-form-embedPermissions .ml-form-embedPermissionsOptionsCheckbox .label-description::after, #mlb2-25408739.ml-form-embedContainer .ml-form-embedWrapper .ml-form-embedBody .ml-form-checkboxRow .label-description::before, #mlb2-25408739.ml-form-embedContainer .ml-form-embedWrapper .ml-form-embedBody .ml-form-checkboxRow .label-description::after {
-           top: 0px!important;
-           box-sizing: border-box!important;
-      }
-
-      #mlb2-25408739.ml-form-embedContainer .ml-form-embedWrapper .ml-form-embedBody .ml-form-checkboxRow .label-description::before, #mlb2-25408739.ml-form-embedContainer .ml-form-embedWrapper .ml-form-embedBody .ml-form-checkboxRow .label-description::after {
-        top: 0px!important;
-           box-sizing: border-box!important;
-      }
-
-       #mlb2-25408739.ml-form-embedContainer .ml-form-embedWrapper .ml-form-embedBody .ml-form-interestGroupsRow .ml-form-interestGroupsRowCheckbox .label-description::after {
-            top: 0px!important;
-            box-sizing: border-box!important;
-            position: absolute;
-            left: -1.5rem;
-            display: block;
-            width: 1rem;
-            height: 1rem;
-            content: "";
-       }
-
-      #mlb2-25408739.ml-form-embedContainer .ml-form-embedWrapper .ml-form-embedBody .ml-form-interestGroupsRow .ml-form-interestGroupsRowCheckbox .label-description::before {
-        top: 0px!important;
-        box-sizing: border-box!important;
-      }
-
-      #mlb2-25408739.ml-form-embedContainer .ml-form-embedWrapper .ml-form-embedBody .custom-control-label::before {
-          position: absolute;
-          top: 4px;
-          left: -1.5rem;
-          display: block;
-          width: 16px;
-          height: 16px;
-          pointer-events: none;
-          content: "";
-          background-color: #ffffff;
-          border: #adb5bd solid 1px;
-          border-radius: 50%;
-      }
-
-      #mlb2-25408739.ml-form-embedContainer .ml-form-embedWrapper .ml-form-embedBody .custom-control-label::after {
-          position: absolute;
-          top: 2px!important;
-          left: -1.5rem;
-          display: block;
-          width: 1rem;
-          height: 1rem;
-          content: "";
-      }
-
-      #mlb2-25408739.ml-form-embedContainer .ml-form-embedWrapper .ml-form-embedBody .ml-form-embedPermissions .ml-form-embedPermissionsOptionsCheckbox .label-description::before, #mlb2-25408739.ml-form-embedContainer .ml-form-embedWrapper .ml-form-embedBody .ml-form-interestGroupsRow .ml-form-interestGroupsRowCheckbox .label-description::before, #mlb2-25408739.ml-form-embedContainer .ml-form-embedWrapper .ml-form-embedBody .ml-form-checkboxRow .label-description::before {
-          position: absolute;
-          top: 4px;
-          left: -1.5rem;
-          display: block;
-          width: 16px;
-          height: 16px;
-          pointer-events: none;
-          content: "";
-          background-color: #ffffff;
-          border: #adb5bd solid 1px;
-          border-radius: 50%;
-      }
-
-      #mlb2-25408739.ml-form-embedContainer .ml-form-embedWrapper .ml-form-embedBody .ml-form-embedPermissions .ml-form-embedPermissionsOptionsCheckbox .label-description::after {
-          position: absolute;
-          top: 0px!important;
-          left: -1.5rem;
-          display: block;
-          width: 1rem;
-          height: 1rem;
-          content: "";
-      }
-
-      #mlb2-25408739.ml-form-embedContainer .ml-form-embedWrapper .ml-form-embedBody .ml-form-checkboxRow .label-description::after {
-          position: absolute;
-          top: 0px!important;
-          left: -1.5rem;
-          display: block;
-          width: 1rem;
-          height: 1rem;
-          content: "";
-      }
-
-      #mlb2-25408739.ml-form-embedContainer .ml-form-embedWrapper .ml-form-embedBody .custom-radio .custom-control-label::after {
-          background: no-repeat 50%/50% 50%;
-      }
-      #mlb2-25408739.ml-form-embedContainer .ml-form-embedWrapper .ml-form-embedBody .custom-checkbox .custom-control-label::after, #mlb2-25408739.ml-form-embedContainer .ml-form-embedWrapper .ml-form-embedBody .ml-form-embedPermissions .ml-form-embedPermissionsOptionsCheckbox .label-description::after, #mlb2-25408739.ml-form-embedContainer .ml-form-embedWrapper .ml-form-embedBody .ml-form-interestGroupsRow .ml-form-interestGroupsRowCheckbox .label-description::after, #mlb2-25408739.ml-form-embedContainer .ml-form-embedWrapper .ml-form-embedBody .ml-form-checkboxRow .label-description::after {
-          background: no-repeat 50%/50% 50%;
-      }
-
-      #mlb2-25408739.ml-form-embedContainer .ml-form-embedWrapper .ml-form-embedBody .ml-form-fieldRow .custom-control, #mlb2-25408739.ml-form-embedContainer .ml-form-embedWrapper .ml-form-embedBody .ml-form-horizontalRow .custom-control {
-        position: relative;
-        display: block;
-        min-height: 1.5rem;
-        padding-left: 1.5rem;
-      }
-
-      #mlb2-25408739.ml-form-embedContainer .ml-form-embedWrapper .ml-form-embedBody .ml-form-fieldRow .custom-radio .custom-control-input, #mlb2-25408739.ml-form-embedContainer .ml-form-embedWrapper .ml-form-embedBody .ml-form-horizontalRow .custom-radio .custom-control-input, #mlb2-25408739.ml-form-embedContainer .ml-form-embedWrapper .ml-form-embedBody .ml-form-fieldRow .custom-checkbox .custom-control-input, #mlb2-25408739.ml-form-embedContainer .ml-form-embedWrapper .ml-form-embedBody .ml-form-horizontalRow .custom-checkbox .custom-control-input {
-          position: absolute;
-          z-index: -1;
-          opacity: 0;
-          box-sizing: border-box;
-          padding: 0;
-      }
-
-      #mlb2-25408739.ml-form-embedContainer .ml-form-embedWrapper .ml-form-embedBody .ml-form-fieldRow .custom-radio .custom-control-label, #mlb2-25408739.ml-form-embedContainer .ml-form-embedWrapper .ml-form-embedBody .ml-form-horizontalRow .custom-radio .custom-control-label, #mlb2-25408739.ml-form-embedContainer .ml-form-embedWrapper .ml-form-embedBody .ml-form-fieldRow .custom-checkbox .custom-control-label, #mlb2-25408739.ml-form-embedContainer .ml-form-embedWrapper .ml-form-embedBody .ml-form-horizontalRow .custom-checkbox .custom-control-label {
-          color: #000000;
-          font-size: 12px!important;
-          font-family: 'Open Sans', Arial, Helvetica, sans-serif;
-          line-height: 22px;
-          margin-bottom: 0;
-          position: relative;
-          vertical-align: top;
-          font-style: normal;
-          font-weight: 700;
-      }
-
-      #mlb2-25408739.ml-form-embedContainer .ml-form-embedWrapper .ml-form-embedBody .ml-form-fieldRow .custom-select, #mlb2-25408739.ml-form-embedContainer .ml-form-embedWrapper .ml-form-embedBody .ml-form-horizontalRow .custom-select {
-        background-color: #ffffff !important;
-        color: #333333 !important;
-        border-color: #e0b51d;
-        border-radius: 4px !important;
-        border-style: solid !important;
-        border-width: 1px !important;
-        font-family: 'Open Sans', Arial, Helvetica, sans-serif;
-        font-size: 14px !important;
-        line-height: 20px !important;
-        margin-bottom: 0;
-        margin-top: 0;
-        padding: 10px 28px 10px 12px !important;
-        width: 100% !important;
-        box-sizing: border-box !important;
-        max-width: 100% !important;
-        height: auto;
-        display: inline-block;
-        vertical-align: middle;
-        background: url('https://assets.mlcdn.com/ml/images/default/dropdown.svg') no-repeat right .75rem center/8px 10px;
-        -webkit-appearance: none;
-        -moz-appearance: none;
-        appearance: none;
-      }
-
-
-      #mlb2-25408739.ml-form-embedContainer .ml-form-embedWrapper .ml-form-embedBody .ml-form-horizontalRow {
-        height: auto;
-        width: 100%;
-        float: left;
-      }
-      .ml-form-formContent.horozintalForm .ml-form-horizontalRow .ml-input-horizontal { width: 70%; float: left; }
-      .ml-form-formContent.horozintalForm .ml-form-horizontalRow .ml-button-horizontal { width: 30%; float: left; }
-      .ml-form-formContent.horozintalForm .ml-form-horizontalRow .ml-button-horizontal.labelsOn { padding-top: 25px;  }
-      .ml-form-formContent.horozintalForm .ml-form-horizontalRow .horizontal-fields { box-sizing: border-box; float: left; padding-right: 10px;  }
-      #mlb2-25408739.ml-form-embedContainer .ml-form-embedWrapper .ml-form-embedBody .ml-form-horizontalRow input {
-        background-color: #ffffff;
-        color: #333333;
-        border-color: #e0b51d;
-        border-radius: 4px;
-        border-style: solid;
-        border-width: 1px;
-        font-family: 'Open Sans', Arial, Helvetica, sans-serif;
-        font-size: 14px;
-        line-height: 20px;
-        margin-bottom: 0;
-        margin-top: 0;
-        padding: 10px 10px;
-        width: 100%;
-        box-sizing: border-box;
-        overflow-y: initial;
-      }
-      #mlb2-25408739.ml-form-embedContainer .ml-form-embedWrapper .ml-form-embedBody .ml-form-horizontalRow button {
-        background-color: #000000 !important;
-        border-color: #000000;
-        border-style: solid;
-        border-width: 1px;
-        border-radius: 4px;
-        box-shadow: none;
-        color: #e0b51d !important;
-        cursor: pointer;
-        font-family: 'Open Sans', Arial, Helvetica, sans-serif;
-        font-size: 14px !important;
-        font-weight: 700;
-        line-height: 20px;
-        margin: 0 !important;
-        padding: 10px !important;
-        width: 100%;
-        height: auto;
-      }
-      #mlb2-25408739.ml-form-embedContainer .ml-form-embedWrapper .ml-form-embedBody .ml-form-horizontalRow button:hover {
-        background-color: #9a41ba !important;
-        border-color: #9a41ba !important;
-      }
-      #mlb2-25408739.ml-form-embedContainer .ml-form-embedWrapper .ml-form-embedBody .ml-form-checkboxRow input[type="checkbox"] {
-        box-sizing: border-box;
-        padding: 0;
-        position: absolute;
-        z-index: -1;
-        opacity: 0;
-        margin-top: 5px;
-        margin-left: -1.5rem;
-        overflow: visible;
-      }
-      #mlb2-25408739.ml-form-embedContainer .ml-form-embedWrapper .ml-form-embedBody .ml-form-checkboxRow .label-description {
-        color: #000000;
-        display: block;
-        font-family: 'Open Sans', Arial, Helvetica, sans-serif;
-        font-size: 12px;
-        text-align: left;
-        margin-bottom: 0;
-        position: relative;
-        vertical-align: top;
-      }
-      #mlb2-25408739.ml-form-embedContainer .ml-form-embedWrapper .ml-form-embedBody .ml-form-checkboxRow label {
-        font-weight: normal;
-        margin: 0;
-        padding: 0;
-        position: relative;
-        display: block;
-        min-height: 24px;
-        padding-left: 24px;
-
-      }
-      #mlb2-25408739.ml-form-embedContainer .ml-form-embedWrapper .ml-form-embedBody .ml-form-checkboxRow label a {
-        color: #000000;
-        text-decoration: underline;
-      }
-      #mlb2-25408739.ml-form-embedContainer .ml-form-embedWrapper .ml-form-embedBody .ml-form-checkboxRow label p {
-        color: #000000 !important;
-        font-family: 'Open Sans', Arial, Helvetica, sans-serif !important;
-        font-size: 12px !important;
-        font-weight: normal !important;
-        line-height: 18px !important;
-        padding: 0 !important;
-        margin: 0 5px 0 0 !important;
-      }
-      #mlb2-25408739.ml-form-embedContainer .ml-form-embedWrapper .ml-form-embedBody .ml-form-checkboxRow label p:last-child {
-        margin: 0;
-      }
-      #mlb2-25408739.ml-form-embedContainer .ml-form-embedWrapper .ml-form-embedBody .ml-form-embedSubmit {
-        margin: 0 0 20px 0;
-        float: left;
-        width: 100%;
-      }
-      #mlb2-25408739.ml-form-embedContainer .ml-form-embedWrapper .ml-form-embedBody .ml-form-embedSubmit button {
-        background-color: #000000 !important;
-        border: none !important;
-        border-radius: 4px !important;
-        box-shadow: none !important;
-        color: #e0b51d !important;
-        cursor: pointer;
-        font-family: 'Open Sans', Arial, Helvetica, sans-serif !important;
-        font-size: 14px !important;
-        font-weight: 700 !important;
-        line-height: 21px !important;
-        height: auto;
-        padding: 10px !important;
-        width: 100% !important;
-        box-sizing: border-box !important;
-      }
-      #mlb2-25408739.ml-form-embedContainer .ml-form-embedWrapper .ml-form-embedBody .ml-form-embedSubmit button.loading {
-        display: none;
-      }
-      #mlb2-25408739.ml-form-embedContainer .ml-form-embedWrapper .ml-form-embedBody .ml-form-embedSubmit button:hover {
-        background-color: #9a41ba !important;
-      }
-      .ml-subscribe-close {
-        width: 30px;
-        height: 30px;
-        background: url('https://assets.mlcdn.com/ml/images/default/modal_close.png') no-repeat;
-        background-size: 30px;
-        cursor: pointer;
-        margin-top: -10px;
-        margin-right: -10px;
-        position: absolute;
-        top: 0;
-        right: 0;
-      }
-      .ml-error input, .ml-error textarea, .ml-error select {
-        border-color: red!important;
-      }
-
-      .ml-error .custom-checkbox-radio-list {
-        border: 1px solid red !important;
-        border-radius: 5px;
-        padding: 10px;
-      }
-
-      .ml-error .label-description,
-      .ml-error .label-description p,
-      .ml-error .label-description p a,
-      .ml-error label:first-child {
-        color: #ff0000 !important;
-      }
-
-      #mlb2-25408739.ml-form-embedContainer .ml-form-embedWrapper .ml-form-embedBody .ml-form-checkboxRow.ml-error .label-description p,
-      #mlb2-25408739.ml-form-embedContainer .ml-form-embedWrapper .ml-form-embedBody .ml-form-checkboxRow.ml-error .label-description p:first-letter {
-        color: #ff0000 !important;
-      }
-            @media only screen and (max-width: 400px){
-
-        .ml-form-embedWrapper.embedDefault, .ml-form-embedWrapper.embedPopup { width: 100%!important; }
-        .ml-form-formContent.horozintalForm { float: left!important; }
-        .ml-form-formContent.horozintalForm .ml-form-horizontalRow { height: auto!important; width: 100%!important; float: left!important; }
-        .ml-form-formContent.horozintalForm .ml-form-horizontalRow .ml-input-horizontal { width: 100%!important; }
-        .ml-form-formContent.horozintalForm .ml-form-horizontalRow .ml-input-horizontal > div { padding-right: 0px!important; padding-bottom: 10px; }
-        .ml-form-formContent.horozintalForm .ml-button-horizontal { width: 100%!important; }
-        .ml-form-formContent.horozintalForm .ml-button-horizontal.labelsOn { padding-top: 0px!important; }
-
-      }
-    </style>
-
-    
-  
-    
-    
-
-    
-    
-
-    
-    
-
-    
-
-      
-        
-        
-      
-
-      
-        
-        
-      
-
-      
-
-            
-            
-            
-            
-            
-            
-      
-
-      
-
-      
-        
-        
-         
-        
-        
-      
-
-        
-        
-        
-        
-        
-        
-      
-
-       
-
-        
-        
-        
-        
-        
-        
-        
-       
-
-
-      
-        
-        
-        
-        
-  
-
-
-
-  
-        
-        
-        
-      
-
-
-      
-    
-    
-    
-    
-    
-    
-    
-  
-
-  
-        
-        
-        
-        
-        
-      
-
-      
-        
-        
-        
-        
-        
-      
-
-      
-        
-        
-        
-        
-        
-      
-
-       
-
-        
-        
-        
-        
-       
-
-       
-        
-        
-        
-        
-      
-
-      
-        
-        
-        
-        
-        
-        
-        
-       
-
-    
-
-    
-
-
-      
-
-
-      
-
-      
-      
-
-      
-
-      
-
-
-
-
-
-    
-
-      
-    <div id="mlb2-25408739" class="ml-form-embedContainer ml-subscribe-form ml-subscribe-form-25408739">
-      <div class="ml-form-align-center ">
-        <div class="ml-form-embedWrapper embedForm">
-
-          
-          <div class="ml-form-embedHeader">
-            
-              <img src="https://storage.mlcdn.com/account_image/1481067/xbSDFFxloFSsJMa8xULItIFlttaJTRidpNpKMRik.png" alt="Oh Constantine! Email List!" border="0" style="display: block;">
-              
-              <style>
-                @media only screen and (max-width: 400px){
-                  .ml-form-embedHeader { display: none !important; }
-                }
-              </style>
-
-            
+    <!-- Decorative corners -->
+    <div class="absolute top-0 left-0 w-16 h-16 border-t-4 border-l-4 border-yellow-300"></div>
+    <div class="absolute top-0 right-0 w-16 h-16 border-t-4 border-r-4 border-yellow-300"></div>
+    <div class="absolute bottom-0 left-0 w-16 h-16 border-b-4 border-l-4 border-yellow-300"></div>
+    <div class="absolute bottom-0 right-0 w-16 h-16 border-b-4 border-r-4 border-yellow-300"></div>
+
+    <!-- Easter egg comment -->
+    <!-- 
+      If this is you then you have lost your way
+      The true believers know the secret...
+      For those who seek, the truth shall be revealed.
+    -->
+  </header>
+
+  <!-- About Section -->
+  <section id="about" class="py-16 bg-opacity-90 bg-purple-900 relative overflow-hidden">
+    <div class="container mx-auto px-6">
+      <div class="text-center mb-12">
+        <h2 class="text-4xl byzantine-title text-yellow-300 mb-4">About The Show</h2>
+        <div class="w-24 h-1 bg-yellow-300 mx-auto"></div>
+      </div>
+
+      <div class="max-w-4xl mx-auto bg-black bg-opacity-50 p-8 rounded-lg ornamental-border">
+        <p class="text-xl italic text-center text-yellow-100 mb-8">
+          "In 325 A.D., Emperor Constantine assembles the early Church to define Christian orthodoxy.
+          But holy debates spiral into unholy chaos as four unruly bishops and one confused emperor
+          clash over the nature of Christ. Featuring slapstick theology, musical numbers, and a lot of wine."
+        </p>
+
+        <div class="grid md:grid-cols-2 gap-8 mt-8">
+          <div>
+            <h3 class="text-2xl byzantine-title text-yellow-300 mb-4">A Divine Comedy</h3>
+            <p class="mb-4">
+              This satirical musical explores the First Council of Nicaea with humor and heart, blending historical events with modern sensibilities.
+            </p>
+            <p>
+              Through song and satire, we examine how theological debates shaped Christianity while never losing sight of the human drama behind the dogma.
+            </p>
           </div>
-
-          <div class="ml-form-embedBody ml-form-embedBodyDefault row-form">
-
-            <div class="ml-form-embedContent" style=" ">
-              
-                <h4>Behold the Good News!</h4>
-                <p>
-</p>
-<p style="text-align: center;"><em>Join our sacred scroll&nbsp;</em><em></em>and&nbsp;<strong>receive divine updates&nbsp;</strong><strong></strong>from the stage of <em>Oh Constantine!</em><br></p>
-
-              
-            </div>
-
-            <form class="ml-block-form" action="https://assets.mailerlite.com/jsonp/1481067/forms/153077908094584011/subscribe" data-code="" method="post" target="_blank">
-              <div class="ml-form-formContent">
-                
-
-                  
-                  <div class="ml-form-fieldRow ml-last-item">
-                    <div class="ml-field-group ml-field-email ml-validate-email ml-validate-required">
-
-                      
-
-
-                      <!-- input -->
-                      <input aria-label="email" aria-required="true" type="email" class="form-control" data-inputmask="" name="fields[email]" placeholder="Email" autocomplete="email">
-                      <!-- /input -->
-
-                      <!-- textarea -->
-                      
-                      <!-- /textarea -->
-
-                      <!-- select -->
-                      
-                      <!-- /select -->
-
-                      <!-- checkboxes -->
-            
-            <!-- /checkboxes -->
-
-                      <!-- radio -->
-                      
-                      <!-- /radio -->
-
-                      <!-- countries -->
-                      
-                      <!-- /countries -->
-
-
-
-
-
-                    </div>
-                  </div>
-                
-              </div>
-
-              
-
-              <!-- Privacy policy -->
-              
-              <!-- /Privacy policy -->
-
-              
-
-              
-
-              
-
-
-
-
-
-
-              
-              <input type="hidden" name="ml-submit" value="1">
-
-              <div class="ml-form-embedSubmit">
-                
-                  <button type="submit" class="primary">Join The Council!</button>
-                
-                <button disabled="disabled" style="display: none;" type="button" class="loading">
-                  <div class="ml-form-embedSubmitLoad"></div>
-                  <span class="sr-only">Loading...</span>
-                </button>
-              </div>
-
-              
-              <input type="hidden" name="anticsrf" value="true">
-            </form>
-          </div>
-
-          <div class="ml-form-successBody row-success" style="display: none">
-
-            <div class="ml-form-successContent">
-              
-                <h4>Thank you!</h4>
-                
-                  <p>You have successfully joined our subscriber list.</p>
-                
-              
-            </div>
-
+          <div>
+            <h3 class="text-2xl byzantine-title text-yellow-300 mb-4">Creative Team</h3>
+            <ul class="space-y-2">
+              <li>
+                <span class="font-semibold text-yellow-300">Written &amp; Directed by:</span> Jan-David Soutar
+              </li>
+              <li>
+                <span class="font-semibold text-yellow-300">Music by:</span> Jan-David Soutar, Kyle Donald &amp; Aviram Spies
+              </li>
+              <li>
+                <span class="font-semibold text-yellow-300">Additional Lyrics by:</span> Rev. Dr. Michael F. Bird
+              </li>
+              <li>
+                <span class="font-semibold text-yellow-300">Produced by:</span> Athena Rethis &amp; Clent Bowers
+              </li>
+              <li>
+                <span class="font-semibold text-yellow-300">Marketing/PR:</span> Tanya Dickson
+              </li>
+              <li>
+                <span class="font-semibold text-yellow-300">Original Stage Design by:</span> Jeremy Thompson
+              </li>
+              <li>
+                <span class="font-semibold text-yellow-300">Production Design by:</span> Courtney Stepleton
+              </li>
+            </ul>
           </div>
         </div>
       </div>
     </div>
+  </section>
 
-  
+  <!-- Cast Section -->
+  <section id="cast" class="py-16 bg-opacity-90 bg-purple-900 relative">
+    <div class="container mx-auto px-6">
+      <div class="text-center mb-12">
+        <h2 class="text-4xl byzantine-title text-yellow-300 mb-4">Meet The Cast</h2>
+        <div class="w-24 h-1 bg-yellow-300 mx-auto"></div>
+      </div>
 
-  
-  
-  <script>
-    function ml_webform_success_25408739() {
-      var $ = ml_jQuery || jQuery;
-      $('.ml-subscribe-form-25408739 .row-success').show();
-      $('.ml-subscribe-form-25408739 .row-form').hide();
-    }
-      </script>
-  
-  
-      <script src="https://groot.mailerlite.com/js/w/webforms.min.js?v176e10baa5e7ed80d35ae235be3d5024" type="text/javascript"></script>
-        <script>
-            fetch("https://assets.mailerlite.com/jsonp/1481067/forms/153077908094584011/takel")
-        </script>
-       
-    </div>
-  </div>
-</div>
-
-<!-- Scripts -->
-<script>
-  function ml_webform_success_25408739() {
-    var $ = ml_jQuery || jQuery;
-    $('.ml-subscribe-form .ml-form-successBody').show();
-    $('.ml-subscribe-form form').hide();
-  }
-</script>
-<script src="https://groot.mailerlite.com/js/w/webforms.min.js" type="text/javascript"></script>
-</div>
-
-    </div>
-  </div>
-</header>
-
-
-        
-        <!-- Decorative elements -->
-        <div class="absolute top-0 left-0 w-16 h-16 border-t-4 border-l-4 border-yellow-300"></div>
-        <div class="absolute top-0 right-0 w-16 h-16 border-t-4 border-r-4 border-yellow-300"></div>
-        <div class="absolute bottom-0 left-0 w-16 h-16 border-b-4 border-l-4 border-yellow-300"></div>
-        <div class="absolute bottom-0 right-0 w-16 h-16 border-b-4 border-r-4 border-yellow-300"></div>
-        
-        <!-- Easter egg comment -->
-        <!-- 
-            NIKA! NIKA! NIKA! 
-            The true believers know the secret of the Nika riots...
-            For those who seek, the truth shall be revealed.
-        -->
-
-    <!-- About Section -->
-    <section id="about" class="py-16 bg-opacity-90 bg-purple-900 relative overflow-hidden">
-        <div class="container mx-auto px-6">
-            <div class="text-center mb-12">
-                <h2 class="text-4xl byzantine-title text-yellow-300 mb-4">About The Show</h2>
-                <div class="w-24 h-1 bg-yellow-300 mx-auto"></div>
+      <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+        <!-- Original Cast Members -->
+        <!-- Constantine -->
+        <a href="https://en.wikipedia.org/wiki/Constantine_the_Great" target="_blank" class="block">
+          <div class="cast-card bg-black bg-opacity-50 rounded-lg overflow-hidden transition duration-300 hover:shadow-lg">
+            <div class="h-64 bg-purple-700 flex items-center justify-center" aria-hidden="true">
+              <i class="fas fa-crown text-6xl text-yellow-300"></i>
             </div>
-            
-            <div class="max-w-4xl mx-auto bg-black bg-opacity-50 p-8 rounded-lg ornamental-border">
-                <p class="text-xl italic text-center text-yellow-100 mb-8">
-                    "In 325 A.D., Emperor Constantine assembles the early Church to define Christian orthodoxy. 
-                    But holy debates spiral into unholy chaos as four unruly bishops and one confused emperor 
-                    clash over the nature of Christ. Featuring slapstick theology, musical numbers, and a lot of wine."
-                </p>
-                
-                <div class="grid md:grid-cols-2 gap-8 mt-8">
-                    <div>
-                        <h3 class="text-2xl byzantine-title text-yellow-300 mb-4">A Divine Comedy</h3>
-        <p class="mb-4">This satirical musical explores the First Council of Nicaea with humor and heart, blending historical events with modern sensibilities.</p>
-        <p>Through song and satire, we examine how theological debates shaped Christianity while never losing sight of the human drama behind the dogma.</p>
+            <div class="p-6">
+              <h3 class="text-2xl byzantine-title text-yellow-300 mb-2">Constantine</h3>
+              <p class="text-yellow-100 italic">Emperor of Rome</p>
+              <p class="mt-3">Played by Cameron Ley</p>
+            </div>
+          </div>
+        </a>
+
+        <!-- Constantia -->
+        <a href="https://en.wikipedia.org/wiki/Flavia_Julia_Constantia" target="_blank" class="block">
+          <div class="cast-card bg-black bg-opacity-50 rounded-lg overflow-hidden transition duration-300 hover:shadow-lg">
+            <div class="h-64 bg-purple-700 flex items-center justify-center" aria-hidden="true">
+              <i class="fas fa-chess-queen text-6xl text-yellow-300"></i>
+            </div>
+            <div class="p-6">
+              <h3 class="text-2xl byzantine-title text-yellow-300 mb-2">Constantia</h3>
+              <p class="text-yellow-100 italic">Sister of Constantine</p>
+              <p class="mt-3">Played by Marlena Hummel</p>
+            </div>
+          </div>
+        </a>
+
+        <!-- Helena -->
+        <a href="https://en.wikipedia.org/wiki/Helena_(empress)" target="_blank" class="block">
+          <div class="cast-card bg-black bg-opacity-50 rounded-lg overflow-hidden transition duration-300 hover:shadow-lg">
+            <div class="h-64 bg-purple-700 flex items-center justify-center" aria-hidden="true">
+              <i class="fas fa-chess-queen text-6xl text-yellow-300"></i>
+            </div>
+            <div class="p-6">
+              <h3 class="text-2xl byzantine-title text-yellow-300 mb-2">Helena</h3>
+              <p class="text-yellow-100 italic">Mother of Constantine</p>
+              <p class="mt-3">Played by Jennifer Lamar</p>
+            </div>
+          </div>
+        </a>
+
+        <!-- Athanasius -->
+        <a href="https://en.wikipedia.org/wiki/Athanasius_of_Alexandria" target="_blank" class="block">
+          <div class="cast-card bg-black bg-opacity-50 rounded-lg overflow-hidden transition duration-300 hover:shadow-lg">
+            <div class="h-64 bg-purple-700 flex items-center justify-center" aria-hidden="true">
+              <i class="fas fa-cross text-6xl text-yellow-300"></i>
+            </div>
+            <div class="p-6">
+              <h3 class="text-2xl byzantine-title text-yellow-300 mb-2">Athanasius</h3>
+              <p class="text-yellow-100 italic">Bishop of Alexandria</p>
+              <p class="mt-3">Played by Nandi Sharma</p>
+            </div>
+          </div>
+        </a>
+
+        <!-- Eusebius -->
+        <a href="https://en.wikipedia.org/wiki/Eusebius_of_Nicomedia" target="_blank" class="block">
+          <div class="cast-card bg-black bg-opacity-50 rounded-lg overflow-hidden transition duration-300 hover:shadow-lg">
+            <div class="h-64 bg-purple-700 flex items-center justify-center" aria-hidden="true">
+              <i class="fas fa-church text-6xl text-yellow-300"></i>
+            </div>
+            <div class="p-6">
+              <h3 class="text-2xl byzantine-title text-yellow-300 mb-2">Eusebius</h3>
+              <p class="text-yellow-100 italic">Bishop of Nicomedia</p>
+              <p class="mt-3">Played by Cole Parker</p>
+            </div>
+          </div>
+        </a>
+
+        <!-- Arius -->
+        <a href="https://en.wikipedia.org/wiki/Arius" target="_blank" class="block">
+          <div class="cast-card bg-black bg-opacity-50 rounded-lg overflow-hidden transition duration-300 hover:shadow-lg">
+            <div class="h-64 bg-purple-700 flex items-center justify-center" aria-hidden="true">
+              <i class="fas fa-dove text-6xl text-yellow-300"></i>
+            </div>
+            <div class="p-6">
+              <h3 class="text-2xl byzantine-title text-yellow-300 mb-2">Arius</h3>
+              <p class="text-yellow-100 italic">Presbyter of Alexandria</p>
+              <p class="mt-3">Played by Clent Bowers</p>
+            </div>
+          </div>
+        </a>
+
+        <!-- Mark (no wiki) -->
+        <a href="https://en.wikipedia.org/wiki/First_Council_of_Nicaea" target="_blank" class="block">
+          <div class="cast-card bg-black bg-opacity-50 rounded-lg overflow-hidden transition duration-300">
+            <div class="h-64 bg-purple-700 flex items-center justify-center" aria-hidden="true">
+              <i class="fas fa-horse-head text-6xl text-yellow-300"></i>
+            </div>
+            <div class="p-6">
+              <h3 class="text-2xl byzantine-title text-yellow-300 mb-2">Mark</h3>
+              <p class="text-yellow-100 italic">Emperor's Herald</p>
+              <p class="mt-3">Played by Clayton Myers</p>
+            </div>
+          </div>
+        </a>
+
+        <!-- Theo (fictional) -->
+        <a href="https://en.wikipedia.org/wiki/First_Council_of_Nicaea" target="_blank" class="block">
+          <div class="cast-card bg-black bg-opacity-50 rounded-lg overflow-hidden transition duration-300">
+            <div class="h-64 bg-purple-700 flex items-center justify-center" aria-hidden="true">
+              <i class="fas fa-theater-masks text-6xl text-yellow-300"></i>
+            </div>
+            <div class="p-6">
+              <h3 class="text-2xl byzantine-title text-yellow-300 mb-2">Theo</h3>
+              <p class="text-yellow-100 italic">Bishop</p>
+              <p class="mt-3">Played by Gabe Bellotti</p>
+            </div>
+          </div>
+        </a>
+
+        <!-- New/Addendum Cast Members -->
+        <!-- SEEB (double for Arius) -->
+        <a href="https://en.wikipedia.org/wiki/Eusebius" target="_blank" class="block">
+          <div class="cast-card bg-black bg-opacity-50 rounded-lg overflow-hidden transition duration-300 hover:shadow-lg">
+            <div class="h-64 bg-purple-700 flex items-center justify-center" aria-hidden="true">
+              <i class="fas fa-scroll text-6xl text-yellow-300"></i>
+            </div>
+            <div class="p-6">
+              <h3 class="text-2xl byzantine-title text-yellow-300 mb-2">SEEB</h3>
+              <p class="text-yellow-100 italic">Bishop Of Caeserea</p>
+              <p class="mt-3">Played by Clent Bowers</p>
+            </div>
+          </div>
+        </a>
+
+        <!-- CRIPUS (double for Athanasius) -->
+        <a href="https://en.wikipedia.org/wiki/Crispus" target="_blank" class="block">
+          <div class="cast-card bg-black bg-opacity-50 rounded-lg overflow-hidden transition duration-300 hover:shadow-lg">
+            <div class="h-64 bg-purple-700 flex items-center justify-center" aria-hidden="true">
+              <i class="fas fa-crown text-6xl text-yellow-300"></i>
+            </div>
+            <div class="p-6">
+              <h3 class="text-2xl byzantine-title text-yellow-300 mb-2">CRIPUS</h3>
+              <p class="text-yellow-100 italic">Son of Constantine</p>
+              <p class="mt-3">Played by Nandi Sharma</p>
+            </div>
+          </div>
+        </a>
+
+        <!-- FAUSTA (actor TBD) -->
+        <a href="https://en.wikipedia.org/wiki/Fausta" target="_blank" class="block">
+          <div class="cast-card bg-black bg-opacity-50 rounded-lg overflow-hidden transition duration-300 hover:shadow-lg">
+            <div class="h-64 bg-purple-700 flex items-center justify-center" aria-hidden="true">
+              <i class="fas fa-chess-queen text-6xl text-yellow-300"></i>
+            </div>
+            <div class="p-6">
+              <h3 class="text-2xl byzantine-title text-yellow-300 mb-2">FAUSTA</h3>
+              <p class="text-yellow-100 italic">Wife of Constantine</p>
+              <p class="mt-3">Played by Carmen Ellrodt</p>
+            </div>
+          </div>
+        </a>
+
+        <!-- ALEXANDER (also Nicholas of Myra) -->
+        <a href="https://en.wikipedia.org/wiki/Pope_Alexander_I_of_Alexandria" target="_blank" class="block">
+          <div class="cast-card bg-black bg-opacity-50 rounded-lg overflow-hidden transition duration-300 hover:shadow-lg">
+            <div class="h-64 bg-purple-700 flex items-center justify-center" aria-hidden="true">
+              <i class="fas fa-cross text-6xl text-yellow-300"></i>
+            </div>
+            <div class="p-6">
+              <h3 class="text-2xl byzantine-title text-yellow-300 mb-2">ALEXANDER</h3>
+              <p class="text-yellow-100 italic">Bishop of Alexandria</p>
+              <p class="mt-3">Played by Nestor Vinelli</p>
+            </div>
+          </div>
+        </a>
+
+        <!-- PAPPY (link to Bishop Paphnutius) -->
+        <a href="https://en.wikipedia.org/wiki/Paphnutius_of_Thebes" target="_blank" class="block">
+          <div class="cast-card bg-black bg-opacity-50 rounded-lg overflow-hidden transition duration-300 hover:shadow-lg">
+            <div class="h-64 bg-purple-700 flex items-center justify-center" aria-hidden="true">
+              <i class="fas fa-church text-6xl text-yellow-300"></i>
+            </div>
+            <div class="p-6">
+              <h3 class="text-2xl byzantine-title text-yellow-300 mb-2">
+                <a href="https://en.wikipedia.org/wiki/Paphnutius" class="hover:underline" target="_blank">PAPPY</a>
+              </h3>
+              <p class="text-yellow-100 italic">Bishop Paphnutius</p>
+              <p class="mt-3">Played by Guy Picot</p>
+            </div>
+          </div>
+        </a>
+
+        <!-- EUST (double for Eusebius) -->
+        <a href="https://en.wikipedia.org/wiki/First_Council_of_Nicaea" target="_blank" class="block">
+          <div class="cast-card bg-black bg-opacity-50 rounded-lg overflow-hidden transition duration-300 hover:shadow-lg">
+            <div class="h-64 bg-purple-700 flex items-center justify-center" aria-hidden="true">
+              <i class="fas fa-user text-6xl text-yellow-300"></i>
+            </div>
+            <div class="p-6">
+              <h3 class="text-2xl byzantine-title text-yellow-300 mb-2">EUST</h3>
+              <p class="text-yellow-100 italic">Bishop of Carthago Nova</p>
+              <p class="mt-3">Played by Cole Parker</p>
+            </div>
+          </div>
+        </a>
+      </div>
+      <!-- 👈 close the grid -->
     </div>
-    <div>
-        <h3 class="text-2xl byzantine-title text-yellow-300 mb-4">Creative Team</h3>
-        <ul class="space-y-2">
-            <li><span class="font-semibold text-yellow-300">Written & Directed by:</span> Jan-David Soutar</li>
-            <li><span class="font-semibold text-yellow-300">Music by:</span> Jan-David Soutar</li></span> Kyle Donald</li></span> &  Aviram Spies</li>
-            <li><span class="font-semibold text-yellow-300">Additional Lyrics by:</span> </span> Rev. Dr. Michael F. Bird</li>
-            <li><span class="font-semibold text-yellow-300">Produced by:</span> Athena Rethis & Clent Bowers</li>
-            <li><span class="font-semibold text-yellow-300">Marketing/PR:</span> Tanya Dickson</li>
-            <li><span class="font-semibold text-yellow-300">Original Stage Design by:</span>  Jeremy Thompson</li>
-            <li><span class="font-semibold text-yellow-300">Production Design by:</span>  Courtney Stepleton</li>
-        </ul>
+    <!-- 👈 close the container -->
+  </section>
+  <!-- 👈 close the cast section -->
+
+  <!-- Gallery Section -->
+  <section id="gallery" class="py-16 bg-opacity-90 bg-purple-900 relative">
+    <div class="container mx-auto px-6">
+      <div class="text-center mb-12">
+        <h2 class="text-4xl byzantine-title text-yellow-300 mb-4">Gallery</h2>
+        <div class="w-24 h-1 bg-yellow-300 mx-auto"></div>
+      </div>
+
+      <!-- Elfsight Instagram Feed -->
+      <script src="https://static.elfsight.com/platform/platform.js" async></script>
+      <div class="elfsight-app-237dc60a-392c-497b-a0e3-9b370125d7fd" data-elfsight-app-lazy></div>
     </div>
-</div>
-</div>
-</div>
-</section>
-<!-- Cast Section -->
-<section id="cast" class="py-16 bg-opacity-90 bg-purple-900 relative">
-<div class="container mx-auto px-6">
-<div class="text-center mb-12">
-<h2 class="text-4xl byzantine-title text-yellow-300 mb-4">Meet The Cast</h2>
-<div class="w-24 h-1 bg-yellow-300 mx-auto"></div>
-</div>
-<div class="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
-<!-- Cast Member 1: Constantine -->
-<a href="https://en.wikipedia.org/wiki/Constantine_the_Great" target="_blank" class="block">
-  <div class="cast-card bg-black bg-opacity-50 rounded-lg overflow-hidden transition duration-300 hover:shadow-lg">
-    <div class="h-64 bg-purple-700 flex items-center justify-center" aria-hidden="true">
-      <i class="fas fa-crown text-6xl text-yellow-300"></i>
+  </section>
+
+  <!-- Tickets Section -->
+  <section id="tickets" class="py-16 bg-opacity-90 bg-purple-900 relative">
+    <div class="container mx-auto px-6">
+      <div class="text-center mb-12">
+        <h2 class="text-4xl byzantine-title text-yellow-300 mb-4">Get Tickets</h2>
+        <div class="w-24 h-1 bg-yellow-300 mx-auto"></div>
+      </div>
+
+      <div class="max-w-4xl mx-auto grid md:grid-cols-2 gap-8">
+        <!-- Ticket Option 1 -->
+        <div class="ticket-card p-8 rounded-lg transition duration-300">
+          <h3 class="text-2xl byzantine-title text-yellow-300 mb-4">General Admission</h3>
+          <p class="text-yellow-100 mb-6">Standard seating for one performance</p>
+          <p class="text-3xl font-bold text-yellow-300 mb-6">$20</p>
+          <a href="https://www.hollywoodfringe.org/projects/11553?tab=tickets" target="_blank" class="block w-full bg-yellow-600 hover:bg-yellow-500 text-black font-bold py-3 px-6 rounded-full text-center transition">
+            Purchase Tickets Starting May 1st! <i class="fas fa-ticket-alt ml-2"></i>
+          </a>
+        </div>
+
+        <!-- Ticket Option 2 -->
+        <div class="ticket-card p-8 rounded-lg transition duration-300">
+          <h3 class="text-2xl byzantine-title text-yellow-300 mb-4">Our Seed & Spark Page</h3>
+          <p class="text-yellow-100 mb-6">Help us bring Oh Constantine! to the stage!</p>
+          <p class="text-3xl font-bold text-yellow-300 mb-6">Click to Support Our Play</p>
+          <a href="https://seedandspark.com/fund/oh-constantine-play" target="_blank" class="block w-full bg-yellow-600 hover:bg-yellow-500 text-black font-bold py-3 px-6 rounded-full text-center transition">
+            Contribute! <i class="fas fa-star ml-2"></i>
+          </a>
+        </div>
+      </div>
     </div>
-    
-    <div class="p-6">
-      <h3 class="text-2xl byzantine-title text-yellow-300 mb-2">Constantine</h3>
-      <p class="text-yellow-100 italic">Emperor of Rome</p>
-      <p class="mt-3">Played by Cameron Ley</p>
+
+    <!-- Show Schedule Section -->
+    <section id="show-schedule" class="py-16 relative overflow-hidden">
+      <div class="container mx-auto px-6">
+        <div class="text-center mb-12">
+          <h2 class="text-4xl byzantine-title text-yellow-300 mb-4">Show Schedule</h2>
+          <p class="text-center text-sm text-yellow-100 mt-2 md:hidden">Swipe to see full schedule ⟶</p>
+          <p class="text-lg text-yellow-100 italic max-w-2xl mx-auto">Choose your night of holy chaos!</p>
+        </div>
+
+        <div class="overflow-x-auto w-full max-w-full">
+          <div class="w-full max-w-5xl mx-auto bg-black bg-opacity-70 p-8 rounded-3xl ornamental-border shadow-xl">
+            <table class="min-w-[600px] md:min-w-full table-auto text-yellow-100 text-sm sm:text-base text-center">
+              <thead>
+                <tr>
+                  <th class="px-4 py-2">Date</th>
+                  <th class="px-4 py-2">Event</th>
+                  <th class="px-4 py-2">Time</th>
+                  <th class="px-4 py-2">Venue</th>
+                  <th class="px-4 py-2">Tickets</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td class="px-4 py-2">Sun, June 8</td>
+                  <td class="px-4 py-2">Preview Night</td>
+                  <td class="px-4 py-2">9:45 PM</td>
+                  <td class="px-4 py-2">Zephyr Theatre</td>
+                  <td class="px-4 py-2">
+                    <a href="https://www.hollywoodfringe.org/projects/11553?embed=false&performance_id=27027&tab=performance" class="text-blue-400 hover:underline" target="_blank">Get Tickets</a>
+                  </td>
+                </tr>
+                <tr>
+                  <td class="px-4 py-2">Fri, June 13</td>
+                  <td class="px-4 py-2">Performance 1</td>
+                  <td class="px-4 py-2">4:30 PM</td>
+                  <td class="px-4 py-2">Zephyr Theatre</td>
+                  <td class="px-4 py-2">
+                    <a href="https://www.hollywoodfringe.org/projects/11553?embed=false&performance_id=27028&tab=performance" class="text-blue-400 hover:underline" target="_blank">Get Tickets</a>
+                  </td>
+                </tr>
+                <tr>
+                  <td class="px-4 py-2">Sun, June 15</td>
+                  <td class="px-4 py-2">Performance 2</td>
+                  <td class="px-4 py-2">7:45 PM</td>
+                  <td class="px-4 py-2">Zephyr Theatre</td>
+                  <td class="px-4 py-2">
+                    <a href="https://www.hollywoodfringe.org/projects/11553?embed=false&performance_id=27029&tab=performance" class="text-blue-400 hover:underline" target="_blank">Get Tickets</a>
+                  </td>
+                </tr>
+                <tr>
+                  <td class="px-4 py-2">Wed, June 18</td>
+                  <td class="px-4 py-2">Performance 3</td>
+                  <td class="px-4 py-2">8:15 PM</td>
+                  <td class="px-4 py-2">Zephyr Theatre</td>
+                  <td class="px-4 py-2">
+                    <a href="https://www.hollywoodfringe.org/projects/11553?embed=false&performance_id=28324&tab=performance" class="text-blue-400 hover:underline" target="_blank">Get Tickets</a>
+                  </td>
+                </tr>
+                <tr>
+                  <td class="px-4 py-2">Thu, June 19</td>
+                  <td class="px-4 py-2">Performance 4</td>
+                  <td class="px-4 py-2">5:00 PM</td>
+                  <td class="px-4 py-2">Zephyr Theatre</td>
+                  <td class="px-4 py-2">
+                    <a href="https://www.hollywoodfringe.org/projects/11553?embed=false&performance_id=27030&tab=performance" class="text-blue-400 hover:underline" target="_blank">Get Tickets</a>
+                  </td>
+                </tr>
+                <tr>
+                  <td class="px-4 py-2">Thu, June 25</td>
+                  <td class="px-4 py-2">Performance 5</td>
+                  <td class="px-4 py-2">7:00 PM</td>
+                  <td class="px-4 py-2">Zephyr Theatre</td>
+                  <td class="px-4 py-2">
+                    <a href="https://www.hollywoodfringe.org/projects/11553?embed=false&performance_id=28471&tab=performance" class="text-blue-400 hover:underline" target="_blank">Get Tickets</a>
+                  </td>
+                </tr>
+                <tr>
+                  <td class="px-4 py-2">Sat, June 28</td>
+                  <td class="px-4 py-2">Closing Night</td>
+                  <td class="px-4 py-2">10:30 PM</td>
+                  <td class="px-4 py-2">Zephyr Theatre</td>
+                  <td class="px-4 py-2">
+                    <a href="https://www.hollywoodfringe.org/projects/11553?embed=false&performance_id=27031&tab=performance" class="text-blue-400 hover:underline" target="_blank">Get Tickets</a>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+    </section>
+  </section>
+
+  <!-- Contact Section -->
+  <section id="contact" class="py-16 bg-opacity-90 bg-purple-900 relative rounded-t-3xl rounded-b-3xl overflow-hidden">
+    <div class="container mx-auto px-6">
+      <div class="text-center mb-12">
+        <h2 class="text-4xl byzantine-title text-yellow-300 mb-4">Contact Us</h2>
+        <div class="w-24 h-1 bg-yellow-300 mx-auto"></div>
+      </div>
+
+      <div class="max-w-2xl mx-auto bg-black bg-opacity-50 p-8 rounded-lg ornamental-border">
+        <div class="text-center mb-8">
+          <p class="text-xl text-yellow-100 mb-6">For press inquiries, group sales, or any questions about the show:</p>
+          <a href="mailto:ohconstantineplay@gmail.com" class="inline-block bg-yellow-600 hover:bg-yellow-500 text-black font-bold py-3 px-8 rounded-full text-lg transition transform hover:scale-105">
+            Email Us <i class="fas fa-envelope ml-2"></i>
+          </a>
+        </div>
+        <div class="flex justify-center space-x-6 mt-8">
+          <a href="https://www.facebook.com/profile.php?id=61574632182433" target="_blank" class="social-icon text-yellow-100 text-2xl transition" aria-label="Facebook">
+            <i class="fab fa-facebook"></i>
+          </a>
+          <a href="https://www.instagram.com/ohconstantineplay" target="_blank" class="social-icon text-yellow-100 text-2xl transition" aria-label="Instagram">
+            <i class="fab fa-instagram"></i>
+          </a>
+          <a href="https://www.tiktok.com/@ohconstantineplay" target="_blank" class="social-icon text-yellow-100 text-2xl transition" aria-label="TikTok">
+            <i class="fab fa-tiktok"></i>
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="bg-black bg-opacity-80 py-8">
+    <div class="container mx-auto px-6">
+      <div class="flex flex-col md:flex-row justify-between items-center">
+        <div class="text-xl byzantine-title text-yellow-300 mb-4 md:mb-0">Oh Constantine!</div>
+        <div class="text-yellow-100 text-center md:text-right">
+          <p>&copy; 2025 The Society Of The Cellar</p>
+          <p class="text-sm mt-1">All rights reserved</p>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Landbot Embed -->
+  <script type="module" src="https://cdn.landbot.io/landbot-3/landbot-3.0.0.mjs"></script>
+  <!-- Custom Confessional Box with Landbot -->
+  <div class="confessional-box" id="confessionalBox">
+    <div class="confessional-header" id="confessionalToggle">
+      <h3>Ask Eusebius!</h3>
+    </div>
+    <div class="confessional-content hidden" id="confessionalContent">
+      <div id="landbotEusebius" style="width: 100%; height: 500px;"></div>
     </div>
   </div>
-</a>
-<!-- Cast Member 2: Constantia -->
-<a href="https://en.wikipedia.org/wiki/Flavia_Julia_Constantia" target="_blank" class="block">
-  <div class="cast-card bg-black bg-opacity-50 rounded-lg overflow-hidden transition duration-300 hover:shadow-lg">
-    <div class="h-64 bg-purple-700 flex items-center justify-center" aria-hidden="true">
-      <i class="fas fa-female text-6xl text-yellow-300"></i>
-    </div>
-    <div class="p-6">
-      <h3 class="text-2xl byzantine-title text-yellow-300 mb-2">Constantia</h3>
-      <p class="text-yellow-100 italic">Sister of Constantine</p>
-      <p class="mt-3">Played by Marlena Hummel</p>
-    </div>
-  </div>
-</a>
-<!-- Cast Member 3: Helena -->
-<a href="https://en.wikipedia.org/wiki/Helena_(empress)" target="_blank" class="block">
-  <div class="cast-card bg-black bg-opacity-50 rounded-lg overflow-hidden transition duration-300 hover:shadow-lg">
-    <div class="h-64 bg-purple-700 flex items-center justify-center" aria-hidden="true">
-      <i class="fas fa-chess-queen text-6xl text-yellow-300"></i>
-    </div>
-    <div class="p-6">
-      <h3 class="text-2xl byzantine-title text-yellow-300 mb-2">Helena</h3>
-      <p class="text-yellow-100 italic">Mother of Constantine</p>
-      <p class="mt-3">Played by Jennifer Lamar</p>
-    </div>
-  </div>
-</a>
-<!-- Cast Member 4: Athanasius -->
-<a href="https://en.wikipedia.org/wiki/Athanasius_of_Alexandria" target="_blank" class="block">
-  <div class="cast-card bg-black bg-opacity-50 rounded-lg overflow-hidden transition duration-300 hover:shadow-lg">
-    <div class="h-64 bg-purple-700 flex items-center justify-center" aria-hidden="true">
-      <i class="fas fa-cross text-6xl text-yellow-300"></i>
-    </div>
-    <div class="p-6">
-      <h3 class="text-2xl byzantine-title text-yellow-300 mb-2">Athanasius</h3>
-      <p class="text-yellow-100 italic">Bishop of Alexandria</p>
-      <p class="mt-3">Played by Nandi Sharma</p>
-    </div>
-  </div>
-</a>
-<!-- Cast Member 5: Eusebius -->
-<a href="https://en.wikipedia.org/wiki/Eusebius_of_Nicomedia" target="_blank" class="block">
-  <div class="cast-card bg-black bg-opacity-50 rounded-lg overflow-hidden transition duration-300 hover:shadow-lg">
-    <div class="h-64 bg-purple-700 flex items-center justify-center" aria-hidden="true">
-      <i class="fas fa-church text-6xl text-yellow-300"></i>
-    </div>
-    <div class="p-6">
-      <h3 class="text-2xl byzantine-title text-yellow-300 mb-2">Eusebius</h3>
-      <p class="text-yellow-100 italic">Bishop of Nicomedia</p>
-      <p class="mt-3">Played by Cole Parker</p>
-    </div>
-  </div>
-</a>
-<!-- Cast Member 6: Arius -->
-<a href="https://en.wikipedia.org/wiki/Arius" target="_blank" class="block">
-  <div class="cast-card bg-black bg-opacity-50 rounded-lg overflow-hidden transition duration-300 hover:shadow-lg">
-    <div class="h-64 bg-purple-700 flex items-center justify-center" aria-hidden="true">
-      <i class="fas fa-dove text-6xl text-yellow-300"></i>
-    </div>
-    <div class="p-6">
-      <h3 class="text-2xl byzantine-title text-yellow-300 mb-2">Arius</h3>
-      <p class="text-yellow-100 italic">Presbyter of Alexandria</p>
-      <p class="mt-3">Played by Clent Bowers</p>
-    </div>
-  </div>
-</a>
-<!-- Cast Member 7: Mark (no wiki) -->
-<a href="https://en.wikipedia.org/wiki/First_Council_of_Nicaea" target="_blank" class="block">
-  <div class="cast-card bg-black bg-opacity-50 rounded-lg overflow-hidden transition duration-300">
-    <div class="h-64 bg-purple-700 flex items-center justify-center" aria-hidden="true">
-      <i class="fas fa-horse-head text-6xl text-yellow-300"></i>
-    </div>
-    <div class="p-6">
-      <h3 class="text-2xl byzantine-title text-yellow-300 mb-2">Mark</h3>
-      <p class="text-yellow-100 italic">Emperor's Herald</p>
-      <p class="mt-3">Played by Clayton Myers</p>
-    </div>
-  </div>
-</a>
-<!-- Cast Member 8: Theo (fictional) -->
-<a href="https://en.wikipedia.org/wiki/First_Council_of_Nicaea" target="_blank" class="block">
-  <div class="cast-card bg-black bg-opacity-50 rounded-lg overflow-hidden transition duration-300">
-    <div class="h-64 bg-purple-700 flex items-center justify-center" aria-hidden="true">
-      <i class="fas fa-theater-masks text-6xl text-yellow-300"></i>
-    </div>
-    <div class="p-6">
-      <h3 class="text-2xl byzantine-title text-yellow-300 mb-2">Theo</h3>
-      <p class="text-yellow-100 italic">Bishop</p>
-      <p class="mt-3">Played by Gabe Bellotti</p>
-    </div>
-  </div>
-</a>
+  <script type="module">
+    const landbot = new Landbot.Container({
+      container: '#landbotEusebius',
+      configUrl: 'https://storage.googleapis.com/landbot.site/v3/H-2886775-CR0KCOEU4E15QMCE/index.json',
+    });
+  </script>
 
-</div> <!-- 👈 close the grid -->
-</div> <!-- 👈 close the container -->
-</section> <!-- 👈 close the cast section -->
+  <!-- Scripts -->
+  <script>
+    document.addEventListener('DOMContentLoaded', function () {
+      // Mobile menu toggle
+      const menuButton = document.querySelector('nav button');
+      if (menuButton) {
+        menuButton.addEventListener('click', function () {
+          document.getElementById('mobileMenu').classList.toggle('hidden');
+        });
+      }
 
-<!-- Gallery Section -->
-<section id="gallery" class="py-16 bg-opacity-90 bg-purple-900 relative">
-<div class="container mx-auto px-6">
-<div class="text-center mb-12">
-<h2 class="text-4xl byzantine-title text-yellow-300 mb-4">Gallery</h2>
-<div class="w-24 h-1 bg-yellow-300 mx-auto"></div>
-</div>
+      // Confessional box toggle
+      const confessionalToggle = document.getElementById('confessionalToggle');
+      const confessionalBox = document.getElementById('confessionalBox');
+      const confessionalContent = document.getElementById('confessionalContent');
+      if (confessionalToggle && confessionalBox && confessionalContent) {
+        confessionalToggle.addEventListener('click', function () {
+          confessionalBox.classList.toggle('open');
+          confessionalContent.classList.toggle('hidden');
+        });
+      }
 
-<!-- Elfsight Instagram Feed | Untitled Instagram Feed -->
-<script src="https://static.elfsight.com/platform/platform.js" async></script>
-<div class="elfsight-app-237dc60a-392c-497b-a0e3-9b370125d7fd" data-elfsight-app-lazy></div>
-
-<!-- Tickets Section -->
-<section id="tickets" class="py-16 bg-opacity-90 bg-purple-900 relative">
-<div class="container mx-auto px-6">
-<div class="text-center mb-12">
-<h2 class="text-4xl byzantine-title text-yellow-300 mb-4">Get Tickets</h2>
-<div class="w-24 h-1 bg-yellow-300 mx-auto"></div>
-</div>
-
-<div class="max-w-4xl mx-auto grid md:grid-cols-2 gap-8">
-<!-- Ticket Option 1 -->
-<div class="ticket-card p-8 rounded-lg transition duration-300">
-<h3 class="text-2xl byzantine-title text-yellow-300 mb-4">General Admission</h3>
-<p class="text-yellow-100 mb-6">Standard seating for one performance</p>
-<p class="text-3xl font-bold text-yellow-300 mb-6">$20</p>
-<a href="https://www.hollywoodfringe.org/projects/11553?tab=tickets" target="_blank" class="block w-full bg-yellow-600 hover:bg-yellow-500 text-black font-bold py-3 px-6 rounded-full text-center transition">
-Purchase Tickets Starting May 1st! <i class="fas fa-ticket-alt ml-2"></i>
-</a>
-</div>
-
-<!-- Ticket Option 2 -->
-<div class="ticket-card p-8 rounded-lg transition duration-300">
-<h3 class="text-2xl byzantine-title text-yellow-300 mb-4">Our Seed & Spark Page</h3>
-<p class="text-yellow-100 mb-6">Help us bring Oh Constantine! to the stage!</p>
-<p class="text-3xl font-bold text-yellow-300 mb-6">Click to Support Our</p>
-<a href="https://www.hollywoodfringe.org/projects/11553?tab=tickets" target="_blank" class="block w-full bg-yellow-600 hover:bg-yellow-500 text-black font-bold py-3 px-6 rounded-full text-center transition">
-Purchase <i class="fas fa-star ml-2"></i>
-</a>
-</div>
-</div>
-<!-- Show Schedule Section -->
-<section id="show-schedule" class="py-16 relative overflow-hidden">
-
-  <div class="container mx-auto px-6">
-    <div class="text-center mb-12">
-      <h2 class="text-4xl byzantine-title text-yellow-300 mb-4">Show Schedule</h2>
-      <p class="text-center text-sm text-yellow-100 mt-2 md:hidden">Swipe to see full schedule ⟶</p>
-      <p class="text-lg text-yellow-100 italic max-w-2xl mx-auto">Choose your night of holy chaos!</p>
-    </div>
-
-<div class="overflow-x-auto w-full max-w-full">
-  <div class="w-full max-w-5xl mx-auto bg-black bg-opacity-70 p-8 rounded-3xl ornamental-border shadow-xl">
-   <table class="min-w-[600px] md:min-w-full table-auto text-yellow-100 text-sm sm:text-base text-center">
-
-  <thead>
-    <tr>
-      <th class="px-4 py-2">Date</th>
-      <th class="px-4 py-2">Event</th>
-      <th class="px-4 py-2">Time</th>
-      <th class="px-4 py-2">Venue</th>
-      <th class="px-4 py-2">Tickets</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td class="px-4 py-2">Sun, June 8</td>
-      <td class="px-4 py-2">Preview Night</td>
-      <td class="px-4 py-2">9:45 PM</td>
-      <td class="px-4 py-2">Zephyr Theatre</td>
-      <td class="px-4 py-2"><a href="https://www.hollywoodfringe.org/projects/11553?embed=false&performance_id=27027&tab=performance" class="text-blue-400 hover:underline" target="_blank">Get Tickets</a></td>
-    </tr>
-    <tr>
-      <td class="px-4 py-2">Fri, June 13</td>
-      <td class="px-4 py-2">Performance 1</td>
-      <td class="px-4 py-2">4:30 PM</td>
-      <td class="px-4 py-2">Zephyr Theatre</td>
-      <td class="px-4 py-2"><a href="https://www.hollywoodfringe.org/projects/11553?embed=false&performance_id=27028&tab=performance" class="text-blue-400 hover:underline" target="_blank">Get Tickets</a></td>
-    </tr>
-    <tr>
-      <td class="px-4 py-2">Sun, June 15</td>
-      <td class="px-4 py-2">Performance 2</td>
-      <td class="px-4 py-2">7:45 PM</td>
-      <td class="px-4 py-2">Zephyr Theatre</td>
-      <td class="px-4 py-2"> <a href="https://www.hollywoodfringe.org/projects/11553?embed=false&performance_id=27029&tab=performance" class="text-blue-400 hover:underline" target="_blank">Get Tickets</a></td>
-    </tr>
-    <tr>
-      <td class="px-4 py-2">Wed, June 18</td>
-      <td class="px-4 py-2">Performance 3</td>
-      <td class="px-4 py-2">8:15 PM</td>
-      <td class="px-4 py-2">Zephyr Theatre</td>
-      <td class="px-4 py-2"> <a href="https://www.hollywoodfringe.org/projects/11553?embed=false&performance_id=28324&tab=performance" class="text-blue-400 hover:underline" target="_blank">Get Tickets</a></td>
-    </tr>
-    <tr>
-      <td class="px-4 py-2">Thu, June 19</td>
-      <td class="px-4 py-2">Performance 4</td>
-      <td class="px-4 py-2">5:00 PM</td>
-      <td class="px-4 py-2">Zephyr Theatre</td>
-      <td class="px-4 py-2"> <a href="https://www.hollywoodfringe.org/projects/11553?embed=false&performance_id=27030&tab=performance" class="text-blue-400 hover:underline" target="_blank">Get Tickets</a></td>
-    </tr>
-      <tr>
-      <td class="px-4 py-2">Thu, June 25</td>
-      <td class="px-4 py-2">Performance 5</td>
-      <td class="px-4 py-2">7:00 PM</td>
-      <td class="px-4 py-2">Zephyr Theatre</td>
-      <td class="px-4 py-2"> <a href="https://www.hollywoodfringe.org/projects/11553?embed=false&performance_id=28471&tab=performance" class="text-blue-400 hover:underline" target="_blank">Get Tickets</a></td>
-    </tr>
-    <tr>
-      <td class="px-4 py-2">Sat, June 28</td>
-      <td class="px-4 py-2">Closing Night</td>
-      <td class="px-4 py-2">10:30 PM</td>
-      <td class="px-4 py-2">Zephyr Theatre</td>
-      <td class="px-4 py-2"><a href="https://www.hollywoodfringe.org/projects/11553?embed=false&performance_id=27031&tab=performance" class="text-blue-400 hover:underline" target="_blank">Get Tickets</a></td>
-    </tr>
-  </tbody>
-</table>
-   </table>
-    </div>
-  </div>
-</section>
-
-
-<!-- Contact Section -->
-<section id="contact" class="py-16 bg-opacity-90 bg-purple-900 relative rounded-t-3xl rounded-b-3xl overflow-hidden">
-
-<div class="container mx-auto px-6">
-<div class="text-center mb-12">
-<h2 class="text-4xl byzantine-title text-yellow-300 mb-4">Contact Us</h2>
-<div class="w-24 h-1 bg-yellow-300 mx-auto"></div>
-</div>
-
-<div class="max-w-2xl mx-auto bg-black bg-opacity-50 p-8 rounded-lg ornamental-border">
-<div class="text-center mb-8">
-<p class="text-xl text-yellow-100 mb-6">For press inquiries, group sales, or any questions about the show:</p>
-<a href="mailto:ohconstantineplay@gmail.com" class="inline-block bg-yellow-600 hover:bg-yellow-500 text-black font-bold py-3 px-8 rounded-full text-lg transition transform hover:scale-105">
-Email Us <i class="fas fa-envelope ml-2"></i>
-</a>
-</div>
-
-<div class="flex justify-center space-x-6 mt-8">
-    <a href="https://www.facebook.com/profile.php?id=61574632182433" target="_blank" class="social-icon text-yellow-100 text-2xl transition" aria-label="Facebook">
-        <i class="fab fa-facebook"></i>
-    </a>
-    <a href="https://www.instagram.com/ohconstantineplay" target="_blank" class="social-icon text-yellow-100 text-2xl transition" aria-label="Instagram">
-        <i class="fab fa-instagram"></i>
-    </a>
-    <a href="https://www.tiktok.com/@ohconstantineplay" target="_blank" class="social-icon text-yellow-100 text-2xl transition" aria-label="TikTok">
-        <i class="fab fa-tiktok"></i>
-    </a>
-</div>
-
-</div>
-</div>
-</section>
-
-<!-- Footer -->
-<footer class="bg-black bg-opacity-80 py-8">
-<div class="container mx-auto px-6">
-<div class="flex flex-col md:flex-row justify-between items-center">
-<div class="text-xl byzantine-title text-yellow-300 mb-4 md:mb-0">Oh Constantine!</div>
-<div class="text-yellow-100 text-center md:text-right">
-<p>&copy; 2025 The Society Of The Cellar</p>
-<p class="text-sm mt-1">All rights reserved</p>
-</div>
-</div>
-</div>
-</footer>
-
-
-<!-- Landbot Embed -->
-<script type="module" src="https://cdn.landbot.io/landbot-3/landbot-3.0.0.mjs"></script>
-<!-- Custom Confessional Box with Landbot -->
-<div class="confessional-box" id="confessionalBox">
-  <div class="confessional-header" id="confessionalToggle">
-    <h3>Ask Eusebius!</h3>
-  </div>
-  <div class="confessional-content hidden" id="confessionalContent">
-    <div id="landbotEusebius" style="width: 100%; height: 500px;"></div>
-  </div>
-</div>
-
-<script type="module">
-  const landbot = new Landbot.Container({
-    container: '#landbotEusebius',
-    configUrl: 'https://storage.googleapis.com/landbot.site/v3/H-2886775-CR0KCOEU4E15QMCE/index.json',
-  });
-</script>
-
-
-
-<script>
-// Mobile menu toggle (simplified)
-document.querySelector('nav button').addEventListener('click', function() {
-document.getElementById('mobileMenu').classList.toggle('hidden');
-});
-// Confessional chat box toggle
-const confessionalToggle = document.getElementById('confessionalToggle');
-const confessionalBox = document.getElementById('confessionalBox');
-const confessionalContent = document.getElementById('confessionalContent');
-confessionalToggle.addEventListener('click', function() {
-confessionalBox.classList.toggle('open');
-confessionalContent.classList.toggle('hidden');
-});
-// Countdown timer to opening night (June 8, 2025)
-function updateCountdown() {
-const now = new Date();
-const openingNight = new Date('June 8, 2025 00:00:00');
-const diff = openingNight - now;
-const days = Math.floor(diff / (1000 * 60 * 60 * 24));
-const hours = Math.floor((diff % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-const minutes = Math.floor((diff % (1000 * 60 * 60)) / (1000 * 60));
-const seconds = Math.floor((diff % (1000 * 60)) / 1000);
-document.getElementById('countdown-timer').innerHTML = 
-`${days}d ${hours}h ${minutes}m ${seconds}s`;
-}// Countdown timer to ticket sales (May 1, 2025)
-function updateTicketCountdown() {
-  const now = new Date();
-  const ticketLaunch = new Date('May 1, 2025 00:00:00');
-  const diff = ticketLaunch - now;
-
-  if (diff > 0) {
-    const days = Math.floor(diff / (1000 * 60 * 60 * 24));
-    const hours = Math.floor((diff % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-    const minutes = Math.floor((diff % (1000 * 60 * 60)) / (1000 * 60));
-    const seconds = Math.floor((diff % (1000 * 60)) / 1000);
-    document.getElementById('tickets-countdown-timer').innerHTML =
-      `${days}d ${hours}h ${minutes}m ${seconds}s`;
-  } else {
-   const saleElement = document.getElementById('tickets-countdown-timer');
-saleElement.innerHTML = "🎟️ Tickets are now ON SALE! 🎟️";
-saleElement.classList.add('glow-on-sale-text');
-
-  }
-}
-function updateTicketButton() {
-  const now = new Date();
-  const saleDate = new Date('May 1, 2025 00:00:00');
-  const buyButton = document.getElementById('buyTicketsButton');
-
-  if (now >= saleDate) {
-    buyButton.innerText = "Buy Tickets Now!";
-  } else {
-    buyButton.innerText = "Tickets On Sale May 1st!";
-  }
-}
-
-// Call it once right away
-updateTicketButton();
-
-// Update it every minute, just in case people leave the page open overnight
-setInterval(updateTicketButton, 60000);
-
-setInterval(updateTicketCountdown, 1000);
-updateTicketCountdown();
-
-setInterval(updateCountdown, 1000);
-updateCountdown();
-/*
-document.addEventListener('DOMContentLoaded', function() {
-const choirAudio = document.getElementById('choirAudio');
-choirAudio.volume = 0.3;
-document.addEventListener('click', function() {
-choirAudio.muted = false;
-choirAudio.play().catch(e => console.log("Audio play prevented:", e));
-}, { once: true });
-});
-*/
-// Easter egg in console
-console.log("%cVOLTAIRE GOD SPEED US TO THE GLORIUS MUSE", "color: #FFC107; font-size: 24px; font-weight: bold;");
-console.log("%cThe true believers know the secret of the Nika riots...", "color: #f8f3e6;");
-</script>
-<p style="border-radius: 8px; text-align: center; font-size: 12px; color: #fff; margin-top: 16px;position: fixed; left: 8px; bottom: 8px; z-index: 10; background: rgba(0, 0, 0, 0.8); padding: 4px 8px;">Made with <img src="https://enzostvs-deepsite.hf.space/logo.svg" alt="DeepSite Logo" style="width: 16px; height: 16px; vertical-align: middle;display:inline-block;margin-right:3px;filter:brightness(0) invert(1);"><a href="https://enzostvs-deepsite.hf.space" style="color: #fff;text-decoration: underline;" target="_blank" >DeepSite</a> - 🧬 <a href="https://enzostvs-deepsite.hf.space?remix=phreakwenci/oh-constantine-http-www-meganrippey-com" style="color: #fff;text-decoration: underline;" target="_blank" >Remix</a></p><script>
-  document.addEventListener('DOMContentLoaded', function () {
-    // Mobile menu toggle
-    const menuButton = document.querySelector('nav button');
-    if (menuButton) {
-      menuButton.addEventListener('click', function () {
-        document.getElementById('mobileMenu').classList.toggle('hidden');
-      });
-    }
-
-    // Confessional box
-    const confessionalToggle = document.getElementById('confessionalToggle');
-    const confessionalBox = document.getElementById('confessionalBox');
-    const confessionalContent = document.getElementById('confessionalContent');
-
-    if (confessionalToggle && confessionalBox && confessionalContent) {
-      confessionalToggle.addEventListener('click', function () {
-        confessionalBox.classList.toggle('open');
-        confessionalContent.classList.toggle('hidden');
-      });
-    }
-
-    // Email Signup Modal
-    const openSignup = document.getElementById('openSignup');
-    const closeSignup = document.getElementById('closeSignup');
-    const signupModal = document.getElementById('signupModal');
-
-    if (openSignup && closeSignup && signupModal) {
-      openSignup.addEventListener('click', () => {
-        signupModal.classList.remove('hidden');
-      });
-
-      closeSignup.addEventListener('click', () => {
-        signupModal.classList.add('hidden');
-      });
-    }
-
-    // Countdown to Opening Night
-    function updateCountdown() {
-      const now = new Date();
-      const openingNight = new Date('June 8, 2025 00:00:00');
-      const diff = openingNight - now;
-      const days = Math.floor(diff / (1000 * 60 * 60 * 24));
-      const hours = Math.floor((diff % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-      const minutes = Math.floor((diff % (1000 * 60 * 60)) / (1000 * 60));
-      const seconds = Math.floor((diff % (1000 * 60)) / 1000);
-      document.getElementById('countdown-timer').textContent = `${days}d ${hours}h ${minutes}m ${seconds}s`;
-    }
-
-    // Countdown to Ticket Launch
-    function updateTicketCountdown() {
-      const now = new Date();
-      const ticketLaunch = new Date('May 1, 2025 00:00:00');
-      const diff = ticketLaunch - now;
-      const countdown = document.getElementById('tickets-countdown-timer');
-
-      if (diff > 0) {
+      // Countdown to Opening Night (June 8, 2025)
+      function updateCountdown() {
+        const now = new Date();
+        const openingNight = new Date('June 8, 2025 00:00:00');
+        const diff = openingNight - now;
         const days = Math.floor(diff / (1000 * 60 * 60 * 24));
         const hours = Math.floor((diff % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
         const minutes = Math.floor((diff % (1000 * 60 * 60)) / (1000 * 60));
         const seconds = Math.floor((diff % (1000 * 60)) / 1000);
-        countdown.textContent = `${days}d ${hours}h ${minutes}m ${seconds}s`;
-      } else {
-        countdown.innerHTML = "🎟️ Tickets are now ON SALE! 🎟️";
-        countdown.classList.add('glow-on-sale-text');
+        document.getElementById('countdown-timer').textContent = `${days}d ${hours}h ${minutes}m ${seconds}s`;
       }
-    }
 
-    // Update Ticket Button Text
-    function updateTicketButton() {
-      const now = new Date();
-      const saleDate = new Date('May 1, 2025 00:00:00');
-      const buyButton = document.getElementById('buyTicketsButton');
-      if (buyButton) {
-        buyButton.innerText = now >= saleDate ? "Buy Tickets Now!" : "Tickets On Sale May 1st!";
+      // Countdown to Ticket Launch (May 1, 2025)
+      function updateTicketCountdown() {
+        const now = new Date();
+        const ticketLaunch = new Date('May 1, 2025 00:00:00');
+        const diff = ticketLaunch - now;
+        const countdown = document.getElementById('tickets-countdown-timer');
+
+        if (diff > 0) {
+          const days = Math.floor(diff / (1000 * 60 * 60 * 24));
+          const hours = Math.floor((diff % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+          const minutes = Math.floor((diff % (1000 * 60 * 60)) / (1000 * 60));
+          const seconds = Math.floor((diff % (1000 * 60)) / 1000);
+          countdown.textContent = `${days}d ${hours}h ${minutes}m ${seconds}s`;
+        } else {
+          countdown.innerHTML = "🎟️ Tickets are now ON SALE! 🎟️";
+          countdown.classList.add('glow-on-sale-text');
+        }
       }
-    }
 
-    // Run once and set intervals
-    updateCountdown();
-    updateTicketCountdown();
-    updateTicketButton();
-    setInterval(updateCountdown, 1000);
-    setInterval(updateTicketCountdown, 1000);
-    setInterval(updateTicketButton, 60000);
-  });
-</script>
+      // Update Ticket Button Text
+      function updateTicketButton() {
+        const now = new Date();
+        const saleDate = new Date('May 1, 2025 00:00:00');
+        const buyButton = document.getElementById('buyTicketsButton');
+        if (buyButton) {
+          buyButton.innerText = now >= saleDate ? "Buy Tickets Now!" : "Tickets On Sale May 1st!";
+        }
+      }
+
+      // Initialize once and set intervals
+      updateCountdown();
+      updateTicketCountdown();
+      updateTicketButton();
+      setInterval(updateCountdown, 1000);
+      setInterval(updateTicketCountdown, 1000);
+      setInterval(updateTicketButton, 60000);
+    });
+
+    // Easter egg in console
+    console.log("%cVOLTAIRE GOD SPEED US TO THE GLORIOUS MUSE", "color: #FFC107; font-size: 24px; font-weight: bold;");
+    console.log("%cThe true believers know the secret of the Nika riots...", "color: #f8f3e6;");
+  </script>
+
+  <p style="border-radius: 8px; text-align: center; font-size: 12px; color: #fff; margin-top: 16px; position: fixed; left: 8px; bottom: 8px; z-index: 10; background: rgba(0, 0, 0, 0.8); padding: 4px 8px;">
+    Made with 
+    <img src="https://enzostvs-deepsite.hf.space/logo.svg" alt="DeepSite Logo" style="width: 16px; height: 16px; vertical-align: middle;display:inline-block;margin-right:3px;filter:brightness(0) invert(1);">
+    <a href="https://enzostvs-deepsite.hf.space" style="color: #fff;text-decoration: underline;" target="_blank">DeepSite</a>  
+    - 🧬 
+    <a href="https://enzostvs-deepsite.hf.space?remix=phreakwenci/oh-constantine-http-www-meganrippey-com" style="color: #fff;text-decoration: underline;" target="_blank">Remix</a>
+  </p>
 </body>
 </html>
