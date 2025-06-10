@@ -845,11 +845,18 @@
         const now = new Date();
         const openingNight = new Date('June 8, 2025 21:30:00');
         const diff = openingNight - now;
-        const days = Math.floor(diff / (1000 * 60 * 60 * 24));
-        const hours = Math.floor((diff % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-        const minutes = Math.floor((diff % (1000 * 60 * 60)) / (1000 * 60));
-        const seconds = Math.floor((diff % (1000 * 60)) / 1000);
-        document.getElementById('countdown-timer').textContent = `${days}d ${hours}h ${minutes}m ${seconds}s`;
+        const countdownEl = document.getElementById('countdown-timer');
+
+        if (diff > 0) {
+          const days = Math.floor(diff / (1000 * 60 * 60 * 24));
+          const hours = Math.floor((diff % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+          const minutes = Math.floor((diff % (1000 * 60 * 60)) / (1000 * 60));
+          const seconds = Math.floor((diff % (1000 * 60)) / 1000);
+          countdownEl.textContent = `${days}d ${hours}h ${minutes}m ${seconds}s`;
+        } else {
+          countdownEl.innerHTML = '🎭 The show is LIVE! 🎭';
+          countdownEl.classList.add('glow-on-sale-text');
+        }
       }
 
       // Countdown to Ticket Launch (May 1, 2025)
