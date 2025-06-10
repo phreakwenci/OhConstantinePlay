@@ -221,7 +221,7 @@
     </div>
 
     <div class="countdown text-outline text-yellow-300 mb-8 text-xl">
-      Opening night in: <span id="countdown-timer"></span>
+      <span id="countdown-timer"></span>
     </div>
     <div class="countdown text-outline text-yellow-300 mb-8 text-xl">
       <span id="tickets-countdown-timer"></span>
@@ -840,22 +840,25 @@
         });
       }
 
-      // Countdown to Opening Night (June 8, 2025)
+      // Campaign Countdown (ends July 1, 2025)
+      const CAMPAIGN_END_DATE = new Date('2025-07-01T23:59:59');
+      function pad(n) {
+        return n.toString().padStart(2, '0');
+      }
       function updateCountdown() {
         const now = new Date();
-        const openingNight = new Date('June 8, 2025 21:30:00');
-        const diff = openingNight - now;
-        const countdownEl = document.getElementById('countdown-timer');
+        const diff = CAMPAIGN_END_DATE - now;
+        const el = document.getElementById('countdown-timer');
+        if (!el) return;
 
         if (diff > 0) {
           const days = Math.floor(diff / (1000 * 60 * 60 * 24));
           const hours = Math.floor((diff % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
           const minutes = Math.floor((diff % (1000 * 60 * 60)) / (1000 * 60));
           const seconds = Math.floor((diff % (1000 * 60)) / 1000);
-          countdownEl.textContent = `${days}d ${hours}h ${minutes}m ${seconds}s`;
+          el.textContent = `${pad(days)} days, ${pad(hours)} hrs, ${pad(minutes)} min, ${pad(seconds)} sec remaining`;
         } else {
-          countdownEl.innerHTML = '🎭 The show is LIVE! 🎭';
-          countdownEl.classList.add('glow-on-sale-text');
+          el.textContent = 'CAMPAIGN CLOSED—thank you!';
         }
       }
 
