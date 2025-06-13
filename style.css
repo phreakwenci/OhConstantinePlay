@@ -39,3 +39,9 @@ p {
         font-size: 1.25rem;
     }
 }
+
+/* Banner above countdown */
+.campaign-banner {
+    text-align: center;
+    margin-bottom: 1rem;
+}
