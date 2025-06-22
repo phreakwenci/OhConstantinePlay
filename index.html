@@ -699,6 +699,21 @@
           </div>
         </div>
       </div>
+      <script>
+        document.addEventListener('DOMContentLoaded', () => {
+          const now = new Date();
+          document.querySelectorAll('#show-schedule tbody tr').forEach(row => {
+            const dateCell = row.querySelector('td');
+            if (!dateCell) return;
+            const perfDate = new Date(dateCell.textContent.trim() + ' 2025');
+            if (perfDate < now) {
+              row.classList.add('line-through', 'opacity-50');
+              const ticketLink = row.querySelector('a');
+              if (ticketLink) ticketLink.textContent = 'Closed';
+            }
+          });
+        });
+      </script>
     </section>
   </section>
 
