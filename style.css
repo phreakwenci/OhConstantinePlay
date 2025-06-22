@@ -39,3 +39,9 @@ p {
         font-size: 1.25rem;
     }
 }
+
+/* Ensure table cells wrap on smaller screens */
+.stackable-table td {
+    flex-wrap: wrap;
+    word-break: break-word;
+}
