@@ -38,4 +38,24 @@ p {
     #countdown-timer {
         font-size: 1.25rem;
     }
+
+    /* Stack schedule table cells vertically */
+    .stackable-table thead {
+        display: none;
+    }
+    .stackable-table tr {
+        display: block;
+        margin-bottom: 1rem;
+    }
+    .stackable-table td {
+        display: flex;
+        justify-content: space-between;
+        width: 100%;
+        padding-left: 0.5rem;
+        padding-right: 0.5rem;
+    }
+    .stackable-table td::before {
+        content: attr(data-label);
+        font-weight: 600;
+    }
 }
