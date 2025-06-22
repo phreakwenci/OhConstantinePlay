@@ -86,8 +86,6 @@
       max-height: 400px;
       overflow-y: auto;
     }
- 
-    }
     /* Accessibility improvements */
     a:focus, button:focus {
       outline: 2px solid #FFC107;
@@ -142,8 +140,7 @@
       width: 280px;
       pointer-events: none; /* so it doesn’t block hover events */
       position: fixed;
-      background: #000;
-      background-opacity: 0.9;
+      background: rgba(0,0,0,0.9);
       color: #ffe;
       padding: 0.75rem;
       border-radius: 0.5rem;
@@ -179,6 +176,7 @@
           <a href="#about" class="text-yellow-100 hover:text-yellow-300 transition">About</a>
           <a href="#cast" class="text-yellow-100 hover:text-yellow-300 transition">Cast</a>
           <a href="#gallery" class="text-yellow-100 hover:text-yellow-300 transition">Gallery</a>
+          <a href="#reviews" class="text-yellow-100 hover:text-yellow-300 transition">Reviews</a>
           <a href="#tickets" class="text-yellow-100 hover:text-yellow-300 transition">Tickets</a>
           <a href="#contact" class="text-yellow-100 hover:text-yellow-300 transition">Contact</a>
         </div>
@@ -192,6 +190,7 @@
           <a href="#about" class="text-yellow-100 hover:text-yellow-300 transition">About</a>
           <a href="#cast" class="text-yellow-100 hover:text-yellow-300 transition">Cast</a>
           <a href="#gallery" class="text-yellow-100 hover:text-yellow-300 transition">Gallery</a>
+          <a href="#reviews" class="text-yellow-100 hover:text-yellow-300 transition">Reviews</a>
           <a href="#tickets" class="text-yellow-100 hover:text-yellow-300 transition">Tickets</a>
           <a href="#contact" class="text-yellow-100 hover:text-yellow-300 transition">Contact</a>
         </div>
@@ -212,8 +211,9 @@
     <!-- Date block moved down with mt-12 -->
     <div class="mt-40 text-2xl md:text-5xl mb-8 text-yellow-100 text-outline space-y-2">
     </div>
-    <div class="countdown text-outline text-yellow-300 mb-8 text-xl">
-      <span id="tickets-countdown-timer"></span>
+    <div class="countdown text-outline text-yellow-300 mb-8 text-xl space-y-1">
+      <span id="countdown-timer" class="block"></span>
+      <span id="tickets-countdown-timer" class="block"></span>
     </div>
 
     <div class="flex flex-col md:flex-row justify-center gap-6 mt-6">
@@ -313,6 +313,7 @@
       </div>
     </div>
   </section>
+
 
   <!-- Cast Section -->
   <section id="cast" class="py-16 bg-opacity-90 bg-purple-900 relative">
@@ -544,9 +545,46 @@
         <div class="w-24 h-1 bg-yellow-300 mx-auto"></div>
       </div>
 
-      <!-- Elfsight Instagram Feed -->
-      <script src="https://static.elfsight.com/platform/platform.js" async></script>
-      <div class="elfsight-app-237dc60a-392c-497b-a0e3-9b370125d7fd" data-elfsight-app-lazy></div>
+      <!-- Instagram Feed using Instafeed.js -->
+      <div id="instagram-feed" class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-4"></div>
+      <script src="https://cdn.jsdelivr.net/npm/instafeed.js@2/dist/instafeed.min.js"></script>
+      <script>
+        document.addEventListener('DOMContentLoaded', function() {
+          const feed = new Instafeed({
+            accessToken: 'YOUR_INSTAGRAM_ACCESS_TOKEN',
+            limit: 8,
+            template: '<a href="{{link}}" target="_blank"><img src="{{image}}" alt="{{caption}}" class="w-full h-auto rounded-lg"></a>'
+          });
+          feed.run();
+        });
+      </script>
+    </div>
+  </section>
+
+  <!-- Reviews Section -->
+  <section id="reviews" class="py-16 bg-opacity-90 bg-purple-900 relative">
+    <div class="container mx-auto px-6">
+      <div class="text-center mb-12">
+        <h2 class="text-4xl byzantine-title text-yellow-300 mb-4">Reviews</h2>
+        <div class="w-24 h-1 bg-yellow-300 mx-auto"></div>
+      </div>
+
+      <div class="grid md:grid-cols-2 gap-8 text-yellow-100">
+        <div class="bg-black bg-opacity-50 p-4 rounded-lg italic">"A divine comedic masterpiece!" – Reviewer 1</div>
+        <div class="bg-black bg-opacity-50 p-4 rounded-lg italic">"Hilarious from start to finish." – Reviewer 2</div>
+        <div class="bg-black bg-opacity-50 p-4 rounded-lg italic">"A riotous romp through history." – Reviewer 3</div>
+        <div class="bg-black bg-opacity-50 p-4 rounded-lg italic">"Brilliant performances all around." – Reviewer 4</div>
+        <div class="bg-black bg-opacity-50 p-4 rounded-lg italic">"Catchy songs and clever jokes." – Reviewer 5</div>
+        <div class="bg-black bg-opacity-50 p-4 rounded-lg italic">"Historical satire at its best." – Reviewer 6</div>
+        <div class="bg-black bg-opacity-50 p-4 rounded-lg italic">"An unexpected gem of the festival." – Reviewer 7</div>
+        <div class="bg-black bg-opacity-50 p-4 rounded-lg italic">"Stunning costumes and set." – Reviewer 8</div>
+        <div class="bg-black bg-opacity-50 p-4 rounded-lg italic">"Laugh-out-loud funny." – Reviewer 9</div>
+        <div class="bg-black bg-opacity-50 p-4 rounded-lg italic">"The audience loved every minute." – Reviewer 10</div>
+        <div class="bg-black bg-opacity-50 p-4 rounded-lg italic">"A must-see production." – Reviewer 11</div>
+        <div class="bg-black bg-opacity-50 p-4 rounded-lg italic">"Expertly written and directed." – Reviewer 12</div>
+        <div class="bg-black bg-opacity-50 p-4 rounded-lg italic">"Will have you singing along." – Reviewer 13</div>
+        <div class="bg-black bg-opacity-50 p-4 rounded-lg italic">"The highlight of my Fringe." – Reviewer 14</div>
+      </div>
     </div>
   </section>
 
