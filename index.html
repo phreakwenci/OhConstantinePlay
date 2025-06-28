@@ -70,6 +70,18 @@
       box-shadow: 0 5px 15px rgba(0,0,0,0.3);
       transform: translateY(100%);
       transition: transform 0.3s ease;
+      animation: pulse-glow 2s infinite;
+    }
+    @keyframes pulse-glow {
+      0% {
+        box-shadow: 0 0 5px rgba(255, 193, 7, 0.5);
+      }
+      50% {
+        box-shadow: 0 0 20px rgba(255, 193, 7, 0.8);
+      }
+      100% {
+        box-shadow: 0 0 5px rgba(255, 193, 7, 0.5);
+      }
     }
     .confessional-box.open {
       transform: translateY(0);
@@ -80,6 +92,20 @@
       padding: 10px;
       cursor: pointer;
       border-radius: 6px 6px 0 0;
+      font-weight: bold;
+      text-align: center;
+      text-shadow: 0 0 5px rgba(255, 193, 7, 0.7);
+      position: relative;
+    }
+    .confessional-header::after {
+      content: "✝";
+      position: absolute;
+      right: 10px;
+      animation: bounce 1s infinite;
+    }
+    @keyframes bounce {
+      0%, 100% { transform: translateY(0); }
+      50% { transform: translateY(-5px); }
     }
     .confessional-content {
       padding: 15px;
@@ -309,6 +335,18 @@
               <li>
                 <span class="font-semibold text-yellow-300">Poster Design &amp; Graphics by:</span> Angelique Fustukjian
               </li>
+               <div>
+            <h3 class="text-2xl byzantine-title text-yellow-300 mb-4">Executive Producers &amp; Supporters</h3>
+            <ul class="space-y-2">
+              <li>
+                <span class="font-semibold text-yellow-300">Executive Producer:</span> Megan Rippey
+              </li>
+                            <li>
+                <span class="font-semibold text-yellow-300">Executive Producer:</span> Jan-David Soutar
+              </li>
+                            <li>
+                <span class="font-semibold text-yellow-300">Executive Producer (POPE LEVEL DONOR):</span> Noelle Kim
+              </li>
             </ul>
           </div>
         </div>
@@ -467,7 +505,7 @@
           </div>
         </a>
 
-        <!-- FAUSTA (actor TBD) -->
+        <!-- FAUSTA (Carmen Ellrodt) -->
         <a href="https://en.wikipedia.org/wiki/Fausta" target="_blank" class="wiki-preview-link block">
           <div class="cast-card bg-black bg-opacity-50 rounded-lg overflow-hidden transition duration-300 hover:shadow-lg">
             <div class="h-64 bg-purple-700 flex items-center justify-center" aria-hidden="true">
@@ -494,7 +532,6 @@
             </div>
           </div>
         </a>
-
         <!-- PAPPY (link to Bishop Paphnutius) -->
         <a href="https://en.wikipedia.org/wiki/Paphnutius_of_Thebes" target="_blank" class="wiki-preview-link block">
           <div class="cast-card bg-black bg-opacity-50 rounded-lg overflow-hidden transition duration-300 hover:shadow-lg">
@@ -510,7 +547,6 @@
             </div>
           </div>
         </a>
-
         <!-- EUST (double for Eusebius) -->
         <a href="https://en.wikipedia.org/wiki/First_Council_of_Nicaea" target="_blank" class="wiki-preview-link block">
           <div class="cast-card bg-black bg-opacity-50 rounded-lg overflow-hidden transition duration-300 hover:shadow-lg">
@@ -546,9 +582,12 @@
         <div class="w-24 h-1 bg-yellow-300 mx-auto"></div>
       </div>
 
-      <!-- Elfsight Instagram Feed -->
-      <script src="https://static.elfsight.com/platform/platform.js" async></script>
-      <div class="elfsight-app-237dc60a-392c-497b-a0e3-9b370125d7fd" data-elfsight-app-lazy></div>
+      <div class="text-center">
+        <a href="https://www.instagram.com/ohconstantineplay" target="_blank" class="inline-block bg-gradient-to-r from-purple-600 to-pink-600 hover:from-purple-700 hover:to-pink-700 text-white font-bold py-4 px-8 rounded-full text-lg transition transform hover:scale-105">
+          Follow Us on Instagram <i class="fab fa-instagram ml-2"></i>
+        </a>
+        <p class="text-yellow-100 mt-4">See behind-the-scenes photos, videos and more!</p>
+      </div>
     </div>
   </section>
   <!-- Reviews Section -->
@@ -560,20 +599,20 @@
       </div>
 
       <ul class="max-w-4xl mx-auto grid md:grid-cols-2 gap-8 text-yellow-100 list-disc list-inside">
-        <li class="bg-black bg-opacity-50 p-4 rounded-lg ornamental-border">"A gleefully irreverent history lesson." - Theater Aficionado</li>
-        <li class="bg-black bg-opacity-50 p-4 rounded-lg ornamental-border">"A laugh-out-loud satire with catchy tunes." - Stage Review Weekly</li>
-        <li class="bg-black bg-opacity-50 p-4 rounded-lg ornamental-border">"Smart, sharp, and unexpectedly heartwarming." - Local Times</li>
-        <li class="bg-black bg-opacity-50 p-4 rounded-lg ornamental-border">"Breaks new ground in comedic musicals." - Fringe Journal</li>
-        <li class="bg-black bg-opacity-50 p-4 rounded-lg ornamental-border">"Constantine has never been so fun." - Playhouse Blog</li>
-        <li class="bg-black bg-opacity-50 p-4 rounded-lg ornamental-border">"Blasphemously brilliant." - Comedy Central Press</li>
-        <li class="bg-black bg-opacity-50 p-4 rounded-lg ornamental-border">"A divine blend of history and humor." - Festival Insider</li>
-        <li class="bg-black bg-opacity-50 p-4 rounded-lg ornamental-border">"The breakout musical of the season." - LA Stage Report</li>
-        <li class="bg-black bg-opacity-50 p-4 rounded-lg ornamental-border">"Makes ancient council debates wildly entertaining." - Critics' Choice</li>
-        <li class="bg-black bg-opacity-50 p-4 rounded-lg ornamental-border">"Characters burst with personality." - Spotlight Magazine</li>
-        <li class="bg-black bg-opacity-50 p-4 rounded-lg ornamental-border">"Sly, silly, and supremely confident." - Actor's Alley</li>
-        <li class="bg-black bg-opacity-50 p-4 rounded-lg ornamental-border">"An irreverent romp that still respects its history." - Theatre Scene</li>
-        <li class="bg-black bg-opacity-50 p-4 rounded-lg ornamental-border">"A show that begs for an encore run." - Crowd Pleasers</li>
-        <li class="bg-black bg-opacity-50 p-4 rounded-lg ornamental-border">"Theater at its most imaginative and fun." - Daily Dramaturg</li>
+        <li class="bg-black bg-opacity-50 p-4 rounded-lg ornamental-border">"High energy from the start. Such great characters!" - Fringe Reviewer</li>
+        <li class="bg-black bg-opacity-50 p-4 rounded-lg ornamental-border">"One of the best produced and most "Fringest" shows of HFF25! Historical silliness!" - StageAndCinema.com</li>
+        <li class="bg-black bg-opacity-50 p-4 rounded-lg ornamental-border">"This was without a doubt the most exciting show I've seen this year, by a far piece." - Fringe Reviewer</li>
+        <li class="bg-black bg-opacity-50 p-4 rounded-lg ornamental-border">"It definitely made me want to go Wikipedia all these historical figures." - Fringe Reviewer</li>
+        <li class="bg-black bg-opacity-50 p-4 rounded-lg ornamental-border">"One of the funniest projects you will see in all of Fringe! " - StageTakes.com</li>
+        <li class="bg-black bg-opacity-50 p-4 rounded-lg ornamental-border">"OH CONSTANTINE!, is a highlight of fringy, Fringe and more than good for the laughs, the “Holy Nommo” Hip Hop, and the almost true history" - GiaOnTheMove.com</li>
+        <li class="bg-black bg-opacity-50 p-4 rounded-lg ornamental-border">"Irreverent, smart, wildly entertaining—with an outstanding cast." - Fringe Reviewer</li>
+        <li class="bg-black bg-opacity-50 p-4 rounded-lg ornamental-border">"Loud, rapid-paced fun and if you can keep up, even educational." - Fringe Reviewer</li>
+        <li class="bg-black bg-opacity-50 p-4 rounded-lg ornamental-border">"The music alone makes this show worth seeing!" - Fringe Reviewer</li>
+        <li class="bg-black bg-opacity-50 p-4 rounded-lg ornamental-border">"I haven't laughed this hard at a musical in years." - Fringe Reviewer</li>
+        <li class="bg-black bg-opacity-50 p-4 rounded-lg ornamental-border">"The cast's chemistry and comedic timing are perfection." - Fringe Reviewer</li>
+        <li class="bg-black bg-opacity-50 p-4 rounded-lg ornamental-border">"A fresh, funny take on history that's not to be missed." - Fringe Reviewer</li>
+        <li class="bg-black bg-opacity-50 p-4 rounded-lg ornamental-border">"The songs will be stuck in your head for days (in a good way)!" - Fringe Reviewer</li>
+        <li class="bg-black bg-opacity-50 p-4 rounded-lg ornamental-border">"This show deserves a much longer run - it's that good!" - Fringe Reviewer</li>
       </ul>
     </div>
   </section>
@@ -688,7 +727,7 @@
                 <tr>
                   <td class="px-4 py-2">Sat, June 28</td>
                   <td class="px-4 py-2">Closing Night</td>
-                  <td class="px-4 py-2">10:30 PM</td>
+                  <td class="px-4 py-2">10:15 PM</td>
                   <td class="px-4 py-2">Zephyr Theatre</td>
                   <td class="px-4 py-2">
                     <a href="https://www.hollywoodfringe.org/projects/11553?embed=false&performance_id=27031&tab=performance" class="text-blue-400 hover:underline" target="_blank">Get Tickets</a>
@@ -872,6 +911,18 @@
       const confBox = document.getElementById('confessionalBox');
       const confContent = document.getElementById('confessionalContent');
       if (confToggle && confBox && confContent) {
+        // Show initially with animation
+        setTimeout(() => {
+          confBox.classList.add('open');
+          confContent.classList.remove('hidden');
+          
+          // Auto-minimize after 8 seconds
+          setTimeout(() => {
+            confBox.classList.remove('open');
+            confContent.classList.add('hidden');
+          }, 8000);
+        }, 3000);
+
         confToggle.addEventListener('click', function () {
           confBox.classList.toggle('open');
           confContent.classList.toggle('hidden');
