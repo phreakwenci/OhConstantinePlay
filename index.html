@@ -240,20 +240,19 @@
     <!-- Date block moved down with mt-12 -->
     <div class="mt-40 text-2xl md:text-5xl mb-8 text-yellow-100 text-outline space-y-2">
     </div>
-    <div class="countdown text-outline text-yellow-300 mb-8 text-xl">
-      <span id="tickets-countdown-timer"></span>
-    </div>
 
-    <div class="flex flex-col md:flex-row justify-center gap-6 mt-6">
-      <!-- Buy Tickets Button -->
-      <a
-        href="https://www.hollywoodfringe.org/projects/11553?tab=tickets"
-        id="buyTicketsButton"
-        class="donate-button bg-yellow-600 hover:bg-yellow-500 text-black font-bold py-3 px-8 rounded-full text-lg transition transform"
-        target="_blank"
-      >
-        Tickets On Sale now!
-      </a>
+    <div class="flex flex-col items-center gap-6 mt-6">
+      <!-- YouTube Pitch Video -->
+      <div class="w-full max-w-2xl aspect-video">
+        <iframe 
+          class="w-full h-full rounded-lg shadow-xl border-4 border-yellow-300 shadow-[0_0_20px_rgba(255,193,7,0.3)]"
+          src="https://www.youtube.com/embed/BB5F9LVlyz0?start=1" 
+          title="Oh Constantine! Pitch Video" 
+          frameborder="0" 
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+          allowfullscreen>
+        </iframe>
+      </div>
 
       <!-- Seed & Spark Link -->
       <a
@@ -621,28 +620,16 @@
   <section id="tickets" class="py-16 bg-opacity-90 bg-purple-900 relative">
     <div class="container mx-auto px-6">
       <div class="text-center mb-12">
-        <h2 class="text-4xl byzantine-title text-yellow-300 mb-4">Get Tickets</h2>
+        <h2 class="text-4xl byzantine-title text-yellow-300 mb-4">Join The Council</h2>
         <div class="w-24 h-1 bg-yellow-300 mx-auto"></div>
       </div>
 
-      <div class="max-w-4xl mx-auto grid md:grid-cols-2 gap-8">
-        <!-- Ticket Option 1 -->
-        <div class="ticket-card p-8 rounded-lg transition duration-300">
-          <h3 class="text-2xl byzantine-title text-yellow-300 mb-4">General Admission</h3>
-          <p class="text-yellow-100 mb-6">Standard seating for one performance</p>
-          <p class="text-3xl font-bold text-yellow-300 mb-6">$20</p>
-          <a href="https://www.hollywoodfringe.org/projects/11553?tab=tickets" target="_blank" class="block w-full bg-yellow-600 hover:bg-yellow-500 text-black font-bold py-3 px-6 rounded-full text-center transition">
-            Purchase Tickets Starting May 1st! <i class="fas fa-ticket-alt ml-2"></i>
-          </a>
-        </div>
-
-        <!-- Ticket Option 2 -->
-        <div class="ticket-card p-8 rounded-lg transition duration-300">
-          <h3 class="text-2xl byzantine-title text-yellow-300 mb-4">Our Seed & Spark Page</h3>
-          <p class="text-yellow-100 mb-6">Help us bring Oh Constantine! to the stage!</p>
-          <p class="text-3xl font-bold text-yellow-300 mb-6">Click to Support Our Play</p>
-          <a href="https://seedandspark.com/fund/oh-constantine-play" target="_blank" class="block w-full bg-yellow-600 hover:bg-yellow-500 text-black font-bold py-3 px-6 rounded-full text-center transition">
-            Contribute! <i class="fas fa-star ml-2"></i>
+      <div class="max-w-2xl mx-auto">
+        <div class="ticket-card p-8 rounded-lg transition duration-300 text-center">
+          <h3 class="text-3xl byzantine-title text-yellow-300 mb-4">Support Our Next Production</h3>
+          <p class="text-yellow-100 mb-6 text-xl">Help us bring Oh Constantine! to more audiences!</p>
+          <a href="https://seedandspark.com/fund/oh-constantine-play" target="_blank" class="inline-block bg-yellow-600 hover:bg-yellow-500 text-black font-bold py-4 px-10 rounded-full text-xl transition transform hover:scale-105">
+            Contribute on Seed & Spark <i class="fas fa-star ml-2"></i>
           </a>
         </div>
       </div>
@@ -666,7 +653,6 @@
                   <th class="px-4 py-2">Event</th>
                   <th class="px-4 py-2">Time</th>
                   <th class="px-4 py-2">Venue</th>
-                  <th class="px-4 py-2">Tickets</th>
                 </tr>
               </thead>
               <tbody>
@@ -675,9 +661,6 @@
                   <td class="px-4 py-2">Preview Night</td>
                   <td class="px-4 py-2">9:45 PM</td>
                   <td class="px-4 py-2">Zephyr Theatre</td>
-                  <td class="px-4 py-2">
-                    <a href="https://www.hollywoodfringe.org/projects/11553?embed=false&performance_id=27027&tab=performance" class="text-blue-400 hover:underline" target="_blank">Get Tickets</a>
-                  </td>
                 </tr>
                 <tr>
                   <td class="px-4 py-2">Fri, June 13</td>
@@ -727,7 +710,7 @@
                 <tr>
                   <td class="px-4 py-2">Sat, June 28</td>
                   <td class="px-4 py-2">Closing Night</td>
-                  <td class="px-4 py-2">10:15 PM</td>
+                  <td class="px-4 py-2">10:30 PM</td>
                   <td class="px-4 py-2">Zephyr Theatre</td>
                   <td class="px-4 py-2">
                     <a href="https://www.hollywoodfringe.org/projects/11553?embed=false&performance_id=27031&tab=performance" class="text-blue-400 hover:underline" target="_blank">Get Tickets</a>
