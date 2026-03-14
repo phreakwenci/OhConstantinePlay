@@ -1,372 +1,657 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Oh Constantine! - A Holy Satire, With Music!</title>
-  <meta name="description" content="A divine musical comedy of slapstick theology and ecclesiastical chaos, live at the Hollywood Fringe Festival."/>
-  <meta property="og:title" content="Oh Constantine! - A Holy Satirical Musical"/>
-  <meta property="og:description" content="Four bishops. One Emperor. Infinite heresy. A holy musical spectacle at the Hollywood Fringe Festival."/>
-  <meta property="og:image" content="https://i.imgur.com/skrCpXn.jpeg"/>
+  <meta name="description"
+    content="A divine musical comedy of slapstick theology and ecclesiastical chaos. Now seeking its next stage." />
+  <meta property="og:title" content="Oh Constantine! - A Holy Satirical Musical" />
+  <meta property="og:description" content="Four bishops. One Imperial Family. Infinite heresy. A holy musical spectacle." />
+  <meta property="og:image" content="https://i.imgur.com/skrCpXn.jpeg" />
   <script src="https://cdn.tailwindcss.com"></script>
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"/>
-  <link href="https://fonts.googleapis.com/css2?family=Cinzel+Decorative:wght@700&family=Cormorant+Garamond:wght@400;600&display=swap" rel="stylesheet"/>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Cinzel+Decorative:wght@700&family=Cinzel:wght@400;600&family=Cormorant+Garamond:ital,wght@0,400;0,600;1,400;1,600&display=swap"
+    rel="stylesheet" />
   <style>
+    :root {
+      --gold: #D4A843;
+      --gold-light: #F0C96A;
+      --gold-dim: #8B6914;
+      --deep: #0E0820;
+      --mid: #1A1035;
+      --surface: #221545;
+      --cream: #F5EDD6;
+      --cream-dim: #C9B88A;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
     html {
       scroll-behavior: smooth;
     }
+
     body {
       font-family: 'Cormorant Garamond', serif;
-      background-color: #1a103d;
-      color: #f8f3e6;
+      background-color: var(--deep);
+      color: var(--cream);
       overflow-x: hidden;
-      background-image: url('https://i.imgur.com/skrCpXn.jpeg');
-      background-repeat: repeat;
-      background-size: auto;
-      background-color: #1a103d; /* fallback color */
     }
-    .byzantine-title {
+
+    .title-font {
       font-family: 'Cinzel Decorative', cursive;
-      text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
     }
-    .ornamental-border {
-      border: 8px solid transparent;
-      border-image: url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxMDAiIGhlaWdodD0iMTAwIiB2aWV3Qm94PSIwIDAgMTAwIDEwMCI+PHBhdGggZD0iTTAsMjVMMjUsMCBMNTAsMjUgTDc1LDAgTDEwMCwyNSBMNzUsNTAgTDEwMCw3NSBMNzUsMTAwIEw1MCw3NSBMMjUsMTAwIEwwLDc1IEwyNSw1MCBMMCwyNSBaIiBmaWxsPSJub25lIiBzdHJva2U9IiNGRkMxMDciIHN0cm9rZS13aWR0aD0iMiIvPjwvc3ZnPg==') 20% round;
+
+    .heading-font {
+      font-family: 'Cinzel', serif;
     }
+
+    .gold-rule {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+      margin: 0 auto 2.5rem;
+      max-width: 260px;
+    }
+
+    .gold-rule::before,
+    .gold-rule::after {
+      content: '';
+      flex: 1;
+      height: 1px;
+      background: var(--gold);
+      opacity: 0.6;
+    }
+
+    .gold-rule-diamond {
+      width: 8px;
+      height: 8px;
+      background: var(--gold);
+      transform: rotate(45deg);
+      flex-shrink: 0;
+    }
+
+    .corner-ornament {
+      position: relative;
+    }
+
+    .corner-ornament::before,
+    .corner-ornament::after,
+    .corner-ornament>.corner-br,
+    .corner-ornament>.corner-bl {
+      content: '';
+      position: absolute;
+      width: 24px;
+      height: 24px;
+      border-color: var(--gold);
+      border-style: solid;
+      opacity: 0.7;
+    }
+
+    .corner-ornament::before {
+      top: 0;
+      left: 0;
+      border-width: 2px 0 0 2px;
+    }
+
+    .corner-ornament::after {
+      top: 0;
+      right: 0;
+      border-width: 2px 2px 0 0;
+    }
+
+    .corner-ornament>.corner-br {
+      bottom: 0;
+      right: 0;
+      border-width: 0 2px 2px 0;
+    }
+
+    .corner-ornament>.corner-bl {
+      bottom: 0;
+      left: 0;
+      border-width: 0 0 2px 2px;
+    }
+
+    nav {
+      background: rgba(10, 6, 28, 0.92);
+      backdrop-filter: blur(8px);
+    }
+
+    nav a {
+      font-family: 'Cinzel', serif;
+      font-size: 0.75rem;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+    }
+
+    nav a:hover {
+      color: var(--gold);
+    }
+
+    #hero {
+      min-height: 100vh;
+      background-image: url('https://i.imgur.com/LhFxaPX.jpeg');
+      background-size: cover;
+      background-position: center top;
+      position: relative;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      padding: 6rem 1.5rem 3rem;
+    }
+
+    #hero::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(to bottom,
+          rgba(10, 6, 28, 0.55) 0%, rgba(10, 6, 28, 0.35) 40%,
+          rgba(10, 6, 28, 0.75) 85%, rgba(10, 6, 28, 1) 100%);
+    }
+
+    .hero-title {
+      font-size: clamp(2.8rem, 8vw, 6.5rem);
+      line-height: 1;
+      color: var(--gold-light);
+      text-shadow: 0 0 60px rgba(212, 168, 67, 0.4), 2px 3px 0 rgba(0, 0, 0, 0.7);
+    }
+
+    .hero-subtitle {
+      font-family: 'Cinzel', serif;
+      letter-spacing: 0.3em;
+      font-size: clamp(0.65rem, 2vw, 0.9rem);
+      text-transform: uppercase;
+      color: var(--cream-dim);
+    }
+
+    section {
+      position: relative;
+    }
+
+    .section-bg {
+      background: linear-gradient(180deg, var(--mid) 0%, var(--surface) 100%);
+    }
+
+    .section-bg-alt {
+      background: linear-gradient(180deg, var(--surface) 0%, var(--mid) 100%);
+    }
+
+    .award-banner {
+      background: linear-gradient(90deg, var(--gold-dim), var(--gold), var(--gold-light), var(--gold), var(--gold-dim));
+      background-size: 200% 100%;
+      animation: shimmer 4s linear infinite;
+    }
+
+    @keyframes shimmer {
+      0% {
+        background-position: 200% 0;
+      }
+
+      100% {
+        background-position: -200% 0;
+      }
+    }
+
+    .video-frame {
+      border: 2px solid var(--gold);
+      box-shadow: 0 0 40px rgba(212, 168, 67, 0.2);
+      border-radius: 4px;
+      overflow: hidden;
+    }
+
+    .video-label {
+      font-family: 'Cinzel', serif;
+      font-size: 0.7rem;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--gold-dim);
+    }
+
+    .cast-card {
+      background: linear-gradient(145deg, rgba(34, 21, 69, 0.9), rgba(14, 8, 32, 0.95));
+      border: 1px solid rgba(212, 168, 67, 0.2);
+      border-radius: 4px;
+      transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
+      overflow: hidden;
+    }
+
     .cast-card:hover {
-      transform: scale(1.05);
-      box-shadow: 0 10px 25px rgba(255, 193, 7, 0.3);
+      transform: translateY(-6px);
+      box-shadow: 0 16px 40px rgba(212, 168, 67, 0.15);
+      border-color: rgba(212, 168, 67, 0.5);
     }
-    .ticket-card {
-      background: linear-gradient(135deg, #271759 0%, #331d69 100%);
-      box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+
+    .cast-icon-area {
+      height: 120px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: linear-gradient(135deg, rgba(45, 30, 90, 0.8), rgba(20, 12, 48, 0.9));
+      border-bottom: 1px solid rgba(212, 168, 67, 0.15);
     }
-    .ticket-card:hover {
-      transform: translateY(-5px);
-      box-shadow: 0 15px 30px rgba(255, 193, 7, 0.4);
+
+    .review-card {
+      background: rgba(34, 21, 69, 0.5);
+      border-left: 3px solid var(--gold);
+      border-radius: 0 4px 4px 0;
+      padding: 1.25rem 1.5rem;
+      font-style: italic;
+      font-size: 1.05rem;
+      line-height: 1.6;
     }
-    .social-icon:hover {
-      transform: scale(1.2);
-      color: #FFC107;
+
+    .review-card cite {
+      display: block;
+      margin-top: 0.5rem;
+      font-style: normal;
+      font-size: 0.8rem;
+      font-family: 'Cinzel', serif;
+      letter-spacing: 0.1em;
+      color: var(--gold-dim);
     }
-    .text-outline {
-      text-shadow:
-        -2px -2px 0 #000,
-         2px -2px 0 #000,
-        -2px  2px 0 #000,
-         2px  2px 0 #000,
-         0    0    5px #000; /* optional soft glow */
+
+    /* ── Selling point cards ── */
+    .selling-card {
+      background: rgba(255, 255, 255, 0.06);
+      border: 1px solid rgba(212, 168, 67, 0.25);
+      border-radius: 6px;
+      padding: 1.5rem;
+      text-align: center;
+      transition: transform 0.25s ease, background 0.25s ease, box-shadow 0.25s ease;
     }
-    /* Confessional chat box */
+
+    .selling-card:hover {
+      transform: translateY(-4px);
+      background: rgba(255, 255, 255, 0.1);
+      box-shadow: 0 12px 32px rgba(212, 168, 67, 0.12);
+    }
+
+    .selling-card .icon {
+      font-size: 2rem;
+      margin-bottom: 0.75rem;
+      display: block;
+    }
+
+    .selling-card h4 {
+      font-family: 'Cinzel', serif;
+      font-size: 0.8rem;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      color: var(--gold);
+      margin-bottom: 0.5rem;
+    }
+
+    .selling-card p {
+      font-size: 0.95rem;
+      line-height: 1.55;
+      color: var(--cream-dim);
+    }
+
+    /* ── Format toggle ── */
+    .format-toggle {
+      display: flex;
+      background: rgba(14, 8, 32, 0.6);
+      border: 1px solid rgba(212, 168, 67, 0.3);
+      border-radius: 4px;
+      overflow: hidden;
+    }
+
+    .format-btn {
+      flex: 1;
+      padding: 0.65rem 1rem;
+      cursor: pointer;
+      font-family: 'Cinzel', serif;
+      font-size: 0.72rem;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      text-align: center;
+      transition: all 0.2s;
+      color: var(--cream-dim);
+      border: none;
+      background: transparent;
+    }
+
+    .format-btn.active {
+      background: var(--gold);
+      color: var(--deep);
+      font-weight: 600;
+    }
+
+    .format-detail {
+      display: none;
+    }
+
+    .format-detail.active {
+      display: block;
+    }
+
+    /* ── Buttons ── */
+    .btn-gold {
+      background: linear-gradient(135deg, var(--gold-dim), var(--gold));
+      color: var(--deep);
+      font-family: 'Cinzel', serif;
+      font-size: 0.8rem;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      padding: 0.85rem 2.5rem;
+      border-radius: 2px;
+      transition: all 0.25s;
+      display: inline-block;
+      font-weight: 600;
+    }
+
+    .btn-gold:hover {
+      background: linear-gradient(135deg, var(--gold), var(--gold-light));
+      box-shadow: 0 8px 24px rgba(212, 168, 67, 0.35);
+      transform: translateY(-2px);
+    }
+
+    .btn-outline {
+      border: 1px solid var(--gold);
+      color: var(--gold);
+      font-family: 'Cinzel', serif;
+      font-size: 0.8rem;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      padding: 0.85rem 2.5rem;
+      border-radius: 2px;
+      transition: all 0.25s;
+      display: inline-block;
+    }
+
+    .btn-outline:hover {
+      background: rgba(212, 168, 67, 0.1);
+      box-shadow: 0 0 20px rgba(212, 168, 67, 0.2);
+    }
+
+    /* ── Booking form — lightened ── */
+    .booking-form input,
+    .booking-form select,
+    .booking-form textarea {
+      background: rgba(255, 255, 255, 0.08);
+      border: 1px solid rgba(212, 168, 67, 0.4);
+      border-radius: 3px;
+      color: var(--cream);
+      padding: 0.75rem 1rem;
+      width: 100%;
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1rem;
+      transition: border-color 0.2s, background 0.2s;
+    }
+
+    .booking-form input::placeholder,
+    .booking-form textarea::placeholder {
+      color: rgba(245, 237, 214, 0.4);
+    }
+
+    .booking-form input:focus,
+    .booking-form select:focus,
+    .booking-form textarea:focus {
+      outline: none;
+      border-color: var(--gold);
+      background: rgba(255, 255, 255, 0.13);
+      box-shadow: 0 0 14px rgba(212, 168, 67, 0.18);
+    }
+
+    .booking-form label {
+      font-family: 'Cinzel', serif;
+      font-size: 0.7rem;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      color: var(--gold-light);
+      display: block;
+      margin-bottom: 0.4rem;
+    }
+
+    .booking-form select option {
+      background: #221545;
+      color: var(--cream);
+    }
+
+    /* ── Confessional ── */
     .confessional-box {
       position: fixed;
-      bottom: 50px;
+      bottom: 24px;
       right: 20px;
       width: 300px;
-      background: #271759;
-      border: 2px solid #FFC107;
-      border-radius: 8px;
+      background: var(--surface);
+      border: 1px solid var(--gold);
+      border-radius: 4px;
       z-index: 1000;
-      box-shadow: 0 5px 15px rgba(0,0,0,0.3);
-      transform: translateY(100%);
-      transition: transform 0.3s ease;
-      animation: pulse-glow 2s infinite;
+      transform: translateY(calc(100% + 24px));
+      transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+      animation: pulse-glow 3s infinite;
     }
-    @keyframes pulse-glow {
-      0% {
-        box-shadow: 0 0 5px rgba(255, 193, 7, 0.5);
-      }
-      50% {
-        box-shadow: 0 0 20px rgba(255, 193, 7, 0.8);
-      }
-      100% {
-        box-shadow: 0 0 5px rgba(255, 193, 7, 0.5);
-      }
-    }
+
     .confessional-box.open {
       transform: translateY(0);
     }
+
+    @keyframes pulse-glow {
+
+      0%,
+      100% {
+        box-shadow: 0 0 8px rgba(212, 168, 67, 0.3);
+      }
+
+      50% {
+        box-shadow: 0 0 24px rgba(212, 168, 67, 0.7);
+      }
+    }
+
     .confessional-header {
-      background: #331d69;
-      color: #FFC107;
-      padding: 10px;
+      background: rgba(212, 168, 67, 0.1);
+      border-bottom: 1px solid rgba(212, 168, 67, 0.3);
+      padding: 0.75rem 1rem;
       cursor: pointer;
-      border-radius: 6px 6px 0 0;
-      font-weight: bold;
-      text-align: center;
-      text-shadow: 0 0 5px rgba(255, 193, 7, 0.7);
-      position: relative;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      font-family: 'Cinzel', serif;
+      font-size: 0.75rem;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      color: var(--gold);
     }
-    .confessional-header::after {
-      content: "✝";
-      position: absolute;
-      right: 10px;
-      animation: bounce 1s infinite;
-    }
-    @keyframes bounce {
-      0%, 100% { transform: translateY(0); }
-      50% { transform: translateY(-5px); }
-    }
+
     .confessional-content {
-      padding: 15px;
-      max-height: 400px;
-      overflow-y: auto;
-    }
- 
-    }
-    /* Accessibility improvements */
-    a:focus, button:focus {
-      outline: 2px solid #FFC107;
-      outline-offset: 2px;
-    }
-    /* Hidden easter egg */
-    .easter-egg {
-      position: absolute;
-      left: -9999px;
-    }
-    /* Donate button animation */
-    @keyframes pulse {
-      0% { transform: scale(1); }
-      50% { transform: scale(1.05); }
-      100% { transform: scale(1); }
-    }
-    .donate-button {
-      animation: pulse 2s infinite;
-      display: inline-block;
-      will-change: transform;
-    }
-    .donate-button:hover {
-      animation-play-state: paused;
-      transform: scale(1.05);
-    }
-    /* Image fade animation */
-    .fade-image {
-      animation: rotateImages 8s infinite ease-in-out;
-    }
-    @keyframes rotateImages {
-      0%, 45% { opacity: 1; }
-      50%, 95% { opacity: 0; }
-      100% { opacity: 1; }
-    }
-    /* Glow-on-sale text */
-    .glow-on-sale-text {
-      animation: glow 1.5s infinite alternate;
-      color: #FFC107;
-      font-weight: bold;
-      font-size: 1.8rem;
-    }
-    @keyframes glow {
-      from { text-shadow: 0 0 5px #FFC107; }
-      to   { text-shadow: 0 0 20px #FFC107; }
+      max-height: 460px;
+      overflow: hidden;
     }
 
-    /* Tooltip hidden by default */
-    .hidden { display: none; }
-
-    /* Wikipedia preview tooltip styling */
+    /* ── Wiki tooltip ── */
     #wikiPreviewTooltip {
       width: 280px;
-      pointer-events: none; /* so it doesn’t block hover events */
+      pointer-events: none;
       position: fixed;
-      background: #000;
-      background-opacity: 0.9;
-      color: #ffe;
-      padding: 0.75rem;
-      border-radius: 0.5rem;
-      box-shadow: 0 4px 12px rgba(0,0,0,0.5);
+      background: rgba(14, 8, 32, 0.97);
+      border: 1px solid rgba(212, 168, 67, 0.4);
+      color: var(--cream);
+      padding: 0.85rem 1rem;
+      border-radius: 4px;
+      box-shadow: 0 8px 24px rgba(0, 0, 0, 0.6);
       z-index: 9999;
     }
+
     #wikiPreviewTitle {
-      font-weight: bold;
-      margin-bottom: 0.5rem;
+      font-family: 'Cinzel', serif;
+      font-size: 0.85rem;
+      color: var(--gold);
+      margin-bottom: 0.4rem;
     }
+
     #wikiPreviewExtract {
-      font-size: 0.875rem;
-      line-height: 1.25rem;
+      font-size: 0.82rem;
+      line-height: 1.5;
+      color: var(--cream-dim);
     }
+
     #wikiPreviewLink {
       margin-top: 0.5rem;
-      font-size: 0.75rem;
-      color: #3bb;
-      cursor: pointer;
+      font-size: 0.7rem;
+      font-family: 'Cinzel', serif;
+      color: var(--gold-dim);
+      letter-spacing: 0.1em;
     }
-    #wikiPreviewLink:hover {
-      text-decoration: underline;
+
+    .social-icon {
+      color: var(--cream-dim);
+      font-size: 1.4rem;
+      transition: all 0.2s;
+    }
+
+    .social-icon:hover {
+      color: var(--gold);
+      transform: scale(1.2);
+    }
+
+    .reveal {
+      opacity: 0;
+      transform: translateY(24px);
+      transition: opacity 0.7s ease, transform 0.7s ease;
+    }
+
+    .reveal.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    a:focus,
+    button:focus {
+      outline: 2px solid var(--gold);
+      outline-offset: 2px;
+    }
+
+    .hidden {
+      display: none;
     }
   </style>
 </head>
+
 <body>
-  <!-- Navigation -->
-  <nav class="bg-black bg-opacity-70 sticky top-0 z-50">
-    <div class="container mx-auto px-6 py-3">
+
+  <!-- NAV -->
+  <nav class="sticky top-0 z-50 border-b border-yellow-900 border-opacity-30">
+    <div class="container mx-auto px-6 py-4">
       <div class="flex justify-between items-center">
-        <div class="flex items-center gap-2">
-          <div class="text-2xl byzantine-title text-yellow-300">Oh Constantine!</div>
-          <span class="bg-yellow-300 text-black text-xs font-bold px-2 py-1 rounded-full whitespace-nowrap">
-            Award Nominee
-          </span>
+        <div class="flex items-center gap-3">
+          <span class="title-font text-lg" style="color:var(--gold-light)">Oh Constantine!</span>
+          <span class="heading-font text-xs px-2 py-0.5 rounded-full border" style="border-color:var(--gold);color:var(--gold);letter-spacing:0.1em">
+          &#10022; Award Nominee
+        </span>
         </div>
-        <div class="hidden md:flex space-x-8">
-          <a href="#about" class="text-yellow-100 hover:text-yellow-300 transition">About</a>
-          <a href="#cast" class="text-yellow-100 hover:text-yellow-300 transition">Cast</a>
-          <a href="#gallery" class="text-yellow-100 hover:text-yellow-300 transition">Gallery</a>
-          <a href="#reviews" class="text-yellow-100 hover:text-yellow-300 transition">Reviews</a>
-          <a href="#tickets" class="text-yellow-100 hover:text-yellow-300 transition">Tickets</a>
-          <a href="#contact" class="text-yellow-100 hover:text-yellow-300 transition">Contact</a>
+        <div class="hidden md:flex items-center space-x-8">
+          <a href="#about" class="transition" style="color:var(--cream-dim)">About</a>
+          <a href="#watch" class="transition" style="color:var(--cream-dim)">Watch</a>
+          <a href="#cast" class="transition" style="color:var(--cream-dim)">Cast</a>
+          <a href="#reviews" class="transition" style="color:var(--cream-dim)">Reviews</a>
+          <a href="#booking" class="btn-gold text-xs py-2 px-5">Book This Show</a>
         </div>
-        <button class="md:hidden text-yellow-300" aria-label="Toggle menu">
-          <i class="fas fa-bars text-2xl"></i>
-        </button>
+        <button id="menuBtn" class="md:hidden" aria-label="Toggle menu" style="color:var(--gold)">
+        <i class="fas fa-bars text-xl"></i>
+      </button>
       </div>
-      <!-- Mobile menu (hidden by default) -->
-      <div id="mobileMenu" class="hidden md:hidden bg-black bg-opacity-90 p-4 mt-2 rounded-lg">
-        <div class="flex flex-col space-y-4">
-          <a href="#about" class="text-yellow-100 hover:text-yellow-300 transition">About</a>
-          <a href="#cast" class="text-yellow-100 hover:text-yellow-300 transition">Cast</a>
-          <a href="#gallery" class="text-yellow-100 hover:text-yellow-300 transition">Gallery</a>
-          <a href="#reviews" class="text-yellow-100 hover:text-yellow-300 transition">Reviews</a>
-          <a href="#tickets" class="text-yellow-100 hover:text-yellow-300 transition">Tickets</a>
-          <a href="#contact" class="text-yellow-100 hover:text-yellow-300 transition">Contact</a>
-        </div>
+      <div id="mobileMenu"
+        class="hidden md:hidden mt-4 pb-2 border-t border-yellow-900 border-opacity-30 pt-4 flex flex-col gap-4">
+        <a href="#about" style="color:var(--cream-dim)" class="text-sm">About</a>
+        <a href="#watch" style="color:var(--cream-dim)" class="text-sm">Watch</a>
+        <a href="#cast" style="color:var(--cream-dim)" class="text-sm">Cast</a>
+        <a href="#reviews" style="color:var(--cream-dim)" class="text-sm">Reviews</a>
+        <a href="#booking" class="btn-gold text-xs py-2 px-5 text-center">Book This Show</a>
       </div>
     </div>
   </nav>
 
-  <!-- Hero/Header -->
-<header
-  class="relative w-full h-screen flex items-center justify-center px-4 sm:px-6 bg-contain bg-no-repeat bg-center text-center overflow-hidden"
-  style="background-image: url('https://i.imgur.com/LhFxaPX.jpeg');"
->
-  <!-- Background Dimmer (reduced opacity) -->
-  <div class="absolute inset-0 bg-black bg-opacity-40 z-0"></div>
-
-  <!-- Content -->
-  <div class="relative z-10 w-full max-w-4xl">
-    <!-- Date block moved down with mt-12 -->
-    <div class="mt-40 text-2xl md:text-5xl mb-8 text-yellow-100 text-outline space-y-2">
-    </div>
-
-    <div class="flex flex-col items-center gap-6 mt-6">
-      <!-- YouTube Pitch Video -->
-      <div class="w-full max-w-4xl aspect-video">
-        <iframe 
-          class="w-full h-full rounded-lg shadow-xl border-4 border-yellow-300 shadow-[0_0_20px_rgba(255,193,7,0.3)]"
-          src="https://www.youtube.com/embed/BB5F9LVlyz0?start=1" 
-          title="Oh Constantine! Pitch Video" 
-          frameborder="0" 
-          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
-          allowfullscreen>
-        </iframe>
-      </div>
-
-      <!-- Seed & Spark Link -->
-      <a
-        href="https://seedandspark.com/fund/oh-constantine-play"
-        class="donate-button bg-purple-600 hover:bg-purple-500 text-white font-bold py-3 px-8 rounded-full text-lg transition transform"
-        target="_blank"
-      >
-        Support Us on Seed & Spark! <i class="fas fa-hand-holding-heart ml-2"></i>
-      </a>
+  <!-- HERO -->
+  <header id="hero">
+    <div class="relative z-10 w-full max-w-4xl mx-auto text-center flex flex-col items-center gap-6">
+      <div class="heading-font text-xs tracking-widest mb-2" style="color:var(--gold-dim)">&#10022; &nbsp; A HOLY
+        SATIRE, WITH MUSIC &nbsp; &#10022;</div>
+      <h1 class="title-font hero-title">Oh Constantine!</h1>
+      <p class="hero-subtitle mt-1">Four Bishops &middot; One Imperial Family &middot; Infinite Heresy</p>
+      <div class="flex flex-col sm:flex-row gap-4 mt-4">
+        <a href="#watch" class="btn-gold">Watch The Show <i class="fas fa-play ml-2 text-xs"></i></a>
+        <a href="#booking" class="btn-outline">Book This Show <i class="fas fa-envelope ml-2 text-xs"></i></a>
       </div>
     </div>
-
-    <!-- Decorative corners -->
-    <div class="absolute top-0 left-0 w-16 h-16 border-t-4 border-l-4 border-yellow-300"></div>
-    <div class="absolute top-0 right-0 w-16 h-16 border-t-4 border-r-4 border-yellow-300"></div>
-    <div class="absolute bottom-0 left-0 w-16 h-16 border-b-4 border-l-4 border-yellow-300"></div>
-    <div class="absolute bottom-0 right-0 w-16 h-16 border-b-4 border-r-4 border-yellow-300"></div>
-
-    <!-- Easter egg comment -->
-    <!-- 
-      If this is you then you have lost your way
-      The true believers know the secret...
-      For those who seek, the truth shall be revealed.
-    -->
+    <div class="absolute bottom-8 left-1/2 -translate-x-1/2 z-10 flex flex-col items-center gap-2 opacity-50">
+      <span class="heading-font text-xs tracking-widest" style="color:var(--cream-dim)">Scroll</span>
+      <i class="fas fa-chevron-down text-xs animate-bounce" style="color:var(--gold)"></i>
+    </div>
   </header>
 
-  <!-- Award Banner -->
-  <div class="bg-gradient-to-r from-yellow-500 to-yellow-300 py-6 text-center">
-    <div class="container mx-auto px-6">
-      <div class="flex flex-col md:flex-row items-center justify-center gap-4">
-        <div class="text-4xl">🏆</div>
-        <div>
-          <h3 class="text-2xl md:text-3xl font-bold text-black">Nominated for the Zephyr Zest Award!</h3>
-          <p class="text-black mt-2">Honored to be recognized by Hollywood Fringe Festival</p>
-        </div>
-        <a href="https://www.hollywoodfringe.org/promote/award/207" target="_blank" class="mt-4 md:mt-0 inline-block bg-black hover:bg-gray-800 text-yellow-300 font-bold py-2 px-6 rounded-full transition">
-          Learn More
-        </a>
+  <!-- AWARD BANNER -->
+  <div class="award-banner py-4 text-center">
+    <div class="container mx-auto px-6 flex flex-col md:flex-row items-center justify-center gap-4">
+      <span class="text-2xl">&#127942;</span>
+      <div>
+        <span class="heading-font text-sm font-bold text-black tracking-widest uppercase">Nominated &mdash; Zephyr Zest Award</span>
+        <span class="text-black text-sm ml-2">&middot; Hollywood Fringe Festival 2025</span>
       </div>
+      <a href="https://www.hollywoodfringe.org/promote/award/207" target="_blank"
+        class="heading-font text-xs font-bold px-4 py-1.5 rounded-sm bg-black text-yellow-400 hover:bg-gray-900 transition tracking-widest uppercase">
+        Learn More
+      </a>
     </div>
   </div>
 
-  <!-- About Section -->
-  <section id="about" class="py-16 bg-opacity-90 bg-purple-900 relative overflow-hidden">
-    <div class="container mx-auto px-6">
-      <div class="text-center mb-12">
-        <h2 class="text-4xl byzantine-title text-yellow-300 mb-4">About The Show</h2>
-        <div class="w-24 h-1 bg-yellow-300 mx-auto"></div>
+  <!-- ABOUT -->
+  <section id="about" class="py-20 section-bg">
+    <div class="container mx-auto px-6 max-w-5xl">
+      <div class="text-center mb-14 reveal">
+        <h2 class="title-font text-3xl mb-4" style="color:var(--gold)">About The Show</h2>
+        <div class="gold-rule">
+          <div class="gold-rule-diamond"></div>
+        </div>
       </div>
-
-      <div class="max-w-4xl mx-auto bg-black bg-opacity-50 p-8 rounded-lg ornamental-border">
-        <p class="text-xl italic text-center text-yellow-100 mb-8">
-          "In 325 A.D., Emperor Constantine assembles the early Church to define Christian orthodoxy.
-          But holy debates spiral into unholy chaos as four unruly bishops and one confused emperor
-          clash over the nature of Christ. Featuring slapstick theology, musical numbers, and a lot of wine."
-        </p>
-
-        <div class="grid md:grid-cols-2 gap-8 mt-8">
-          <div>
-            <h3 class="text-2xl byzantine-title text-yellow-300 mb-4">A Divine Comedy</h3>
-            <p class="mb-4">
-              This satirical musical explores the First Council of Nicaea with humor and heart, blending historical events with modern sensibilities.
-            </p>
-            <p>
-              Through song and satire, we examine how theological debates shaped Christianity while never losing sight of the human drama behind the dogma.
-            </p>
+      <div class="grid md:grid-cols-2 gap-12 items-start">
+        <div class="reveal">
+          <p class="text-xl italic leading-relaxed mb-6" style="color:var(--cream-dim)">
+            "In 325 A.D., Emperor Constantine assembles the early Church to define Christian orthodoxy.
+            But holy debates spiral into unholy chaos as four unruly bishops and one confused emperor
+            clash over the nature of Christ."
+          </p>
+          <p class="text-lg leading-relaxed mb-4">
+            Featuring slapstick theology, original musical numbers, and a frankly irresponsible amount of wine,
+            <em>Oh Constantine!</em> blends historical events with modern sensibility &mdash; examining how
+            theological debates shaped Christianity while never losing sight of the very human drama behind the dogma.
+          </p>
+          <p class="text-lg leading-relaxed" style="color:var(--cream-dim)">
+            Originally staged at the Hollywood Fringe Festival 2025 at the Zephyr Theatre, the show
+            received an award nomination and rave reviews.
+            <strong style="color:var(--gold)">It is now seeking its next stage.</strong>
+          </p>
+        </div>
+        <div class="reveal space-y-6">
+          <div class="corner-ornament p-6"
+            style="border:1px solid rgba(212,168,67,0.2);border-radius:4px;background:rgba(14,8,32,0.5)">
+            <div class="corner-br"></div>
+            <div class="corner-bl"></div>
+            <h3 class="heading-font text-sm tracking-widest uppercase mb-4" style="color:var(--gold)">Creative Team</h3>
+            <ul class="space-y-2 text-sm leading-relaxed" style="color:var(--cream-dim)">
+              <li><span style="color:var(--gold)">Written &amp; Directed by</span> Jan-David Soutar</li>
+              <li><span style="color:var(--gold)">Music by</span> Jan-David Soutar &amp; Kyle Donald</li>
+              <li><span style="color:var(--gold)">Additional Lyrics by</span> Rev. Dr. Michael F. Bird</li>
+              <li><span style="color:var(--gold)">Produced by</span> Athena Rethis &amp; Clent Bowers</li>
+              <li><span style="color:var(--gold)">Marketing / PR</span> Tanya Dickson</li>
+              <li><span style="color:var(--gold)">Original Stage Design</span> Jeremy Thompson</li>
+              <li><span style="color:var(--gold)">Production Design</span> Courtney Stepleton</li>
+              <li><span style="color:var(--gold)">Poster Photography</span> Brendan Eisan</li>
+              <li><span style="color:var(--gold)">Poster Design &amp; Graphics</span> Angelique Fustukjian</li>
+            </ul>
           </div>
-          <div>
-            <h3 class="text-2xl byzantine-title text-yellow-300 mb-4">Creative Team</h3>
-            <ul class="space-y-2">
-              <li>
-                <span class="font-semibold text-yellow-300">Written &amp; Directed by:</span> Jan-David Soutar
-              </li>
-              <li>
-                <span class="font-semibold text-yellow-300">Music by:</span> Jan-David Soutar &amp; Kyle Donald
-              </li>
-              <li>
-                <span class="font-semibold text-yellow-300">Additional Lyrics by:</span> Rev. Dr. Michael F. Bird
-              </li>
-              <li>
-                <span class="font-semibold text-yellow-300">Produced by:</span> Athena Rethis &amp; Clent Bowers
-              </li>
-              <li>
-                <span class="font-semibold text-yellow-300">Marketing/PR:</span> Tanya Dickson
-              </li>
-              <li>
-                <span class="font-semibold text-yellow-300">Original Stage Design by:</span> Jeremy Thompson
-              </li>
-               <li>
-                <span class="font-semibold text-yellow-300">Production Design by:</span> Courtney Stepleton
-              </li>
-              <li>
-                <span class="font-semibold text-yellow-300">Poster Photography by:</span> Brendan Eisan
-              </li>
-              <li>
-                <span class="font-semibold text-yellow-300">Poster Design &amp; Graphics by:</span> Angelique Fustukjian
-              </li>
-               <div>
-            <h3 class="text-2xl byzantine-title text-yellow-300 mb-4">Executive Producers &amp; Supporters</h3>
-            <ul class="space-y-2">
-              <li>
-                <span class="font-semibold text-yellow-300">Executive Producer:</span> Megan Rippey
-              </li>
-                            <li>
-                <span class="font-semibold text-yellow-300">Executive Producer:</span> Jan-David Soutar
-              </li>
-                            <li>
-                <span class="font-semibold text-yellow-300">Executive Producer (POPE LEVEL DONOR):</span> Noelle Kim
-              </li>
+          <div class="p-5 rounded-sm" style="background:rgba(212,168,67,0.06);border:1px solid rgba(212,168,67,0.15)">
+            <h3 class="heading-font text-sm tracking-widest uppercase mb-3" style="color:var(--gold)">Executive
+              Producers</h3>
+            <ul class="space-y-1 text-sm" style="color:var(--cream-dim)">
+              <li>Megan Rippey</li>
+              <li>Jan-David Soutar</li>
+              <li>Noelle Kim <span class="text-xs" style="color:var(--gold)">(Pope Level Donor)</span></li>
             </ul>
           </div>
         </div>
@@ -374,636 +659,619 @@
     </div>
   </section>
 
-  <!-- Cast Section -->
-  <section id="cast" class="py-16 bg-opacity-90 bg-purple-900 relative">
-    <div class="container mx-auto px-6">
-      <div class="text-center mb-12">
-        <h2 class="text-4xl byzantine-title text-yellow-300 mb-4">Meet The Cast</h2>
-        <div class="w-24 h-1 bg-yellow-300 mx-auto"></div>
-      </div>
-
-      <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
-        <!-- Original Cast Members -->
-        <!-- Constantine -->
-        <a href="https://en.wikipedia.org/wiki/Constantine_the_Great" target="_blank" class="wiki-preview-link block">
-          <div class="cast-card bg-black bg-opacity-50 rounded-lg overflow-hidden transition duration-300 hover:shadow-lg">
-            <div class="h-64 bg-purple-700 flex items-center justify-center" aria-hidden="true">
-              <i class="fas fa-crown text-6xl text-yellow-300"></i>
-            </div>
-            <div class="p-6">
-              <h3 class="text-2xl byzantine-title text-yellow-300 mb-2">Constantine</h3>
-              <p class="text-yellow-100 italic">Emperor of Rome</p>
-              <p class="mt-3">Played by Cameron Ley</p>
-            </div>
-          </div>
-        </a>
-
-        <!-- Constantia -->
-        <a href="https://en.wikipedia.org/wiki/Flavia_Julia_Constantia" target="_blank" class="wiki-preview-link block">
-          <div class="cast-card bg-black bg-opacity-50 rounded-lg overflow-hidden transition duration-300 hover:shadow-lg">
-            <div class="h-64 bg-purple-700 flex items-center justify-center" aria-hidden="true">
-              <i class="fas fa-chess-queen text-6xl text-yellow-300"></i>
-            </div>
-            <div class="p-6">
-              <h3 class="text-2xl byzantine-title text-yellow-300 mb-2">Constantia</h3>
-              <p class="text-yellow-100 italic">Sister of Constantine</p>
-              <p class="mt-3">Played by Marlena Hummel</p>
-            </div>
-          </div>
-        </a>
-
-        <!-- Helena -->
-        <a href="https://en.wikipedia.org/wiki/Helena_(empress)" target="_blank" class="wiki-preview-link block">
-          <div class="cast-card bg-black bg-opacity-50 rounded-lg overflow-hidden transition duration-300 hover:shadow-lg">
-            <div class="h-64 bg-purple-700 flex items-center justify-center" aria-hidden="true">
-              <i class="fas fa-chess-queen text-6xl text-yellow-300"></i>
-            </div>
-            <div class="p-6">
-              <h3 class="text-2xl byzantine-title text-yellow-300 mb-2">Helena</h3>
-              <p class="text-yellow-100 italic">Mother of Constantine</p>
-              <p class="mt-3">Played by Jennifer Lamar</p>
-            </div>
-          </div>
-        </a>
-
-        <!-- Athanasius -->
-        <a href="https://en.wikipedia.org/wiki/Athanasius_of_Alexandria" target="_blank" class="wiki-preview-link block">
-          <div class="cast-card bg-black bg-opacity-50 rounded-lg overflow-hidden transition duration-300 hover:shadow-lg">
-            <div class="h-64 bg-purple-700 flex items-center justify-center" aria-hidden="true">
-              <i class="fas fa-cross text-6xl text-yellow-300"></i>
-            </div>
-            <div class="p-6">
-              <h3 class="text-2xl byzantine-title text-yellow-300 mb-2">Athanasius</h3>
-              <p class="text-yellow-100 italic">Bishop of Alexandria</p>
-              <p class="mt-3">Played by Nandi Sharma</p>
-            </div>
-          </div>
-        </a>
-
-        <!-- Eusebius -->
-        <a href="https://en.wikipedia.org/wiki/Eusebius_of_Nicomedia" target="_blank" class="wiki-preview-link block">
-          <div class="cast-card bg-black bg-opacity-50 rounded-lg overflow-hidden transition duration-300 hover:shadow-lg">
-            <div class="h-64 bg-purple-700 flex items-center justify-center" aria-hidden="true">
-              <i class="fas fa-church text-6xl text-yellow-300"></i>
-            </div>
-            <div class="p-6">
-              <h3 class="text-2xl byzantine-title text-yellow-300 mb-2">Eusebius</h3>
-              <p class="text-yellow-100 italic">Bishop of Nicomedia</p>
-              <p class="mt-3">Played by Cole Parker</p>
-            </div>
-          </div>
-        </a>
-
-        <!-- Arius -->
-        <a href="https://en.wikipedia.org/wiki/Arius" target="_blank" class="wiki-preview-link block">
-          <div class="cast-card bg-black bg-opacity-50 rounded-lg overflow-hidden transition duration-300 hover:shadow-lg">
-            <div class="h-64 bg-purple-700 flex items-center justify-center" aria-hidden="true">
-              <i class="fas fa-dove text-6xl text-yellow-300"></i>
-            </div>
-            <div class="p-6">
-              <h3 class="text-2xl byzantine-title text-yellow-300 mb-2">Arius</h3>
-              <p class="text-yellow-100 italic">Presbyter of Alexandria</p>
-              <p class="mt-3">Played by Clent Bowers</p>
-            </div>
-          </div>
-        </a>
-
-        <!-- Mark (no wiki) -->
-        <a href="https://en.wikipedia.org/wiki/First_Council_of_Nicaea" target="_blank" class="wiki-preview-link block">
-          <div class="cast-card bg-black bg-opacity-50 rounded-lg overflow-hidden transition duration-300">
-            <div class="h-64 bg-purple-700 flex items-center justify-center" aria-hidden="true">
-              <i class="fas fa-horse-head text-6xl text-yellow-300"></i>
-            </div>
-            <div class="p-6">
-              <h3 class="text-2xl byzantine-title text-yellow-300 mb-2">Mark</h3>
-              <p class="text-yellow-100 italic">Emperor's Herald</p>
-              <p class="mt-3">Played by Clayton Myers</p>
-            </div>
-          </div>
-        </a>
-
-        <!-- Theo (fictional) -->
-        <a href="https://en.wikipedia.org/wiki/First_Council_of_Nicaea" target="_blank" class="wiki-preview-link block">
-          <div class="cast-card bg-black bg-opacity-50 rounded-lg overflow-hidden transition duration-300">
-            <div class="h-64 bg-purple-700 flex items-center justify-center" aria-hidden="true">
-              <i class="fas fa-theater-masks text-6xl text-yellow-300"></i>
-            </div>
-            <div class="p-6">
-              <h3 class="text-2xl byzantine-title text-yellow-300 mb-2">Theo</h3>
-              <p class="text-yellow-100 italic">Bishop</p>
-              <p class="mt-3">Played by Gabe Bellotti</p>
-            </div>
-          </div>
-        </a>
-
-        <!-- New/Addendum Cast Members -->
-        <!-- SEEB (double for Arius) -->
-        <a href="https://en.wikipedia.org/wiki/Eusebius" target="_blank" class="wiki-preview-link block">
-          <div class="cast-card bg-black bg-opacity-50 rounded-lg overflow-hidden transition duration-300 hover:shadow-lg">
-            <div class="h-64 bg-purple-700 flex items-center justify-center" aria-hidden="true">
-              <i class="fas fa-scroll text-6xl text-yellow-300"></i>
-            </div>
-            <div class="p-6">
-              <h3 class="text-2xl byzantine-title text-yellow-300 mb-2">SEEB</h3>
-              <p class="text-yellow-100 italic">Bishop Of Caeserea</p>
-              <p class="mt-3">Played by Clent Bowers</p>
-            </div>
-          </div>
-        </a>
-
-        <!-- CRIPUS (double for Athanasius) -->
-        <a href="https://en.wikipedia.org/wiki/Crispus" target="_blank" class="wiki-preview-link block">
-          <div class="cast-card bg-black bg-opacity-50 rounded-lg overflow-hidden transition duration-300 hover:shadow-lg">
-            <div class="h-64 bg-purple-700 flex items-center justify-center" aria-hidden="true">
-              <i class="fas fa-crown text-6xl text-yellow-300"></i>
-            </div>
-            <div class="p-6">
-              <h3 class="text-2xl byzantine-title text-yellow-300 mb-2">CRIPUS</h3>
-              <p class="text-yellow-100 italic">Son of Constantine</p>
-              <p class="mt-3">Played by Nandi Sharma</p>
-            </div>
-          </div>
-        </a>
-
-        <!-- FAUSTA (Carmen Ellrodt) -->
-        <a href="https://en.wikipedia.org/wiki/Fausta" target="_blank" class="wiki-preview-link block">
-          <div class="cast-card bg-black bg-opacity-50 rounded-lg overflow-hidden transition duration-300 hover:shadow-lg">
-            <div class="h-64 bg-purple-700 flex items-center justify-center" aria-hidden="true">
-              <i class="fas fa-chess-queen text-6xl text-yellow-300"></i>
-            </div>
-            <div class="p-6">
-              <h3 class="text-2xl byzantine-title text-yellow-300 mb-2">FAUSTA</h3>
-              <p class="text-yellow-100 italic">Wife of Constantine</p>
-              <p class="mt-3">Played by Carmen Ellrodt</p>
-            </div>
-          </div>
-        </a>
-
-        <!-- ALEXANDER (also Nicholas of Myra) -->
-        <a href="https://en.wikipedia.org/wiki/Pope_Alexander_I_of_Alexandria" target="_blank" class="wiki-preview-link block">
-          <div class="cast-card bg-black bg-opacity-50 rounded-lg overflow-hidden transition duration-300 hover:shadow-lg">
-            <div class="h-64 bg-purple-700 flex items-center justify-center" aria-hidden="true">
-              <i class="fas fa-cross text-6xl text-yellow-300"></i>
-            </div>
-            <div class="p-6">
-              <h3 class="text-2xl byzantine-title text-yellow-300 mb-2">ALEXANDER</h3>
-              <p class="text-yellow-100 italic">Bishop of Alexandria</p>
-              <p class="mt-3">Played by Nestor Vinelli</p>
-            </div>
-          </div>
-        </a>
-        <!-- PAPPY (link to Bishop Paphnutius) -->
-        <a href="https://en.wikipedia.org/wiki/Paphnutius_of_Thebes" target="_blank" class="wiki-preview-link block">
-          <div class="cast-card bg-black bg-opacity-50 rounded-lg overflow-hidden transition duration-300 hover:shadow-lg">
-            <div class="h-64 bg-purple-700 flex items-center justify-center" aria-hidden="true">
-              <i class="fas fa-church text-6xl text-yellow-300"></i>
-            </div>
-            <div class="p-6">
-              <h3 class="text-2xl byzantine-title text-yellow-300 mb-2">
-                <a href="https://en.wikipedia.org/wiki/Paphnutius" class="hover:underline">PAPPY</a>
-              </h3>
-              <p class="text-yellow-100 italic">Bishop Paphnutius</p>
-              <p class="mt-3">Played by Guy Picot</p>
-            </div>
-          </div>
-        </a>
-        <!-- EUST (double for Eusebius) -->
-        <a href="https://en.wikipedia.org/wiki/First_Council_of_Nicaea" target="_blank" class="wiki-preview-link block">
-          <div class="cast-card bg-black bg-opacity-50 rounded-lg overflow-hidden transition duration-300 hover:shadow-lg">
-            <div class="h-64 bg-purple-700 flex items-center justify-center" aria-hidden="true">
-              <i class="fas fa-user text-6xl text-yellow-300"></i>
-            </div>
-            <div class="p-6">
-              <h3 class="text-2xl byzantine-title text-yellow-300 mb-2">EUST</h3>
-              <p class="text-yellow-100 italic">Bishop of Carthago Nova</p>
-              <p class="mt-3">Played by Cole Parker</p>
-            </div>
-          </div>
-        </a>
-      </div>
-      <!-- 👈 close the grid -->
-    </div>
-    <!-- 👈 close the container -->
-  </section>
-  <!-- 👈 close the cast section -->
-
-  <!-- Wikipedia Preview Tooltip -->
-  <div id="wikiPreviewTooltip" class="hidden">
-    <div id="wikiPreviewTitle"></div>
-    <div id="wikiPreviewExtract"></div>
-    <div id="wikiPreviewLink">Read more on Wikipedia →</div>
-  </div>
-
-  <!-- Gallery Section -->
-  <section id="gallery" class="py-16 bg-opacity-90 bg-purple-900 relative">
-    <div class="container mx-auto px-6">
-      <div class="text-center mb-12">
-        <h2 class="text-4xl byzantine-title text-yellow-300 mb-4">Gallery</h2>
-        <div class="w-24 h-1 bg-yellow-300 mx-auto"></div>
-      </div>
-
-      <div class="text-center">
-        <a href="https://www.instagram.com/ohconstantineplay" target="_blank" class="inline-block bg-gradient-to-r from-purple-600 to-pink-600 hover:from-purple-700 hover:to-pink-700 text-white font-bold py-4 px-8 rounded-full text-lg transition transform hover:scale-105">
-          Follow Us on Instagram <i class="fab fa-instagram ml-2"></i>
-        </a>
-        <p class="text-yellow-100 mt-4">See behind-the-scenes photos, videos and more!</p>
-      </div>
-    </div>
-  </section>
-  <!-- Reviews Section -->
-  <section id="reviews" class="py-16 bg-opacity-90 bg-purple-900 relative">
-    <div class="container mx-auto px-6">
-      <div class="text-center mb-12">
-        <h2 class="text-4xl byzantine-title text-yellow-300 mb-4">Reviews</h2>
-        <div class="w-24 h-1 bg-yellow-300 mx-auto"></div>
-      </div>
-
-      <ul class="max-w-4xl mx-auto grid md:grid-cols-2 gap-8 text-yellow-100 list-disc list-inside">
-        <li class="bg-black bg-opacity-50 p-4 rounded-lg ornamental-border">"High energy from the start. Such great characters!" - Fringe Reviewer</li>
-        <li class="bg-black bg-opacity-50 p-4 rounded-lg ornamental-border">"One of the best produced and most "Fringest" shows of HFF25! Historical silliness!" - StageAndCinema.com</li>
-        <li class="bg-black bg-opacity-50 p-4 rounded-lg ornamental-border">"This was without a doubt the most exciting show I've seen this year, by a far piece." - Fringe Reviewer</li>
-        <li class="bg-black bg-opacity-50 p-4 rounded-lg ornamental-border">"It definitely made me want to go Wikipedia all these historical figures." - Fringe Reviewer</li>
-        <li class="bg-black bg-opacity-50 p-4 rounded-lg ornamental-border">"One of the funniest projects you will see in all of Fringe! " - StageTakes.com</li>
-        <li class="bg-black bg-opacity-50 p-4 rounded-lg ornamental-border">"OH CONSTANTINE!, is a highlight of fringy, Fringe and more than good for the laughs, the “Holy Nommo” Hip Hop, and the almost true history" - GiaOnTheMove.com</li>
-        <li class="bg-black bg-opacity-50 p-4 rounded-lg ornamental-border">"Irreverent, smart, wildly entertaining—with an outstanding cast." - Fringe Reviewer</li>
-        <li class="bg-black bg-opacity-50 p-4 rounded-lg ornamental-border">"Loud, rapid-paced fun and if you can keep up, even educational." - Fringe Reviewer</li>
-        <li class="bg-black bg-opacity-50 p-4 rounded-lg ornamental-border">"The music alone makes this show worth seeing!" - Fringe Reviewer</li>
-        <li class="bg-black bg-opacity-50 p-4 rounded-lg ornamental-border">"I haven't laughed this hard at a musical in years." - Fringe Reviewer</li>
-        <li class="bg-black bg-opacity-50 p-4 rounded-lg ornamental-border">"The cast's chemistry and comedic timing are perfection." - Fringe Reviewer</li>
-        <li class="bg-black bg-opacity-50 p-4 rounded-lg ornamental-border">"A fresh, funny take on history that's not to be missed." - Fringe Reviewer</li>
-        <li class="bg-black bg-opacity-50 p-4 rounded-lg ornamental-border">"The songs will be stuck in your head for days (in a good way)!" - Fringe Reviewer</li>
-        <li class="bg-black bg-opacity-50 p-4 rounded-lg ornamental-border">"This show deserves a much longer run - it's that good!" - Fringe Reviewer</li>
-      </ul>
-    </div>
-  </section>
-
-  <!-- Tickets Section -->
-  <section id="tickets" class="py-16 bg-opacity-90 bg-purple-900 relative">
-    <div class="container mx-auto px-6">
-      <div class="text-center mb-12">
-        <h2 class="text-4xl byzantine-title text-yellow-300 mb-4">Join The Council</h2>
-        <div class="w-24 h-1 bg-yellow-300 mx-auto"></div>
-      </div>
-
-      <div class="max-w-2xl mx-auto">
-        <div class="ticket-card p-8 rounded-lg transition duration-300 text-center">
-          <h3 class="text-3xl byzantine-title text-yellow-300 mb-4">Support Our Next Production</h3>
-          <p class="text-yellow-100 mb-6 text-xl">Help us bring Oh Constantine! to more audiences!</p>
-          <a href="https://seedandspark.com/fund/oh-constantine-play" target="_blank" class="inline-block bg-yellow-600 hover:bg-yellow-500 text-black font-bold py-4 px-10 rounded-full text-xl transition transform hover:scale-105">
-            Contribute on Seed & Spark <i class="fas fa-star ml-2"></i>
-          </a>
+  <!-- WATCH -->
+  <section id="watch" class="py-20 section-bg-alt">
+    <div class="container mx-auto px-6 max-w-5xl">
+      <div class="text-center mb-14 reveal">
+        <h2 class="title-font text-3xl mb-4" style="color:var(--gold)">Watch</h2>
+        <div class="gold-rule">
+          <div class="gold-rule-diamond"></div>
         </div>
+        <p class="text-lg" style="color:var(--cream-dim)">Experience the holy chaos from wherever you are.</p>
       </div>
-    </div>
-
-    <!-- Show Schedule Section -->
-    <section id="show-schedule" class="py-16 relative overflow-hidden">
-      <div class="container mx-auto px-6">
-        <div class="text-center mb-12">
-          <h2 class="text-4xl byzantine-title text-yellow-300 mb-4">Show Schedule</h2>
-          <p class="text-center text-sm text-yellow-100 mt-2 md:hidden">Swipe to see full schedule ⟶</p>
-          <p class="text-lg text-yellow-100 italic max-w-2xl mx-auto">Choose your night of holy chaos!</p>
-        </div>
-
-        <div class="overflow-x-auto w-full max-w-full">
-          <div class="w-full max-w-5xl mx-auto bg-black bg-opacity-70 p-8 rounded-3xl ornamental-border shadow-xl">
-            <table class="min-w-[600px] md:min-w-full table-auto text-yellow-100 text-sm sm:text-base text-center">
-              <thead>
-                <tr>
-                  <th class="px-4 py-2">Date</th>
-                  <th class="px-4 py-2">Event</th>
-                  <th class="px-4 py-2">Time</th>
-                  <th class="px-4 py-2">Venue</th>
-                </tr>
-              </thead>
-              <tbody>
-                <tr>
-                  <td class="px-4 py-2">Sun, June 8</td>
-                  <td class="px-4 py-2">Preview Night</td>
-                  <td class="px-4 py-2">9:45 PM</td>
-                  <td class="px-4 py-2">Zephyr Theatre</td>
-                </tr>
-                <tr>
-                  <td class="px-4 py-2">Fri, June 13</td>
-                  <td class="px-4 py-2">Performance 1</td>
-                  <td class="px-4 py-2">4:30 PM</td>
-                  <td class="px-4 py-2">Zephyr Theatre</td>
-                  <td class="px-4 py-2">
-                    <a href="https://www.hollywoodfringe.org/projects/11553?embed=false&performance_id=27028&tab=performance" class="text-blue-400 hover:underline" target="_blank">Get Tickets</a>
-                  </td>
-                </tr>
-                <tr>
-                  <td class="px-4 py-2">Sun, June 15</td>
-                  <td class="px-4 py-2">Performance 2</td>
-                  <td class="px-4 py-2">7:45 PM</td>
-                  <td class="px-4 py-2">Zephyr Theatre</td>
-                  <td class="px-4 py-2">
-                    <a href="https://www.hollywoodfringe.org/projects/11553?embed=false&performance_id=27029&tab=performance" class="text-blue-400 hover:underline" target="_blank">Get Tickets</a>
-                  </td>
-                </tr>
-                <tr>
-                  <td class="px-4 py-2">Wed, June 18</td>
-                  <td class="px-4 py-2">Performance 3</td>
-                  <td class="px-4 py-2">8:15 PM</td>
-                  <td class="px-4 py-2">Zephyr Theatre</td>
-                  <td class="px-4 py-2">
-                    <a href="https://www.hollywoodfringe.org/projects/11553?embed=false&performance_id=28324&tab=performance" class="text-blue-400 hover:underline" target="_blank">Get Tickets</a>
-                  </td>
-                </tr>
-                <tr>
-                  <td class="px-4 py-2">Thu, June 19</td>
-                  <td class="px-4 py-2">Performance 4</td>
-                  <td class="px-4 py-2">5:00 PM</td>
-                  <td class="px-4 py-2">Zephyr Theatre</td>
-                  <td class="px-4 py-2">
-                    <a href="https://www.hollywoodfringe.org/projects/11553?embed=false&performance_id=27030&tab=performance" class="text-blue-400 hover:underline" target="_blank">Get Tickets</a>
-                  </td>
-                </tr>
-                <tr>
-                  <td class="px-4 py-2">Thu, June 25</td>
-                  <td class="px-4 py-2">Performance 5</td>
-                  <td class="px-4 py-2">7:00 PM</td>
-                  <td class="px-4 py-2">Zephyr Theatre</td>
-                  <td class="px-4 py-2">
-                    <a href="https://www.hollywoodfringe.org/projects/11553?embed=false&performance_id=28471&tab=performance" class="text-blue-400 hover:underline" target="_blank">Get Tickets</a>
-                  </td>
-                </tr>
-                <tr>
-                  <td class="px-4 py-2">Sat, June 28</td>
-                  <td class="px-4 py-2">Closing Night</td>
-                  <td class="px-4 py-2">10:30 PM</td>
-                  <td class="px-4 py-2">Zephyr Theatre</td>
-                  <td class="px-4 py-2">
-                    <a href="https://www.hollywoodfringe.org/projects/11553?embed=false&performance_id=27031&tab=performance" class="text-blue-400 hover:underline" target="_blank">Get Tickets</a>
-                  </td>
-                </tr>
-              </tbody>
-            </table>
+      <div class="grid md:grid-cols-2 gap-8">
+        <div class="reveal flex flex-col gap-3">
+          <span class="video-label">&#10022; &nbsp; Pitch Video / Trailer</span>
+          <div class="video-frame" style="aspect-ratio:16/9;">
+            <iframe class="w-full h-full" src="https://www.youtube.com/embed/BB5F9LVlyz0?start=1"
+              title="Oh Constantine! Pitch Video" frameborder="0"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+              allowfullscreen>
+            </iframe>
           </div>
         </div>
-      </div>
-      <script>
-        document.addEventListener('DOMContentLoaded', () => {
-          const now = new Date();
-          document.querySelectorAll('#show-schedule tbody tr').forEach(row => {
-            const dateCell = row.querySelector('td');
-            if (!dateCell) return;
-            const perfDate = new Date(dateCell.textContent.trim() + ' 2025');
-            if (perfDate < now) {
-              row.classList.add('line-through', 'opacity-50');
-              const ticketLink = row.querySelector('a');
-              if (ticketLink) ticketLink.textContent = 'Closed';
-            }
-          });
-        });
-      </script>
-    </section>
-  </section>
-
-  <!-- Contact Section -->
-  <section id="contact" class="py-16 bg-opacity-90 bg-purple-900 relative rounded-t-3xl rounded-b-3xl overflow-hidden">
-    <div class="container mx-auto px-6">
-      <div class="text-center mb-12">
-        <h2 class="text-4xl byzantine-title text-yellow-300 mb-4">Contact Us</h2>
-        <div class="w-24 h-1 bg-yellow-300 mx-auto"></div>
-      </div>
-
-      <div class="max-w-2xl mx-auto bg-black bg-opacity-50 p-8 rounded-lg ornamental-border">
-        <div class="text-center mb-8">
-          <p class="text-xl text-yellow-100 mb-6">For press inquiries, group sales, or any questions about the show:</p>
-          <a href="mailto:ohconstantineplay@gmail.com" class="inline-block bg-yellow-600 hover:bg-yellow-500 text-black font-bold py-3 px-8 rounded-full text-lg transition transform hover:scale-105">
-            Email Us <i class="fas fa-envelope ml-2"></i>
-          </a>
-        </div>
-        <div class="flex justify-center space-x-6 mt-8">
-          <a href="https://www.facebook.com/profile.php?id=61574632182433" target="_blank" class="social-icon text-yellow-100 text-2xl transition" aria-label="Facebook">
-            <i class="fab fa-facebook"></i>
-          </a>
-          <a href="https://www.instagram.com/ohconstantineplay" target="_blank" class="social-icon text-yellow-100 text-2xl transition" aria-label="Instagram">
-            <i class="fab fa-instagram"></i>
-          </a>
-          <a href="https://www.tiktok.com/@ohconstantineplay" target="_blank" class="social-icon text-yellow-100 text-2xl transition" aria-label="TikTok">
-            <i class="fab fa-tiktok"></i>
-          </a>
+        <div class="reveal flex flex-col gap-3">
+          <span class="video-label">&#10022; &nbsp; 360&deg; Performance Recording &nbsp;<span style="color:var(--gold);font-size:0.65rem">(Coming Soon)</span></span>
+          <div class="video-frame flex flex-col items-center justify-center gap-4"
+            style="aspect-ratio:16/9;background:rgba(14,8,32,0.85);">
+            <i class="fas fa-vr-cardboard text-4xl" style="color:var(--gold-dim)"></i>
+            <p class="heading-font text-xs tracking-widest text-center px-8" style="color:var(--cream-dim)">
+              A 360&deg; immersive recording of a live performance is currently in post-production.
+            </p>
+            <span class="heading-font text-xs tracking-widest uppercase px-4 py-1.5 rounded-sm" style="background:rgba(212,168,67,0.1);border:1px solid rgba(212,168,67,0.3);color:var(--gold)">
+            Stay Tuned
+          </span>
+          </div>
+          <!--
+          WHEN READY: replace the placeholder div above with:
+          <div class="video-frame" style="aspect-ratio:16/9;">
+            <iframe class="w-full h-full"
+              src="https://www.youtube.com/embed/YOUR_360_VIDEO_ID"
+              title="Oh Constantine! 360 Recording"
+              frameborder="0"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+              allowfullscreen>
+            </iframe>
+          </div>
+        -->
         </div>
       </div>
     </div>
   </section>
 
-  <!-- Footer -->
-  <footer class="bg-black bg-opacity-80 py-8">
+  <!-- CAST -->
+  <section id="cast" class="py-20 section-bg">
     <div class="container mx-auto px-6">
-      <div class="flex flex-col md:flex-row justify-between items-center">
-        <div class="text-xl byzantine-title text-yellow-300 mb-4 md:mb-0">Oh Constantine!</div>
-        <div class="text-yellow-100 text-center md:text-right">
-          <p>&copy; 2025 The Society Of The Cellar</p>
-          <p class="text-sm mt-1">All rights reserved</p>
+      <div class="text-center mb-14 reveal">
+        <h2 class="title-font text-3xl mb-4" style="color:var(--gold)">The Council</h2>
+        <div class="gold-rule">
+          <div class="gold-rule-diamond"></div>
+        </div>
+      </div>
+      <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-4 max-w-6xl mx-auto">
+
+        <a href="https://en.wikipedia.org/wiki/Constantine_the_Great" target="_blank"
+          class="wiki-preview-link block reveal">
+          <div class="cast-card">
+            <div class="cast-icon-area"><i class="fas fa-crown text-4xl" style="color:var(--gold)"></i></div>
+            <div class="p-4 text-center">
+              <h3 class="heading-font text-sm font-semibold mb-1" style="color:var(--gold-light)">Constantine</h3>
+              <p class="text-xs italic mb-1" style="color:var(--cream-dim)">Emperor of Rome</p>
+              <p class="text-xs" style="color:var(--cream-dim)">Cameron Ley</p>
+            </div>
+          </div>
+        </a>
+
+        <a href="https://en.wikipedia.org/wiki/Flavia_Julia_Constantia" target="_blank"
+          class="wiki-preview-link block reveal">
+          <div class="cast-card">
+            <div class="cast-icon-area"><i class="fas fa-chess-queen text-4xl" style="color:var(--gold)"></i></div>
+            <div class="p-4 text-center">
+              <h3 class="heading-font text-sm font-semibold mb-1" style="color:var(--gold-light)">Constantia</h3>
+              <p class="text-xs italic mb-1" style="color:var(--cream-dim)">Sister of Constantine</p>
+              <p class="text-xs" style="color:var(--cream-dim)">Marlena Hummel</p>
+            </div>
+          </div>
+        </a>
+
+        <a href="https://en.wikipedia.org/wiki/Helena_(empress)" target="_blank" class="wiki-preview-link block reveal">
+          <div class="cast-card">
+            <div class="cast-icon-area"><i class="fas fa-chess-queen text-4xl" style="color:var(--gold)"></i></div>
+            <div class="p-4 text-center">
+              <h3 class="heading-font text-sm font-semibold mb-1" style="color:var(--gold-light)">Helena</h3>
+              <p class="text-xs italic mb-1" style="color:var(--cream-dim)">Mother of Constantine</p>
+              <p class="text-xs" style="color:var(--cream-dim)">Jennifer Lamar</p>
+            </div>
+          </div>
+        </a>
+
+        <a href="https://en.wikipedia.org/wiki/Athanasius_of_Alexandria" target="_blank"
+          class="wiki-preview-link block reveal">
+          <div class="cast-card">
+            <div class="cast-icon-area"><i class="fas fa-cross text-4xl" style="color:var(--gold)"></i></div>
+            <div class="p-4 text-center">
+              <h3 class="heading-font text-sm font-semibold mb-1" style="color:var(--gold-light)">Athanasius</h3>
+              <p class="text-xs italic mb-1" style="color:var(--cream-dim)">Bishop of Alexandria</p>
+              <p class="text-xs" style="color:var(--cream-dim)">Nandi Sharma</p>
+            </div>
+          </div>
+        </a>
+
+        <a href="https://en.wikipedia.org/wiki/Eusebius_of_Nicomedia" target="_blank"
+          class="wiki-preview-link block reveal">
+          <div class="cast-card">
+            <div class="cast-icon-area"><i class="fas fa-church text-4xl" style="color:var(--gold)"></i></div>
+            <div class="p-4 text-center">
+              <h3 class="heading-font text-sm font-semibold mb-1" style="color:var(--gold-light)">Eusebius</h3>
+              <p class="text-xs italic mb-1" style="color:var(--cream-dim)">Bishop of Nicomedia</p>
+              <p class="text-xs" style="color:var(--cream-dim)">Cole Parker</p>
+            </div>
+          </div>
+        </a>
+
+        <a href="https://en.wikipedia.org/wiki/Arius" target="_blank" class="wiki-preview-link block reveal">
+          <div class="cast-card">
+            <div class="cast-icon-area"><i class="fas fa-dove text-4xl" style="color:var(--gold)"></i></div>
+            <div class="p-4 text-center">
+              <h3 class="heading-font text-sm font-semibold mb-1" style="color:var(--gold-light)">Arius</h3>
+              <p class="text-xs italic mb-1" style="color:var(--cream-dim)">Presbyter of Alexandria</p>
+              <p class="text-xs" style="color:var(--cream-dim)">Clent Bowers</p>
+            </div>
+          </div>
+        </a>
+
+        <a href="https://en.wikipedia.org/wiki/Pope_Alexander_I_of_Alexandria" target="_blank"
+          class="wiki-preview-link block reveal">
+          <div class="cast-card">
+            <div class="cast-icon-area"><i class="fas fa-cross text-4xl" style="color:var(--gold)"></i></div>
+            <div class="p-4 text-center">
+              <h3 class="heading-font text-sm font-semibold mb-1" style="color:var(--gold-light)">Alexander</h3>
+              <p class="text-xs italic mb-1" style="color:var(--cream-dim)">Bishop of Alexandria</p>
+              <p class="text-xs" style="color:var(--cream-dim)">Nestor Vinelli</p>
+            </div>
+          </div>
+        </a>
+
+        <a href="https://en.wikipedia.org/wiki/Fausta" target="_blank" class="wiki-preview-link block reveal">
+          <div class="cast-card">
+            <div class="cast-icon-area"><i class="fas fa-chess-queen text-4xl" style="color:var(--gold)"></i></div>
+            <div class="p-4 text-center">
+              <h3 class="heading-font text-sm font-semibold mb-1" style="color:var(--gold-light)">Fausta</h3>
+              <p class="text-xs italic mb-1" style="color:var(--cream-dim)">Wife of Constantine</p>
+              <p class="text-xs" style="color:var(--cream-dim)">Carmen Ellrodt</p>
+            </div>
+          </div>
+        </a>
+
+        <a href="https://en.wikipedia.org/wiki/Crispus" target="_blank" class="wiki-preview-link block reveal">
+          <div class="cast-card">
+            <div class="cast-icon-area"><i class="fas fa-crown text-4xl" style="color:var(--gold)"></i></div>
+            <div class="p-4 text-center">
+              <h3 class="heading-font text-sm font-semibold mb-1" style="color:var(--gold-light)">Crispus</h3>
+              <p class="text-xs italic mb-1" style="color:var(--cream-dim)">Son of Constantine</p>
+              <p class="text-xs" style="color:var(--cream-dim)">Nandi Sharma</p>
+            </div>
+          </div>
+        </a>
+
+        <a href="https://en.wikipedia.org/wiki/Paphnutius_of_Thebes" target="_blank"
+          class="wiki-preview-link block reveal">
+          <div class="cast-card">
+            <div class="cast-icon-area"><i class="fas fa-church text-4xl" style="color:var(--gold)"></i></div>
+            <div class="p-4 text-center">
+              <h3 class="heading-font text-sm font-semibold mb-1" style="color:var(--gold-light)">Pappy</h3>
+              <p class="text-xs italic mb-1" style="color:var(--cream-dim)">Bishop Paphnutius</p>
+              <p class="text-xs" style="color:var(--cream-dim)">Guy Picot</p>
+            </div>
+          </div>
+        </a>
+
+        <a href="https://en.wikipedia.org/wiki/First_Council_of_Nicaea" target="_blank"
+          class="wiki-preview-link block reveal">
+          <div class="cast-card">
+            <div class="cast-icon-area"><i class="fas fa-horse-head text-4xl" style="color:var(--gold)"></i></div>
+            <div class="p-4 text-center">
+              <h3 class="heading-font text-sm font-semibold mb-1" style="color:var(--gold-light)">Mark</h3>
+              <p class="text-xs italic mb-1" style="color:var(--cream-dim)">Emperor's Herald</p>
+              <p class="text-xs" style="color:var(--cream-dim)">Clayton Myers</p>
+            </div>
+          </div>
+        </a>
+
+        <a href="https://en.wikipedia.org/wiki/First_Council_of_Nicaea" target="_blank"
+          class="wiki-preview-link block reveal">
+          <div class="cast-card">
+            <div class="cast-icon-area"><i class="fas fa-theater-masks text-4xl" style="color:var(--gold)"></i></div>
+            <div class="p-4 text-center">
+              <h3 class="heading-font text-sm font-semibold mb-1" style="color:var(--gold-light)">Theo</h3>
+              <p class="text-xs italic mb-1" style="color:var(--cream-dim)">Bishop</p>
+              <p class="text-xs" style="color:var(--cream-dim)">Gabe Bellotti</p>
+            </div>
+          </div>
+        </a>
+
+        <a href="https://en.wikipedia.org/wiki/Eusebius" target="_blank" class="wiki-preview-link block reveal">
+          <div class="cast-card">
+            <div class="cast-icon-area"><i class="fas fa-scroll text-4xl" style="color:var(--gold)"></i></div>
+            <div class="p-4 text-center">
+              <h3 class="heading-font text-sm font-semibold mb-1" style="color:var(--gold-light)">SEEB</h3>
+              <p class="text-xs italic mb-1" style="color:var(--cream-dim)">Bishop of Caesarea</p>
+              <p class="text-xs" style="color:var(--cream-dim)">Clent Bowers</p>
+            </div>
+          </div>
+        </a>
+
+        <a href="https://en.wikipedia.org/wiki/First_Council_of_Nicaea" target="_blank"
+          class="wiki-preview-link block reveal">
+          <div class="cast-card">
+            <div class="cast-icon-area"><i class="fas fa-user text-4xl" style="color:var(--gold)"></i></div>
+            <div class="p-4 text-center">
+              <h3 class="heading-font text-sm font-semibold mb-1" style="color:var(--gold-light)">Eust</h3>
+              <p class="text-xs italic mb-1" style="color:var(--cream-dim)">Bishop of Carthago Nova</p>
+              <p class="text-xs" style="color:var(--cream-dim)">Cole Parker</p>
+            </div>
+          </div>
+        </a>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- REVIEWS -->
+  <section id="reviews" class="py-20 section-bg-alt">
+    <div class="container mx-auto px-6 max-w-5xl">
+      <div class="text-center mb-14 reveal">
+        <h2 class="title-font text-3xl mb-4" style="color:var(--gold)">What They Said</h2>
+        <div class="gold-rule">
+          <div class="gold-rule-diamond"></div>
+        </div>
+      </div>
+      <div class="grid md:grid-cols-2 gap-5">
+        <div class="review-card reveal">One of the best produced and most "Fringest" shows of HFF25! Historical
+          silliness!<cite>StageAndCinema.com</cite></div>
+        <div class="review-card reveal">One of the funniest projects you will see in all of
+          Fringe!<cite>StageTakes.com</cite></div>
+        <div class="review-card reveal">OH CONSTANTINE! is a highlight of fringy, Fringe &mdash; the "Holy Nommo" Hip
+          Hop and the almost-true history.<cite>GiaOnTheMove.com</cite></div>
+        <div class="review-card reveal">This was without a doubt the most exciting show I've seen this year, by a far
+          piece.<cite>Fringe Reviewer</cite></div>
+        <div class="review-card reveal">Irreverent, smart, wildly entertaining &mdash; with an outstanding
+          cast.<cite>Fringe Reviewer</cite></div>
+        <div class="review-card reveal">High energy from the start. Such great characters!<cite>Fringe Reviewer</cite>
+        </div>
+        <div class="review-card reveal">The music alone makes this show worth seeing!<cite>Fringe Reviewer</cite></div>
+        <div class="review-card reveal">I haven't laughed this hard at a musical in years.<cite>Fringe Reviewer</cite>
+        </div>
+        <div class="review-card reveal">It definitely made me want to go Wikipedia all these historical
+          figures.<cite>Fringe Reviewer</cite></div>
+        <div class="review-card reveal">This show deserves a much longer run &mdash; it's that
+          good!<cite>Fringe Reviewer</cite></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- BOOKING -->
+  <section id="booking" class="py-20 section-bg">
+    <div class="container mx-auto px-6 max-w-5xl">
+
+      <div class="text-center mb-6 reveal">
+        <h2 class="title-font text-3xl mb-4" style="color:var(--gold)">Bring The Council To You</h2>
+        <div class="gold-rule">
+          <div class="gold-rule-diamond"></div>
+        </div>
+        <p class="text-xl italic max-w-2xl mx-auto" style="color:var(--cream-dim)">
+          So you're programming a season and you need a show that'll actually fill seats, get people talking,
+          and maybe &mdash; just maybe &mdash; teach them something about the Council of Nicaea.
+          We have good news.
+        </p>
+      </div>
+
+      <!-- Selling point cards -->
+      <div class="grid grid-cols-2 md:grid-cols-4 gap-4 mb-14 reveal">
+        <div class="selling-card">
+          <span class="icon">&#127942;</span>
+          <h4>Award-Nominated</h4>
+          <p>Nominated for the Zephyr Zest Award at Hollywood Fringe Festival 2025. Critics loved it. Audiences more so.
+          </p>
+        </div>
+        <div class="selling-card">
+          <span class="icon">&#127917;</span>
+          <h4>A Genuinely Rare Genre</h4>
+          <p>History + slapstick + original music. There is literally no other show about the Council of Nicaea with a
+            hip-hop number.</p>
+        </div>
+        <div class="selling-card">
+          <span class="icon">&#128200;</span>
+          <h4>Proven Audiences</h4>
+          <p>Strong houses across our Hollywood Fringe run. Audiences who came once told their friends. Word of mouth
+            was the engine.</p>
+        </div>
+        <div class="selling-card">
+          <span class="icon">&#9881;</span>
+          <h4>Two Formats</h4>
+          <p>A tight 60-minute one-act for festival slots, or the full 90-minute two-act for proper theatre seasons. We
+            fit your schedule.</p>
+        </div>
+      </div>
+
+      <!-- At-a-glance specs with format toggle -->
+      <div class="reveal mb-14">
+        <div class="corner-ornament p-8 max-w-3xl mx-auto"
+          style="border:1px solid rgba(212,168,67,0.25);border-radius:6px;background:rgba(255,255,255,0.04)">
+          <div class="corner-br"></div>
+          <div class="corner-bl"></div>
+          <h3 class="heading-font text-sm tracking-widest uppercase text-center mb-6" style="color:var(--gold)">The
+            Numbers</h3>
+
+          <!-- Format toggle -->
+          <div class="format-toggle mb-6 max-w-xs mx-auto">
+            <button class="format-btn active" id="btn-oneact" onclick="switchFormat('oneact')">60-min One-Act</button>
+            <button class="format-btn" id="btn-twoact" onclick="switchFormat('twoact')">90-min Two-Act</button>
+          </div>
+
+          <div class="format-detail active" id="detail-oneact">
+            <div class="grid grid-cols-3 gap-4 text-center">
+              <div>
+                <div class="title-font text-3xl mb-1" style="color:var(--gold-light)">60</div>
+                <div class="heading-font text-xs tracking-widest uppercase" style="color:var(--cream-dim)">Minutes<br>No Interval
+                </div>
+              </div>
+              <div>
+                <div class="title-font text-3xl mb-1" style="color:var(--gold-light)">15&ndash;20</div>
+                <div class="heading-font text-xs tracking-widest uppercase" style="color:var(--cream-dim)">Cast &amp;<br>Crew
+                </div>
+              </div>
+              <div>
+                <div class="title-font text-3xl mb-1" style="color:var(--gold-light)">&#10022;</div>
+                <div class="heading-font text-xs tracking-widest uppercase" style="color:var(--cream-dim)">Ideal For<br>Events and Conventions
+                </div>
+              </div>
+            </div>
+            <p class="text-center text-sm mt-5" style="color:var(--cream-dim)">
+              Punchy, pacey, no dead air. Perfect for festival programming where every minute counts.
+            </p>
+          </div>
+
+          <div class="format-detail" id="detail-twoact">
+            <div class="grid grid-cols-3 gap-4 text-center">
+              <div>
+                <div class="title-font text-3xl mb-1" style="color:var(--gold-light)">90</div>
+                <div class="heading-font text-xs tracking-widest uppercase" style="color:var(--cream-dim)">Minutes<br>With Interval
+                </div>
+              </div>
+              <div>
+                <div class="title-font text-3xl mb-1" style="color:var(--gold-light)">15&ndash;20</div>
+                <div class="heading-font text-xs tracking-widest uppercase" style="color:var(--cream-dim)">Cast &amp;<br>Crew
+                </div>
+              </div>
+              <div>
+                <div class="title-font text-3xl mb-1" style="color:var(--gold-light)">&#10022;&#10022;</div>
+                <div class="heading-font text-xs tracking-widest uppercase" style="color:var(--cream-dim)">Ideal For<br>Theatre Seasons
+                </div>
+              </div>
+            </div>
+            <p class="text-center text-sm mt-5" style="color:var(--cream-dim)">
+              The full experience. More music, more chaos, more time for the bar at interval. The way it was meant to be
+              seen.
+            </p>
+          </div>
+
+        </div>
+      </div>
+
+      <!-- Inquiry Form -->
+      <div class="max-w-3xl mx-auto">
+        <div class="text-center mb-8 reveal">
+          <h3 class="title-font text-2xl mb-2" style="color:var(--gold)">Ready to summon the Council?</h3>
+          <p class="text-lg" style="color:var(--cream-dim)">Fill in the scroll below and we shall dispatch a reply with
+            great haste.</p>
+        </div>
+
+        <div class="corner-ornament reveal"
+          style="border:1px solid rgba(212,168,67,0.3);border-radius:6px;background:rgba(255,255,255,0.05);padding:2.5rem">
+          <div class="corner-br"></div>
+          <div class="corner-bl"></div>
+          <form class="booking-form space-y-5" id="bookingForm" action="https://formspree.io/f/mzdjazon" method="POST">
+            <div class="grid md:grid-cols-2 gap-5">
+              <div>
+                <label for="bf-name">Your Name</label>
+                <input type="text" id="bf-name" name="name" placeholder="Full name" required>
+              </div>
+              <div>
+                <label for="bf-org">Organisation / Festival</label>
+                <input type="text" id="bf-org" name="organisation" placeholder="Theatre, festival, university...">
+              </div>
+            </div>
+            <div class="grid md:grid-cols-2 gap-5">
+              <div>
+                <label for="bf-email">Email Address</label>
+                <input type="email" id="bf-email" name="email" placeholder="you@example.com" required>
+              </div>
+              <div>
+                <label for="bf-type">Type of Enquiry</label>
+                <select id="bf-type" name="enquiry_type">
+                <option value="">Select one...</option>
+                <option>Festival / Fringe booking</option>
+                <option>Theatre season / venue booking</option>
+                <option>Campus / special event</option>
+                <option>Press / media inquiry</option>
+                <option>Other</option>
+              </select>
+              </div>
+            </div>
+            <div>
+              <label for="bf-format">Preferred Format</label>
+              <select id="bf-format" name="preferred_format">
+              <option value="">Not sure yet...</option>
+              <option>60-minute one-act (festival / fringe)</option>
+              <option>90-minute two-act (full production)</option>
+              <option>Flexible &mdash; let's talk</option>
+            </select>
+            </div>
+            <div>
+              <label for="bf-message">Message</label>
+              <textarea id="bf-message" name="message" rows="5" placeholder="Tell us about your event, dates, venue capacity, and any questions..."></textarea>
+            </div>
+            <div class="text-center pt-2">
+              <button type="submit" class="btn-gold cursor-pointer">
+              Dispatch Your Scroll <i class="fas fa-paper-plane ml-2 text-xs"></i>
+            </button>
+            </div>
+            <p id="form-success" class="hidden text-center text-sm mt-3 heading-font tracking-widest"
+              style="color:var(--gold)">
+              &#10022; &nbsp; Your scroll has been received. We shall reply with great haste.
+            </p>
+          </form>
+        </div>
+
+        <p class="text-center mt-8 text-sm" style="color:var(--cream-dim)">
+          Prefer the direct approach?
+          <a href="mailto:ohconstantineplay&#64;gmail.com" style="color:var(--gold)"
+            class="hover:underline">ohconstantineplay&#64;gmail.com</a>
+        </p>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="py-10 border-t" style="background:rgba(6,3,18,0.97);border-color:rgba(212,168,67,0.15)">
+    <div class="container mx-auto px-6">
+      <div class="flex flex-col md:flex-row justify-between items-center gap-6">
+        <div class="text-center md:text-left">
+          <div class="title-font text-xl mb-1" style="color:var(--gold-light)">Oh Constantine!</div>
+          <p class="text-xs heading-font tracking-widest uppercase" style="color:var(--gold-dim)">A Holy Satire, With
+            Music</p>
+        </div>
+        <div class="flex gap-6">
+          <a href="https://www.facebook.com/profile.php?id=61574632182433" target="_blank" class="social-icon"
+            aria-label="Facebook"><i class="fab fa-facebook"></i></a>
+          <a href="https://www.instagram.com/ohconstantineplay" target="_blank" class="social-icon"
+            aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+          <a href="https://www.tiktok.com/@ohconstantineplay" target="_blank" class="social-icon"
+            aria-label="TikTok"><i class="fab fa-tiktok"></i></a>
+        </div>
+        <div class="text-center md:text-right text-xs" style="color:var(--cream-dim)">
+          <p>&copy; 2025 The Society of the Cellar</p>
+          <a href="https://societyofthecellar.com" target="_blank" class="hover:underline mt-1 inline-block"
+            style="color:var(--gold-dim)">societyofthecellar.com</a>
         </div>
       </div>
     </div>
   </footer>
 
-  <!-- Landbot Embed -->
+  <!-- CONFESSIONAL CHATBOT -->
   <script type="module" src="https://cdn.landbot.io/landbot-3/landbot-3.0.0.mjs"></script>
-  <!-- Custom Confessional Box with Landbot -->
   <div class="confessional-box" id="confessionalBox">
     <div class="confessional-header" id="confessionalToggle">
-      <h3>Ask Eusebius!</h3>
+      <span>&#10013; Ask Eusebius!</span>
+      <i class="fas fa-chevron-up text-xs" id="confChevron"></i>
     </div>
     <div class="confessional-content hidden" id="confessionalContent">
-      <div id="landbotEusebius" style="width: 100%; height: 500px;"></div>
+      <div id="landbotEusebius" style="width:100%;height:460px;"></div>
     </div>
   </div>
   <script type="module">
     const landbot = new Landbot.Container({
-      container: '#landbotEusebius',
-      configUrl: 'https://storage.googleapis.com/landbot.site/v3/H-2886775-CR0KCOEU4E15QMCE/index.json',
-    });
+    container: '#landbotEusebius',
+    configUrl: 'https://storage.googleapis.com/landbot.site/v3/H-2886775-CR0KCOEU4E15QMCE/index.json',
+  });
   </script>
 
-  <!-- Wikipedia Preview Script -->
+  <!-- WIKI TOOLTIP -->
+  <div id="wikiPreviewTooltip" class="hidden">
+    <div id="wikiPreviewTitle"></div>
+    <div id="wikiPreviewExtract"></div>
+    <div id="wikiPreviewLink">Read more on Wikipedia &rarr;</div>
+  </div>
+
+  <!-- SCRIPTS -->
   <script>
-    (function() {
-      const tooltip = document.getElementById('wikiPreviewTooltip');
-      const titleEl = document.getElementById('wikiPreviewTitle');
-      const extractEl = document.getElementById('wikiPreviewExtract');
-      const linkEl = document.getElementById('wikiPreviewLink');
+    function switchFormat(which) {
+    document.getElementById('detail-oneact').classList.remove('active');
+    document.getElementById('detail-twoact').classList.remove('active');
+    document.getElementById('btn-oneact').classList.remove('active');
+    document.getElementById('btn-twoact').classList.remove('active');
+    document.getElementById('detail-' + which).classList.add('active');
+    document.getElementById('btn-' + which).classList.add('active');
+  }
 
-      function positionTooltip(x, y) {
-        const offset = 12;
-        const rect = tooltip.getBoundingClientRect();
-        let left = x + offset;
-        let top = y + offset;
-        if (left + rect.width > window.innerWidth) {
-          left = x - rect.width - offset;
+  document.addEventListener('DOMContentLoaded', function () {
+
+    document.getElementById('menuBtn').addEventListener('click', function() {
+      document.getElementById('mobileMenu').classList.toggle('hidden');
+    });
+
+    var confBox = document.getElementById('confessionalBox');
+    var confContent = document.getElementById('confessionalContent');
+    var confChevron = document.getElementById('confChevron');
+    document.getElementById('confessionalToggle').addEventListener('click', function() {
+      confBox.classList.toggle('open');
+      confContent.classList.toggle('hidden');
+      confChevron.classList.toggle('fa-chevron-up');
+      confChevron.classList.toggle('fa-chevron-down');
+    });
+    setTimeout(function() {
+      confBox.classList.add('open');
+      confContent.classList.remove('hidden');
+      confChevron.classList.remove('fa-chevron-up');
+      confChevron.classList.add('fa-chevron-down');
+      setTimeout(function() {
+        confBox.classList.remove('open');
+        confContent.classList.add('hidden');
+        confChevron.classList.remove('fa-chevron-down');
+        confChevron.classList.add('fa-chevron-up');
+      }, 8000);
+    }, 3000);
+
+    var revealEls = document.querySelectorAll('.reveal');
+    var observer = new IntersectionObserver(function(entries) {
+      entries.forEach(function(entry, i) {
+        if (entry.isIntersecting) {
+          setTimeout(function() { entry.target.classList.add('visible'); }, i * 60);
+          observer.unobserve(entry.target);
         }
-        if (top + rect.height > window.innerHeight) {
-          top = y - rect.height - offset;
-        }
-        tooltip.style.left = left + 'px';
-        tooltip.style.top = top + 'px';
-      }
+      });
+    }, { threshold: 0.1 });
+    revealEls.forEach(function(el) { observer.observe(el); });
 
-      function getWikiTitleFromUrl(url) {
-        try {
-          const parts = new URL(url).pathname.split('/');
-          return decodeURIComponent(parts[parts.length - 1]);
-        } catch (e) {
-          return null;
-        }
-      }
-
-      document.querySelectorAll('a.wiki-preview-link').forEach(anchor => {
-        let controller = null;
-
-        anchor.addEventListener('mouseenter', async (ev) => {
-          const pageTitle = getWikiTitleFromUrl(anchor.href);
-          if (!pageTitle) return;
-
-          if (controller) {
-            controller.abort();
+    var form = document.getElementById('bookingForm');
+    form.addEventListener('submit', function(e) {
+      e.preventDefault();
+      var data = new FormData(form);
+      fetch(form.action, { method: 'POST', body: data, headers: { 'Accept': 'application/json' } })
+        .then(function(res) {
+          if (res.ok) {
+            form.reset();
+            document.getElementById('form-success').classList.remove('hidden');
           }
-          controller = new AbortController();
+        })
+        .catch(function() { form.submit(); });
+    });
 
-          const apiUrl = `https://en.wikipedia.org/api/rest_v1/page/summary/${pageTitle}`;
-          try {
-            const response = await fetch(apiUrl, { signal: controller.signal });
-            if (!response.ok) throw new Error('Fetch failed');
-            const data = await response.json();
+    var tooltip = document.getElementById('wikiPreviewTooltip');
+    var titleEl = document.getElementById('wikiPreviewTitle');
+    var extractEl = document.getElementById('wikiPreviewExtract');
+    var linkEl = document.getElementById('wikiPreviewLink');
 
-            titleEl.textContent = data.title || pageTitle;
+    function positionTooltip(x, y) {
+      var offset = 14;
+      var left = x + offset;
+      var top = y + offset;
+      if (left + 280 > window.innerWidth) left = x - 280 - offset;
+      if (top + 200 > window.innerHeight) top = y - 200 - offset;
+      tooltip.style.left = left + 'px';
+      tooltip.style.top = top + 'px';
+    }
+
+    function getWikiTitle(url) {
+      try { var p = new URL(url).pathname.split('/'); return decodeURIComponent(p[p.length - 1]); }
+      catch(e) { return null; }
+    }
+
+    document.querySelectorAll('a.wiki-preview-link').forEach(function(anchor) {
+      var controller = null;
+      anchor.addEventListener('mouseenter', function(ev) {
+        var title = getWikiTitle(anchor.href);
+        if (!title) return;
+        if (controller) controller.abort();
+        controller = new AbortController();
+        fetch('https://en.wikipedia.org/api/rest_v1/page/summary/' + title, { signal: controller.signal })
+          .then(function(res) { return res.json(); })
+          .then(function(data) {
+            titleEl.textContent = data.title || title;
             extractEl.textContent = data.extract || 'No summary available.';
-            linkEl.onclick = () => window.open(anchor.href, '_blank');
-
+            linkEl.onclick = function() { window.open(anchor.href, '_blank'); };
             tooltip.classList.remove('hidden');
             positionTooltip(ev.clientX, ev.clientY);
-          } catch (err) {
-            tooltip.classList.add('hidden');
-          }
-        });
-
-        anchor.addEventListener('mousemove', (ev) => {
-          if (!tooltip.classList.contains('hidden')) {
-            positionTooltip(ev.clientX, ev.clientY);
-          }
-        });
-
-        anchor.addEventListener('mouseleave', () => {
-          tooltip.classList.add('hidden');
-          if (controller) {
-            controller.abort();
-            controller = null;
-          }
-        });
+          })
+          .catch(function() { tooltip.classList.add('hidden'); });
       });
-    })();
-  </script>
-
-  <!-- Core Scripts -->
-  <script>
-    document.addEventListener('DOMContentLoaded', function () {
-      // Mobile menu toggle
-      const menuButton = document.querySelector('nav button');
-      if (menuButton) {
-        menuButton.addEventListener('click', function () {
-          document.getElementById('mobileMenu').classList.toggle('hidden');
-        });
-      }
-
-      // Confessional box toggle
-      const confToggle = document.getElementById('confessionalToggle');
-      const confBox = document.getElementById('confessionalBox');
-      const confContent = document.getElementById('confessionalContent');
-      if (confToggle && confBox && confContent) {
-        // Show initially with animation
-        setTimeout(() => {
-          confBox.classList.add('open');
-          confContent.classList.remove('hidden');
-          
-          // Auto-minimize after 8 seconds
-          setTimeout(() => {
-            confBox.classList.remove('open');
-            confContent.classList.add('hidden');
-          }, 8000);
-        }, 3000);
-
-        confToggle.addEventListener('click', function () {
-          confBox.classList.toggle('open');
-          confContent.classList.toggle('hidden');
-        });
-      }
-
-      // Campaign Countdown (ends July 18, 2025 at 9:21 AM)
-      const CAMPAIGN_END_DATE = new Date('2025-07-18T09:21:00');
-      function pad(n) {
-        return n.toString().padStart(2, '0');
-      }
-      function updateCountdown() {
-        const now = new Date();
-        const diff = CAMPAIGN_END_DATE - now;
-        const el = document.getElementById('countdown-timer');
-        if (!el) return;
-
-        if (diff > 0) {
-          const days = Math.floor(diff / (1000 * 60 * 60 * 24));
-          const hours = Math.floor((diff % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-          const minutes = Math.floor((diff % (1000 * 60 * 60)) / (1000 * 60));
-          const seconds = Math.floor((diff % (1000 * 60)) / 1000);
-          el.textContent = `${pad(days)} days, ${pad(hours)} hrs, ${pad(minutes)} min, ${pad(seconds)} sec remaining`;
-        } else {
-          el.textContent = 'CAMPAIGN CLOSED—thank you!';
-        }
-      }
-
-      // Countdown to Ticket Launch (May 1, 2025)
-      function updateTicketCountdown() {
-        const now = new Date();
-        const ticketLaunch = new Date('May 1, 2025 00:00:00');
-        const diff = ticketLaunch - now;
-        const countdownEl = document.getElementById('tickets-countdown-timer');
-
-        if (diff > 0) {
-          const days = Math.floor(diff / (1000 * 60 * 60 * 24));
-          const hours = Math.floor((diff % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-          const minutes = Math.floor((diff % (1000 * 60 * 60)) / (1000 * 60));
-          const seconds = Math.floor((diff % (1000 * 60)) / 1000);
-          countdownEl.textContent = `${days}d ${hours}h ${minutes}m ${seconds}s`;
-        } else {
-          countdownEl.innerHTML = "🎟️ Tickets are now ON SALE! 🎟️";
-          countdownEl.classList.add('glow-on-sale-text');
-        }
-      }
-
-      // Update Ticket Button Text
-      function updateTicketButton() {
-        const now = new Date();
-        const saleDate = new Date('May 1, 2025 00:00:00');
-        const buyButton = document.getElementById('buyTicketsButton');
-        if (buyButton) {
-          buyButton.innerText = now >= saleDate ? "Buy Tickets Now!" : "Tickets On Sale May 1st!";
-        }
-      }
-
-      // Initialize and set intervals
-      updateCountdown();
-      updateTicketCountdown();
-      updateTicketButton();
-      setInterval(updateCountdown, 1000);
-      setInterval(updateTicketCountdown, 1000);
-      setInterval(updateTicketButton, 60000);
+      anchor.addEventListener('mousemove', function(ev) {
+        if (!tooltip.classList.contains('hidden')) positionTooltip(ev.clientX, ev.clientY);
+      });
+      anchor.addEventListener('mouseleave', function() {
+        tooltip.classList.add('hidden');
+        if (controller) { controller.abort(); controller = null; }
+      });
     });
 
-    // Easter egg in console
-    console.log("%cVOLTAIRE GOD SPEED US TO THE GLORIOUS MUSE", "color: #FFC107; font-size: 24px; font-weight: bold;");
-    console.log("%cThe true believers know the secret of the Nika riots...", "color: #f8f3e6;");
+  });
+
+  console.log('%cVOLTAIRE GOD SPEED US TO THE GLORIOUS MUSE', 'color:#D4A843;font-size:20px;font-weight:bold');
+  console.log('%cThe true believers know the secret of the Nika riots...', 'color:#F5EDD6');
   </script>
 
-  <p style="border-radius: 8px; text-align: center; font-size: 12px; color: #fff; margin-top: 16px; position: fixed; left: 8px; bottom: 8px; z-index: 10; background: rgba(0, 0, 0, 0.8); padding: 4px 8px;">
-    Made with 
-    <img src="https://enzostvs-deepsite.hf.space/logo.svg" alt="DeepSite Logo" style="width: 16px; height: 16px; vertical-align: middle;display:inline-block;margin-right:3px;filter:brightness(0) invert(1);">
-    <a href="https://enzostvs-deepsite.hf.space" style="color: #fff;text-decoration: underline;" target="_blank">DeepSite</a>  
-    - 🧬 
-    <a href="https://enzostvs-deepsite.hf.space?remix=phreakwenci/oh-constantine-http-www-meganrippey-com" style="color: #fff;text-decoration: underline;" target="_blank">Remix</a>
-  </p>
 </body>
+
 </html>
